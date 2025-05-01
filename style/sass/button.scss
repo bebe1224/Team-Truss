@@ -1,0 +1,75 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+.btn1 {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 9px;
+    transition: 0.3s ease-in-out;
+    width: 75px;
+    text-align: center;
+
+    &:hover {
+        filter: invert(100%);
+    }
+}
+
+
+.cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    span {
+        padding-bottom: 7px;
+        letter-spacing: 4px;
+        font-size: 14px;
+        padding-right: 15px;
+        text-transform: uppercase;
+    }
+
+    svg {
+        transform: translateX(-8px);
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        svg {
+            transform: translateX(0);
+        }
+
+        .hover-underline-animation {
+            &::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+
+    &:active {
+        svg {
+            transform: scale(0.9);
+        }
+    }
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+}

@@ -1,0 +1,16 @@
+.underline_gray {
+  margin-top: 2px;
+  border-radius: 9px;
+  background-color: #838383;
+  width: 0%;
+  height: 3px;
+  transition: 0.3s ease-in-out;
+}
+
+.main_menu:hover .underline_gray {
+  width: 100%;
+}
+
+.sect4 .inner .tab_btns .tab_btn:hover .underline_gray {
+  width: 100%;
+}

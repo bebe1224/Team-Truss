@@ -1,0 +1,84 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+header {
+    @include fsbc;
+    padding-left: 20px;
+    padding: 0px 28px;
+
+    .pc_nav {
+
+        .main_menu_wrpa {
+            display: flex;
+            gap: 32px;
+
+            .main_menu {
+                position: relative;
+
+                a {}
+
+                .sub_menu {
+                    background-color: #fafafa;
+                    position: absolute;
+                    z-index: 999;
+                    left: 50%;
+                    transform: translate(-50%, 0%);
+                    display: flex;
+                    flex-direction: column;
+                    width: 200%;
+                    height: 0;
+                    overflow: hidden;
+
+                    &.active {
+                        height: auto;
+                    }
+
+                    li {
+                        padding: 4px;
+                        transition: 0.3s ease-in-out;
+                        text-align: center;
+
+                        &:hover {
+                            background-color: #afafaf;
+
+                            a {
+                                color: #ffff;
+                            }
+                        }
+
+                        a {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header1 {
+    min-width: 320px;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.header2 {
+    min-width: 320px;
+    height: 100px;
+    background-color: blue;
+}
+
+.header3 {
+    min-width: 320px;
+    height: 100px;
+    background-color: yellow;
+}
+
+//헤더로고크기
+header {
+    h1 {
+        width: 100px;
+
+        img {
+            width: 100%;
+        }
+    }
+}

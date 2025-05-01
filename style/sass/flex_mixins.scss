@@ -1,0 +1,93 @@
+// ===== mixin
+@mixin fsbc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin fcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fce {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+@mixin fsc {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+@mixin fec {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+@mixin feae {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+@mixin fcs {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+@mixin fss {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+@mixin fc {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin fcr {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@mixin fccc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin fscc {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin fcsc {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+@mixin fssc {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+@mixin fesc {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    flex-direction: column;
+}

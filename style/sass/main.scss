@@ -1,0 +1,450 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+body {
+    user-select: none;
+}
+
+.sect2 {
+    .inner {
+        @include fccc;
+        gap: 32px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+
+        .sect2_swiper {}
+    }
+}
+
+.sect3 {
+    .inner {
+        @include fccc;
+        gap: 32px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+
+        .banner {
+            @include fcc;
+            gap: 32px;
+
+            a {
+                figure {
+                    width: 400px;
+                    transition: opacity 0.3s ease-in-out;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+
+                    .i_w {
+                        width: 100%;
+                        height: 240px;
+                        overflow: hidden;
+
+                        &:hover {
+                            img {
+                                transform: scale(1.05);
+                            }
+                        }
+
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                            transition: transform 0.3s ease-in-out;
+                        }
+                    }
+
+                    figcaption {
+                        @include fsbc;
+                        margin-top: 20px;
+
+                        width: 100%;
+
+                        .p_wrap {
+                            @include fc;
+                            gap: 4px;
+
+                            .p1 {
+                                font-size: 18px;
+                                color: #3a3a3a;
+                            }
+
+                            .p2 {
+                                font-size: 14px;
+                                color: #9a9a9a;
+                            }
+                        }
+
+                        img {
+                            width: 36px;
+                            height: 36px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sect4 {
+    .inner {
+        @include fccc;
+        gap: 32px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+
+        .tab_btns {
+            @include fcc;
+            gap: 32px;
+
+            .tab_btn {
+                cursor: pointer;
+                font-size: 18px;
+                color: $secondary-color0;
+                transition: filter 0.3s ease-in-out;
+
+                &:hover {
+                    filter: invert(100);
+                }
+
+                &.active {
+                    font-weight: bold;
+                    filter: invert(100);
+                }
+            }
+        }
+
+        .screen_wrap {
+            width: 100%;
+            height: auto;
+
+            //screen 자바스크립트 애드,리브 클래스 위해
+            .screen {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            //screen안에 products 스타일
+            .screen {
+                .products {
+                    @include fcc;
+                    gap: 30px;
+
+                    .product {
+                        @include fscc;
+                        width: 296px;
+                        height: 500px;
+
+                        &:hover {
+                            .i_w {
+                                .hidden {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .i_w {
+                            position: relative;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 292px;
+                            background-color: $primary-color5;
+
+                            img {
+                                width: 100%;
+                                height: 100%
+                            }
+
+                            .hidden {
+                                @include fcc;
+                                gap: 8px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                opacity: 0;
+                                transition: opacity 0.3s ease-in-out
+                            }
+                        }
+
+                        article {
+                            @include fcsc;
+                            width: 100%;
+                            height: calc(100% - 292px);
+                            font-size: 12px;
+
+                            b {
+                                font-size: 14px;
+                            }
+
+                            span {
+                                color: $secondary-color0;
+                                text-decoration: line-through;
+                            }
+
+                            .price {}
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.sect5 {
+    .inner {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.sect6 {
+    .inner {
+        @include fccc;
+        gap: 32px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+
+        .products_wrap {
+            .products {
+                @include fcc;
+                gap: 30px;
+
+                .product {
+                    @include fscc;
+                    width: 296px;
+                    height: 500px;
+
+                    &:hover {
+                        .i_w {
+                            .hidden {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .i_w {
+                        position: relative;
+                        overflow: hidden;
+                        width: 100%;
+                        height: 292px;
+                        background-color: $primary-color5;
+
+                        img {
+                            width: 100%;
+                            height: 100%
+                        }
+
+                        .hidden {
+                            @include fcc;
+                            gap: 8px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out
+                        }
+                    }
+
+                    article {
+                        @include fcsc;
+                        width: 100%;
+                        height: calc(100% - 292px);
+                        font-size: 12px;
+
+                        b {
+                            font-size: 14px;
+                        }
+
+                        span {
+                            color: $secondary-color0;
+                            text-decoration: line-through;
+                        }
+
+                        .price {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sect7 {
+    .inner {
+        @include fccc;
+        gap: 32px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+    }
+}
+
+.sect8 {
+    .inner {
+        .banner_box {
+            @include fcc;
+            width: 100%;
+
+            .banner_text {
+                @include fcsc;
+                gap: 24px;
+                width: 50%;
+                padding: 168px;
+                background-color: $secondary-color2;
+                ;
+
+                h2 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+
+                .p1 {
+                    color: $secondary-color5;
+                }
+
+                .p2 {}
+            }
+
+            .i_w {
+                @include fcc;
+                width: 50%;
+                overflow: hidden;
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.sect9 {
+    .inner {
+        @include fccc;
+        gap: 32px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+
+        .products_wrap {
+            .products {
+                @include fcc;
+                gap: 30px;
+
+                .product {
+                    @include fscc;
+                    width: 296px;
+                    height: 500px;
+
+                    &:hover {
+                        .i_w {
+                            .hidden {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .i_w {
+                        position: relative;
+                        overflow: hidden;
+                        width: 100%;
+                        height: 292px;
+                        background-color: $primary-color5;
+
+                        img {
+                            width: 100%;
+                            height: 100%
+                        }
+
+                        .hidden {
+                            @include fcc;
+                            gap: 8px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out
+                        }
+                    }
+
+                    article {
+                        @include fcsc;
+                        width: 100%;
+                        height: calc(100% - 292px);
+                        font-size: 12px;
+
+                        b {
+                            font-size: 14px;
+                        }
+
+                        span {
+                            color: $secondary-color0;
+                            text-decoration: line-through;
+                        }
+
+                        .price {}
+                    }
+                }
+            }
+        }
+    }
+}
