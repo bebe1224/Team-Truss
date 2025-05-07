@@ -8,7 +8,7 @@ body {
 .sect2 {
     .inner {
         @include fccc;
-        gap: 32px;
+        gap: 48px;
 
         .wrap {
             @include fccc;
@@ -26,7 +26,7 @@ body {
 .sect3 {
     .inner {
         @include fccc;
-        gap: 32px;
+        gap: 48px;
 
         .wrap {
             @include fccc;
@@ -37,66 +37,165 @@ body {
             p {}
         }
 
-        .banner {
+        // .banner {
+        //     @include fsbc;
+        //     width: 100%;
+
+        //     a {
+        //         figure {
+        //             width: 400px;
+        //             transition: opacity 0.3s ease-in-out;
+
+        //             &:hover {
+        //                 opacity: 0.8;
+        //             }
+
+        //             .i_w {
+        //                 width: 100%;
+        //                 height: 240px;
+        //                 overflow: hidden;
+
+        //                 &:hover {
+        //                     img {
+        //                         transform: scale(1.05);
+        //                     }
+        //                 }
+
+        //                 img {
+        //                     width: 100%;
+        //                     object-fit: cover;
+        //                     transition: transform 0.3s ease-in-out;
+        //                 }
+        //             }
+
+        //             figcaption {
+        //                 @include fsbc;
+        //                 margin-top: 20px;
+
+        //                 width: 100%;
+
+        //                 .p_wrap {
+        //                     @include fc;
+        //                     gap: 4px;
+
+        //                     .p1 {
+        //                         font-size: 18px;
+        //                         color: #3a3a3a;
+        //                     }
+
+        //                     .p2 {
+        //                         font-size: 14px;
+        //                         color: #9a9a9a;
+        //                     }
+        //                 }
+
+        //                 img {
+        //                     width: 36px;
+        //                     height: 36px;
+        //                 }
+
+        //             }
+        //         }
+        //     }
+        // }
+
+        .banner1 {
             @include fcc;
             gap: 32px;
+            width: 100%;
 
-            a {
-                figure {
-                    width: 400px;
+            .hidden {
+                position: relative;
+                transition: filter 0.3s ease-in-out;
+
+                &:hover {
+                    img {
+                        filter: blur(2px);
+                    }
+
+                    .btn3 {
+                        opacity: 1;
+                    }
+                }
+
+                .btn3 {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 99;
+                    opacity: 0;
                     transition: opacity 0.3s ease-in-out;
+                }
+            }
 
-                    &:hover {
-                        opacity: 0.8;
+            .border_r {
+                border-radius: 9px;
+            }
+
+            .shadow {
+                // box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+                box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+            }
+
+            .img_style {
+                overflow: hidden;
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+
+            .left {
+                @include fccc;
+                gap: 24px;
+                width: 911px;
+
+                .tob_box {
+
+                    width: 100%;
+                    height: 400px
+                }
+
+                .bottom_box {
+                    @include fcc;
+                    gap: 16px;
+
+                    .b_b1 {
+                        width: 675px;
+                        height: 400px;
                     }
 
-                    .i_w {
-                        width: 100%;
-                        height: 240px;
-                        overflow: hidden;
-
-                        &:hover {
-                            img {
-                                transform: scale(1.05);
-                            }
-                        }
-
-                        img {
-                            width: 100%;
-                            object-fit: cover;
-                            transition: transform 0.3s ease-in-out;
-                        }
-                    }
-
-                    figcaption {
-                        @include fsbc;
-                        margin-top: 20px;
-
-                        width: 100%;
-
-                        .p_wrap {
-                            @include fc;
-                            gap: 4px;
-
-                            .p1 {
-                                font-size: 18px;
-                                color: #3a3a3a;
-                            }
-
-                            .p2 {
-                                font-size: 14px;
-                                color: #9a9a9a;
-                            }
-                        }
-
-                        img {
-                            width: 36px;
-                            height: 36px;
-                        }
-
+                    .b_b2 {
+                        width: 220px;
+                        height: 400px;
                     }
                 }
             }
+
+            .right {
+                @include fccc;
+                gap: 24px;
+                width: 456px;
+
+                .tob_box {
+                    width: 456px;
+                    height: 630px;
+                }
+
+                .bottom_box {
+                    width: 456px;
+                    height: 170px;
+                }
+            }
+
         }
     }
 }
@@ -104,7 +203,7 @@ body {
 .sect4 {
     .inner {
         @include fccc;
-        gap: 32px;
+        gap: 48px;
 
         .wrap {
             @include fccc;
@@ -139,6 +238,8 @@ body {
         .screen_wrap {
             width: 100%;
             height: auto;
+            //프로덕츠스에다가 쉐도우 줘서 마진탑좀줌 경계를 넘어서 ㅠㅠ
+            // margin-top: 80px;
 
             //screen 자바스크립트 애드,리브 클래스 위해
             .screen {
@@ -152,13 +253,32 @@ body {
             //screen안에 products 스타일
             .screen {
                 .products {
-                    @include fcc;
-                    gap: 30px;
+                    @include fsbc;
+                    align-items: start;
 
                     .product {
                         @include fscc;
-                        width: 296px;
+                        width: 300px;
                         height: 500px;
+
+                        &:nth-of-type(1n) {
+
+                            transition: 0.3s ease-in-out;
+
+                            &:hover {
+                                margin: 48px 0px 0px 0px;
+                                // margin: 48px;
+                            }
+                        }
+
+                        &:nth-of-type(2n) {
+                            margin: 48px 0px 0px 0px;
+                            transition: 0.3s ease-in-out;
+
+                            &:hover {
+                                margin-top: 0px;
+                            }
+                        }
 
                         &:hover {
                             .i_w {
@@ -172,7 +292,7 @@ body {
                             position: relative;
                             overflow: hidden;
                             width: 100%;
-                            height: 292px;
+                            height: 331px;
                             background-color: $primary-color5;
 
                             img {
@@ -195,7 +315,7 @@ body {
                         article {
                             @include fcsc;
                             width: 100%;
-                            height: calc(100% - 292px);
+                            height: calc(100% - 331px);
                             font-size: 12px;
 
                             b {
@@ -211,24 +331,42 @@ body {
                         }
                     }
                 }
-
             }
         }
     }
 }
 
 .sect5 {
+    background: url(../../imgs/sect5/jimny.png)no-repeat center/cover;
+    background-attachment: fixed;
+
     .inner {
-        img {
-            width: 100%;
+        @include fcc;
+
+        a {
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                opacity: 0.8;
+                color: $primary-color0;
+            }
+
+            .barcode {
+                font-family: "Libre Barcode 39 Extended Text", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 100px;
+                color: $primary-color1;
+            }
         }
+
     }
 }
 
 .sect6 {
     .inner {
         @include fccc;
-        gap: 32px;
+        gap: 80px;
 
         .wrap {
             @include fccc;
@@ -240,14 +378,34 @@ body {
         }
 
         .products_wrap {
+            width: 100%;
+
             .products {
-                @include fcc;
-                gap: 30px;
+                @include fsbc;
+                align-items: start;
 
                 .product {
                     @include fscc;
-                    width: 296px;
+                    width: 300px;
                     height: 500px;
+
+                    &:nth-of-type(1n) {
+                        transition: 0.3s ease-in-out;
+
+                        &:hover {
+                            margin: 48px 0px 0px 0px;
+                            // margin: 48px;
+                        }
+                    }
+
+                    &:nth-of-type(2n) {
+                        margin: 48px 0px 0px 0px;
+                        transition: 0.3s ease-in-out;
+
+                        &:hover {
+                            margin-top: 0px;
+                        }
+                    }
 
                     &:hover {
                         .i_w {
@@ -261,7 +419,7 @@ body {
                         position: relative;
                         overflow: hidden;
                         width: 100%;
-                        height: 292px;
+                        height: 331px;
                         background-color: $primary-color5;
 
                         img {
@@ -284,7 +442,7 @@ body {
                     article {
                         @include fcsc;
                         width: 100%;
-                        height: calc(100% - 292px);
+                        height: calc(100% - 331px);
                         font-size: 12px;
 
                         b {
@@ -330,7 +488,7 @@ body {
                 @include fcsc;
                 gap: 24px;
                 width: 50%;
-                padding: 168px;
+                padding: 152px;
                 background-color: $secondary-color2;
                 ;
 
@@ -352,6 +510,7 @@ body {
             .i_w {
                 @include fcc;
                 width: 50%;
+                height: 588px;
                 overflow: hidden;
 
                 &:hover {
@@ -362,6 +521,7 @@ body {
 
                 img {
                     width: 100%;
+                    height: 100%;
                     object-fit: cover;
                     transition: 0.3s ease-in-out;
                 }
@@ -373,7 +533,7 @@ body {
 .sect9 {
     .inner {
         @include fccc;
-        gap: 32px;
+        gap: 48px;
 
         .wrap {
             @include fccc;
@@ -385,14 +545,34 @@ body {
         }
 
         .products_wrap {
+            width: 100%;
+
             .products {
-                @include fcc;
-                gap: 30px;
+                @include fsbc;
+                align-items: start;
 
                 .product {
                     @include fscc;
-                    width: 296px;
+                    width: 300px;
                     height: 500px;
+
+                    &:nth-of-type(1n) {
+                        transition: 0.3s ease-in-out;
+
+                        &:hover {
+                            margin: 48px 0px 0px 0px;
+                            // margin: 48px;
+                        }
+                    }
+
+                    &:nth-of-type(2n) {
+                        margin: 48px 0px 0px 0px;
+                        transition: 0.3s ease-in-out;
+
+                        &:hover {
+                            margin-top: 0px;
+                        }
+                    }
 
                     &:hover {
                         .i_w {
@@ -406,7 +586,7 @@ body {
                         position: relative;
                         overflow: hidden;
                         width: 100%;
-                        height: 292px;
+                        height: 331px;
                         background-color: $primary-color5;
 
                         img {
@@ -429,7 +609,7 @@ body {
                     article {
                         @include fcsc;
                         width: 100%;
-                        height: calc(100% - 292px);
+                        height: calc(100% - 331px);
                         font-size: 12px;
 
                         b {

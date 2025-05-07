@@ -1,0 +1,120 @@
+footer {
+  width: 100%;
+}
+footer .f .inner {
+  margin: 0 auto;
+  width: 1400px;
+  height: 100%;
+  color: #FFFFFF;
+}
+footer .f .inner a {
+  transition: 0.3s ease-in-out;
+}
+footer .f .inner a:hover {
+  opacity: 0.6;
+  color: #fafafa;
+}
+footer .f_1 {
+  background-color: #0A1D37;
+  height: 400px;
+}
+footer .f_1 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .f_1 .inner .right {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 32px;
+}
+footer .f_1 .inner .right .top {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .f_1 .inner .right .top .f_logo {
+  width: 48px;
+}
+footer .f_1 .inner .right .top .f_logo img {
+  width: 100%;
+  filter: invert(1) brightness(2);
+}
+footer .f_1 .inner .right .top ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+footer .f_1 .inner .right .top .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+footer .f_1 .inner .right .top .home img {
+  width: 16px;
+}
+footer .f_1 .inner .right .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .f_1 .inner .right .bottom p {
+  font-size: 13px;
+}
+footer .f_1 .inner .right .bottom p span {
+  padding-right: 4px;
+  font-weight: bold;
+}
+footer .f_1 .inner .right .bottom .wrap {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+}
+footer .f_1 .inner .left {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+}
+footer .f_1 .inner .left p {
+  font-size: 13px;
+}
+footer .f_1 .inner .left p span {
+  font-weight: bold;
+  padding-right: 4px;
+}
+footer .f_2 {
+  background-color: #061222;
+  height: 200px;
+}
+footer .f_2 .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .f_2 .inner strong {
+  font-size: 13px;
+}
+footer .f_2 .inner ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+footer .f_2 .inner ul li {
+  width: 32px;
+  height: 32px;
+}
+footer .f_2 .inner ul li a img {
+  width: 100%;
+}

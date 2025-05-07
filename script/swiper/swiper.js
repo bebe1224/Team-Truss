@@ -42,8 +42,9 @@ window.addEventListener("load", () => {
 
 // Swiper 생성  sect2
 const swiper2 = new Swiper(".sect2_swiper", {
-    slidesPerView: 5,
+    slidesPerView: 4,
     spaceBetween: 32,
+    // effect: "coverflow",
     speed: 1000,
     autoplay: {
         delay: 3500,

@@ -4,13 +4,13 @@
 }
 .sect .inner {
   margin: 0 auto;
-  min-width: 1600px;
-  width: 1600px;
+  min-width: 1400px;
+  width: 1400px;
   height: 100vh;
 }
 
 .sect1 {
-  height: calc(100vh - 300px);
+  margin-top: 100px;
 }
 
 .sect2 {
@@ -39,7 +39,7 @@
 
 .sect5 {
   height: auto;
-  padding: 80px 0px;
+  padding: 300px 0px;
 }
 .sect5 .inner {
   height: auto;

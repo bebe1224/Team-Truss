@@ -3,7 +3,7 @@
 
 .sect1_swiper {
     width: 100%;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 100px);
 
 
     .swiper-slide {
@@ -117,11 +117,15 @@
 .sect2_swiper {
 
     width: 100%;
-    height: 500px;
+    height: 600px;
 
 
     .swiper-slide {
         @include fscc;
+
+        &:nth-of-type(2n) {
+            margin-top: 32px;
+        }
 
         &:hover {
             .i_w {
@@ -131,11 +135,13 @@
             }
         }
 
+
         .i_w {
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
             position: relative;
             overflow: hidden;
             width: 100%;
-            height: 292px;
+            height: auto;
             background-color: $primary-color5;
 
             img {
@@ -158,7 +164,7 @@
         article {
             @include fcsc;
             width: 100%;
-            height: calc(100% - 292px);
+            height: calc(100% - 331px);
             font-size: 12px;
 
             b {
@@ -172,5 +178,6 @@
 
             .price {}
         }
+
     }
 }

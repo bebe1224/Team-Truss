@@ -1,0 +1,137 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+footer {
+    width: 100%;
+
+    .f {
+        .inner {
+            margin: 0 auto;
+            width: 1400px;
+            height: 100%;
+            color: $primary-color0;
+
+            a {
+                transition: 0.3s ease-in-out;
+
+                &:hover {
+                    opacity: 0.6;
+                    color: $primary-color1;
+
+
+                }
+            }
+        }
+    }
+
+    .f_1 {
+        background-color: $primary-color7;
+        height: 400px;
+
+        .inner {
+            @include fsbc;
+
+            .right {
+                @include fcsc;
+                gap: 32px;
+
+                .top {
+                    @include fcsc;
+                    gap: 16px;
+
+                    .f_logo {
+                        width: 48px;
+
+                        img {
+                            width: 100%;
+                            filter: invert(1) brightness(2);
+                        }
+                    }
+
+                    ul {
+                        @include fcc;
+                        gap: 16px;
+
+                        li {
+                            a {}
+                        }
+                    }
+
+                    .home {
+                        @include fcc;
+                        gap: 4px;
+
+
+                        img {
+                            width: 16px;
+                        }
+                    }
+                }
+
+                .bottom {
+                    @include fcsc;
+                    gap: 16px;
+
+                    p {
+                        font-size: 13px;
+
+                        span {
+                            padding-right: 4px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .wrap {
+                        @include fsc;
+                        gap: 8px;
+                    }
+                }
+            }
+
+            .left {
+                @include fcsc;
+                gap: 16px;
+
+                a {}
+
+                p {
+                    font-size: 13px;
+
+                    span {
+                        font-weight: bold;
+                        padding-right: 4px;
+                    }
+                }
+            }
+        }
+    }
+
+    .f_2 {
+        background-color: $primary-color8;
+        height: 200px;
+
+        .inner {
+            @include fsbc;
+
+            strong {
+                font-size: 13px;
+            }
+
+            ul {
+                @include fcc;
+                gap: 8px;
+
+                li {
+                    width: 32px;
+                    height: 32px;
+
+                    a {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
