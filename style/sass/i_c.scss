@@ -1,0 +1,142 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+body {
+    user-select: none;
+}
+
+.sect1_1 {
+    .inner {
+        @include fccc;
+        gap: 48px;
+
+        .wrap {
+            @include fccc;
+            gap: 4px;
+
+            h2 {}
+
+            p {}
+        }
+
+        .tab_btns {
+            @include fcc;
+            gap: 32px;
+
+            .tab_btn {
+                cursor: pointer;
+                font-size: 18px;
+                color: $secondary-color0;
+                transition: filter 0.3s ease-in-out;
+
+                &:hover {
+                    filter: invert(100);
+                }
+
+                &.active {
+                    font-weight: bold;
+                    filter: invert(100);
+                }
+            }
+        }
+
+        .screen_wrap {
+            width: 100%;
+            height: auto;
+            //프로덕츠스에다가 쉐도우 줘서 마진탑좀줌 경계를 넘어서 ㅠㅠ
+            // margin-top: 80px;
+
+            //screen 자바스크립트 애드,리브 클래스 위해
+            .screen {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            //screen안에 products 스타일
+            .screen {
+                .products {
+                    @include fsbc;
+                    align-items: start;
+
+                    .product {
+                        @include fscc;
+                        width: 300px;
+                        height: 500px;
+
+                        &:nth-of-type(1n) {
+
+                            transition: 0.3s ease-in-out;
+
+                            &:hover {
+                                margin: 48px 0px 0px 0px;
+                                // margin: 48px;
+                            }
+                        }
+
+                        &:nth-of-type(2n) {
+                            margin: 48px 0px 0px 0px;
+                            transition: 0.3s ease-in-out;
+
+                            &:hover {
+                                margin-top: 0px;
+                            }
+                        }
+
+                        &:hover {
+                            .i_w {
+                                .hidden {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+
+                        .i_w {
+                            position: relative;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 331px;
+                            background-color: $primary-color5;
+
+                            img {
+                                width: 100%;
+                                height: 100%
+                            }
+
+                            .hidden {
+                                @include fcc;
+                                gap: 8px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                opacity: 0;
+                                transition: opacity 0.3s ease-in-out
+                            }
+                        }
+
+                        article {
+                            @include fcsc;
+                            width: 100%;
+                            height: calc(100% - 331px);
+                            font-size: 12px;
+
+                            b {
+                                font-size: 14px;
+                            }
+
+                            span {
+                                color: $secondary-color0;
+                                text-decoration: line-through;
+                            }
+
+                            .price {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

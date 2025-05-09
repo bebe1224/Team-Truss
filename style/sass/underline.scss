@@ -9,6 +9,7 @@
     height: 3px;
     transition: 0.3s ease-in-out;
 }
+
 // 적용 ~~
 .main_menu {
     &:hover {
@@ -18,7 +19,23 @@
     }
 }
 
+//main_page
 .sect4 {
+    .inner {
+        .tab_btns {
+            .tab_btn {
+                &:hover {
+                    .underline_gray {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//import.html
+.sect1_1 {
     .inner {
         .tab_btns {
             .tab_btn {

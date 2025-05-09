@@ -1,0 +1,120 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+body {
+    user-select: none;
+}
+
+.sect1_2 {
+    .inner {
+
+        @include fsbc;
+        align-items: start;
+        gap: 48px;
+
+        .product_box {
+            @include fc;
+            gap: 32px;
+
+            .i_w {
+                @include fcc;
+                border-radius: 9px;
+                width: 650px;
+                height: 700px;
+                overflow: hidden;
+                box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+                &:hover {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                    transition: 0.3s ease-in-out;
+                }
+            }
+
+            .img_tab {
+                @include fsc;
+                gap: 8px;
+                width: 100%;
+                border: 1px solid #000;
+
+                li {
+                    @include fcc;
+                    width: 80px;
+                    height: 100px;
+                    cursor: pointer;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .product_detail_box {
+            @include fc;
+            gap: 80px;
+            border-top: 2px solid #000;
+            padding: 16px 0px 0px 0px;
+            width: 700px;
+
+            h2 {}
+
+            .detail {
+                @include fc;
+                gap: 16px;
+
+                p {
+                    @include fsc;
+                    gap: 32px;
+
+                    span {
+
+                        width: 95px;
+                    }
+                }
+
+                .p1 {
+                    color: $secondary-color0;
+                    text-decoration: line-through;
+                }
+
+                .p2 {
+                    font-weight: bold;
+                }
+
+                .p3 {
+                    color: $secondary-color1;
+                }
+            }
+
+            .price {
+                @include fsbc;
+                align-items: center;
+                border-top: 2px solid $secondary-color0;
+                padding: 32px 0px;
+
+                .quantity-selector {}
+
+                .p3 {
+                    font-weight: bold
+                }
+            }
+
+            .btn_wrap {
+                @include fsc;
+                gap: 32px;
+                padding: 32px 0px;
+                border-top: 2px solid $secondary-color0;
+            }
+        }
+    }
+}

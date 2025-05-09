@@ -213,7 +213,7 @@ sect5_once_tl.fromTo(
         y: 100,
     },
     {
-        autoAlpha: 1,
+        autoAlpha: 1, // opacity: 1 + visibility: visible
         y: 0,
         duration: 2,
         stagger: 0.5,

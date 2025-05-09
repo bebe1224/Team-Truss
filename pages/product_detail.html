@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product_detail</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/css/button.css">
+    <link rel="stylesheet" href="../style/css/footer.css">
+    <link rel="stylesheet" href="../style/css/header.css">
+    <link rel="stylesheet" href="../style/css/product_detail.css">
+    <link rel="stylesheet" href="../style/css/sect.css">
+    <link rel="stylesheet" href="../style/css/underline.css">
+</head>
+
+<body>
+    <header class="header1">
+        <h1 class="logo"><a href="./main.html"><img src="../imgs/logo/logo.png" alt="로고"></a></h1>
+        <nav class="pc_nav">
+            <ul class="main_menu_wrpa">
+                <li class="main_menu"><a href="./import.html">직수입자동차
+                    </a>
+                    <div class="underline_gray"></div>
+                    <ul class="sub_menu">
+                        <li><a href="#">G바겐</a></li>
+                        <li><a href="#">포르쉐</a></li>
+                        <li><a href="#">스즈키 짐니</a></li>
+                        <li><a href="#">코펜세로</a></li>
+                        <li><a href="#">올드카</a></li>
+                        <li><a href="#">일본차</a></li>
+                        <li><a href="#">머쓸카</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu"><a href="./custom.html">커스텀/튜닝</a>
+                    <div class="underline_gray"></div>
+                    <ul class="sub_menu">
+                        <li><a href="#">DAMD커스텀</a></li>
+                        <li><a href="#">KUMOI커스텀</a></li>
+                        <li><a href="#">커스텀스토리</a></li>
+                        <li><a href="#">자동차꾸미기</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu"><a href="./parts.html">용품/파츠</a>
+                    <div class="underline_gray"></div>
+                    <ul class="sub_menu">
+                        <li><a href="#">용품 파츠(부품)</a></li>
+                        <li><a href="#">악세서리</a></li>
+                        <li><a href="#">시트</a></li>
+                        <li><a href="#">전기</a></li>
+                        <li><a href="#">썬팅</a></li>
+                        <li><a href="#">네비/블랙박스</a></li>
+                        <li><a href="#">오디오</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu"><a href="./clothing.html">브랜드의류</a>
+                    <div class="underline_gray"></div>
+                    <ul class="sub_menu">
+                        <li><a href="#">스투시</a></li>
+                        <li><a href="#">갤러리 댑</a></li>
+                        <li><a href="#">와펜(기타 부자재)</a></li>
+                        <li><a href="#">팀트러스</a></li>
+                    </ul>
+                </li>
+                <li class="main_menu"><a href="#">유니크몰</a>
+                    <div class="underline_gray"></div>
+                </li>
+                <li class="main_menu"><a href="#">토스모듈로가기</a>
+                    <div class="underline_gray"></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sect1_2 sect">
+        <div class="inner">
+            <div class="product_box">
+                <div class="i_w">
+                    <img src="" alt="큰 상품이미지">
+                </div>
+                <ul class="img_tab">
+                    <li><img src="" alt="상품이미지"></li>
+                    <li><img src="" alt="상품이미지"></li>
+                    <li><img src="" alt="상품이미지"></li>
+                    <li><img src="" alt="상품이미지"></li>
+                    <li><img src="" alt="상품이미지"></li>
+                </ul>
+            </div>
+            <div class="product_detail_box">
+                <h2>상품이름</h2>
+                <div class="detail">
+                    <p class="p1"><span> 소비자가</span>30,000원</p>
+                    <p class="p2"><span> 판매가</span>30,000원</p>
+                    <p class="p3"><span> 국내·해외배송</span>국내배송</p>
+                    <p class="p3"><span> 배송방법</span>택배</p>
+                    <p class="p3"><span> 배송비</span>2,500원 (50,000원 이상 구매 시 무료)</p>
+                </div>
+                <div class="wrap">
+                    <div class="price">
+                        <div class="quantity-selector">
+                            <button onclick="decreaseQuantity()">-</button>
+                            <input id="quantity" type="number" value="1" min="1" readonly>
+                            <button onclick="increaseQuantity()">+</button>
+                        </div>
+                        <p class="p3">30,000원</p>
+                    </div>
+                    <div class="btn_wrap">
+                        <div class="button-borders">
+                            <button class="primary-button"> BUY IT NOW
+                            </button>
+                        </div>
+                        <div class="button-borders">
+                            <button class="primary-button"> CART
+                            </button>
+                        </div>
+                        <div class="button-borders">
+                            <button class="primary-button"> WISH LIST
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="f_1 f">
+            <div class="inner">
+                <div class="right">
+                    <div class="top">
+                        <h3 class="f_logo"><a href="#"><img src="../imgs/logo/logo.png" alt="로고"></a></h3>
+                        <ul>
+                            <li><a href="4">회사소개</a></li>
+                            <li><a href="4">이용약관</a></li>
+                            <li><a href="4">개인정보처리방침</a></li>
+                            <li><a href="4">이용안내</a></li>
+                        </ul>
+                        <a href="#" class="home"><img src="../imgs/footer/Home.png" alt="홈">홈</a>
+                    </div>
+                    <div class="bottom">
+                        <p><span>사업장 주소</span>06772 서울특별시 서초구 양재대로11길 36 (양재동)
+                            은관 B402호 (양재동, 서울오토갤러리)</p>
+                        <div class="wrap">
+                            <p><span>대표 전화</span>010-2054-6600</p>
+                            <p><span>사업자 등록번호</span>2140958856</p>
+                        </div>
+                        <p><span>통신판매업 신고번호 </span>2020-서울서초-4412 [사업자정보확인]</p>
+                        <p><span>개인정보보호책임자 </span>백제현</p>
+                    </div>
+                </div>
+                <div class="left">
+                    <a href="#">고객센터 정보</a>
+                    <p><span>상담/주문 전화 </span>010-2054-6600</p>
+                    <p><span>상담/주문 이메일</span>teamtruss@gmail.com</p>
+                    <p><span>CS운영시간</span>AM 09:00 ~ PM 18:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="f_2 f">
+            <div class="inner">
+                <strong>Copyright © 오토갤러리. All Rights Reserved. Hosting by Cafe24 Corp.</strong>
+                <ul>
+                    <li><a href="#"><img src="../imgs/footer/Facebook.png" alt="sns"></a></li>
+                    <li><a href="#"><img src="../imgs/footer/Instagram.png" alt="sns"></a></li>
+                    <li><a href="#"><img src="../imgs/footer/X.png" alt="sns"></a></li>
+                    <li><a href="#"><img src="../imgs/footer/YouTube.png" alt="sns"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="../script/btn.js"></script>
+    <script src="../script/header/h_slide3.js"></script>
+    <script src="../script/tab/tab.js"></script>
+    <!-- ocalStorage에 저장된 상품 정보를 웹페이지에 출력 -->
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            const product = JSON.parse(localStorage.getItem("selectedProduct"));
+            if (!product) {
+                alert("상품 정보가 없습니다.");
+                return;
+            }
+
+            // 큰 이미지
+            document.querySelector(".i_w img").src = product.images[0];
+
+            // 썸네일 이미지들
+            const thumbImgs = document.querySelectorAll(".img_tab li img");
+            for (let i = 0; i < thumbImgs.length; i++) {
+                thumbImgs[i].src = product.images[i + 1];
+            }
+
+            // 상품 이름
+            document.querySelector(".product_detail_box h2").textContent = product.displayName;
+
+            // 소비자가 / 판매가
+            const consumerPrice = document.querySelector(".detail .p1");
+            const salePrice = document.querySelector(".detail .p2");
+            const bottomPrice = document.querySelector(".wrap .price p");
+
+            consumerPrice.innerHTML = `<span> 소비자가</span> ${product.price}원`;
+            salePrice.innerHTML = `<span> 판매가</span> ${product.displayPrice}`;
+            bottomPrice.textContent = product.displayPrice;
+        });
+    </script>
+</body>
+
+</html>

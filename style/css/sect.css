@@ -76,3 +76,19 @@
 .sect9 .inner {
   height: auto;
 }
+
+.sect1_1 {
+  height: auto;
+  padding: 200px 0px 100px 0px;
+}
+.sect1_1 .inner {
+  height: auto;
+}
+
+.sect1_2 {
+  height: auto;
+  padding: 200px 0px 100px 0px;
+}
+.sect1_2 .inner {
+  height: auto;
+}
