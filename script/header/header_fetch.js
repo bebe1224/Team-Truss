@@ -12,7 +12,7 @@ const isLocal = location.hostname === 'localhost' || location.hostname === '127.
 
 const fetchPath = isLocal
     ? '../../components/header.html'  // 로컬 경로
-    : '/TEAM-TRUSS/components/header.html';  // GitHub Pages 경로
+    : './components/header.html';     // GitHub Pages 경로 (절대경로를 상대경로로 수정)
 
 fetch(fetchPath)
     .then(response => {
@@ -25,3 +25,5 @@ fetch(fetchPath)
         document.getElementById('header-placeholder').innerHTML = data;
     })
     .catch(error => console.error('헤더 로드 실패:', error));
+
+
