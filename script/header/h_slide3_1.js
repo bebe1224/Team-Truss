@@ -25,3 +25,4 @@ main_menu.forEach((menu) => {
         })
     });
 });
+
