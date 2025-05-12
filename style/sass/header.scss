@@ -10,52 +10,79 @@ header {
     z-index: 999;
     width: 100%;
 
-    .pc_nav {
+    .wrap {
+        @include fcc;
+        gap: 100px;
 
-        .main_menu_wrpa {
-            display: flex;
-            gap: 32px;
+        .pc_nav {
 
-            .main_menu {
-                position: relative;
+            .main_menu_wrpa {
+                display: flex;
+                gap: 32px;
 
-                a {}
+                .main_menu {
+                    position: relative;
 
-                .sub_menu {
-                    background-color: $primary-color6;
-                    position: absolute;
-                    z-index: 999;
-                    left: 50%;
-                    transform: translate(-50%, 0%);
-                    display: flex;
-                    flex-direction: column;
-                    width: 200%;
-                    height: 0;
-                    overflow: hidden;
+                    a {}
 
-                    &.active {
-                        height: auto;
-                    }
 
-                    li {
-                        padding: 4px;
-                        transition: 0.3s ease-in-out;
-                        text-align: center;
 
-                        &:hover {
-                            background-color: #afafaf;
+                    .sub_menu {
+                        background-color: $primary-color6;
+                        position: absolute;
+                        z-index: 999;
+                        left: 50%;
+                        transform: translate(-50%, 0%);
+                        display: flex;
+                        flex-direction: column;
+                        width: 200%;
+                        height: 0;
+                        overflow: hidden;
 
-                            a {
-                                color: #ffff;
-                            }
+                        &.active {
+                            height: auto;
                         }
 
-                        a {}
+                        li {
+                            padding: 4px;
+                            transition: 0.3s ease-in-out;
+                            text-align: center;
+
+                            &:hover {
+                                background-color: #afafaf;
+
+                                a {
+                                    color: #ffff;
+                                }
+                            }
+
+                            a {}
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .admin {
+            @include fcc;
+            flex-direction: row-reverse;
+            gap: 16px;
+
+            a {
+                img {
+                    width: 36px;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        opacity: 0.5;
                     }
                 }
             }
         }
     }
+
+
 }
 
 .header1 {

@@ -1,4 +1,4 @@
-const tabBtns = document.querySelectorAll(".tab_btn");
+const tabBtns = document.querySelectorAll(".element");
 const screens = document.querySelectorAll(".screen");
 
 tabBtns.forEach((btn, i) => {
@@ -13,11 +13,6 @@ tabBtns.forEach((btn, i) => {
     });
 });
 
-// 기본적으로 첫 번째 탭 활성화
+
 tabBtns[0].classList.add("active");
 screens[0].classList.add("active");
-
-
-
-
-

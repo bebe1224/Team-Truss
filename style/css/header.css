@@ -9,14 +9,20 @@ header {
   z-index: 999;
   width: 100%;
 }
-header .pc_nav .main_menu_wrpa {
+header .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+header .wrap .pc_nav .main_menu_wrpa {
   display: flex;
   gap: 32px;
 }
-header .pc_nav .main_menu_wrpa .main_menu {
+header .wrap .pc_nav .main_menu_wrpa .main_menu {
   position: relative;
 }
-header .pc_nav .main_menu_wrpa .main_menu .sub_menu {
+header .wrap .pc_nav .main_menu_wrpa .main_menu .sub_menu {
   background-color: rgba(255, 255, 255, 0.9);
   position: absolute;
   z-index: 999;
@@ -28,20 +34,35 @@ header .pc_nav .main_menu_wrpa .main_menu .sub_menu {
   height: 0;
   overflow: hidden;
 }
-header .pc_nav .main_menu_wrpa .main_menu .sub_menu.active {
+header .wrap .pc_nav .main_menu_wrpa .main_menu .sub_menu.active {
   height: auto;
 }
-header .pc_nav .main_menu_wrpa .main_menu .sub_menu li {
+header .wrap .pc_nav .main_menu_wrpa .main_menu .sub_menu li {
   padding: 4px;
   transition: 0.3s ease-in-out;
   text-align: center;
 }
-header .pc_nav .main_menu_wrpa .main_menu .sub_menu li:hover {
+header .wrap .pc_nav .main_menu_wrpa .main_menu .sub_menu li:hover {
   background-color: #afafaf;
 }
-header .pc_nav .main_menu_wrpa .main_menu .sub_menu li:hover a {
+header .wrap .pc_nav .main_menu_wrpa .main_menu .sub_menu li:hover a {
   color: white;
 }
+header .wrap .admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 16px;
+}
+header .wrap .admin a img {
+  width: 36px;
+  transition: 0.3s ease-in-out;
+}
+header .wrap .admin a img:hover {
+  opacity: 0.5;
+}
+
 .header1 {
   min-width: 320px;
   height: 100px;

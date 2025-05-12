@@ -1,0 +1,114 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+// ========================================
+
+/* From Uiverse.io by Na3ar-17 */
+.card_wrap {
+    background-color: rgba(36, 40, 50, 1);
+    width: 300px;
+    height: 100vh;
+
+    .card {
+        width: 100%;
+        background-color: rgba(36, 40, 50, 1);
+        background-image: linear-gradient(139deg,
+                rgba(36, 40, 50, 1) 0%,
+                rgba(36, 40, 50, 1) 0%,
+                rgba(37, 28, 40, 1) 100%);
+
+        // border-radius: 10px;
+        padding: 15px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .separator {
+            border-top: 1.5px solid #42434a;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 0px 10px;
+
+            .element {
+                display: flex;
+                align-items: center;
+                color: #7e8590;
+                gap: 10px;
+                transition: all 0.3s ease-out;
+                padding: 8px 16px;
+                border-radius: 6px;
+                cursor: pointer;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    transition: all 0.3s ease-out;
+                }
+
+                .label {
+                    font-size: 20px;
+                }
+
+                &:hover {
+                    background-color: #5353ff;
+                    color: #ffffff;
+                    transform: translate(1px, -1px);
+
+                    svg {
+                        stroke: #ffffff;
+                    }
+                }
+
+                &:active {
+                    transform: scale(0.99);
+                }
+            }
+
+            .money:hover {
+                background-color: #8e2a2a;
+            }
+
+            &:last-child {
+                svg {
+                    stroke: #bd89ff;
+                }
+
+                .element {
+                    color: #bd89ff;
+
+                    &:hover {
+                        background-color: rgba(56, 45, 71, 0.836);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sect1 {
+    @include fcc;
+
+    // .card_wrap{}
+    .screen_wrap {
+        width: calc(100% - 300px);
+        height: 100vh;
+
+        .screen {
+            width: 100%;
+            height: 100vh;
+            display: none;
+
+            &:nth-of-type(2n) {
+                background-color: #5353ff;
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

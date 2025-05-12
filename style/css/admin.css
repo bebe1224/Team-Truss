@@ -1,0 +1,86 @@
+/* From Uiverse.io by Na3ar-17 */
+.card_wrap {
+  background-color: rgb(36, 40, 50);
+  width: 300px;
+  height: 100vh;
+}
+.card_wrap .card {
+  width: 100%;
+  background-color: rgb(36, 40, 50);
+  background-image: linear-gradient(139deg, rgb(36, 40, 50) 0%, rgb(36, 40, 50) 0%, rgb(37, 28, 40) 100%);
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card_wrap .card .separator {
+  border-top: 1.5px solid #42434a;
+}
+.card_wrap .card .list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0px 10px;
+}
+.card_wrap .card .list .element {
+  display: flex;
+  align-items: center;
+  color: #7e8590;
+  gap: 10px;
+  transition: all 0.3s ease-out;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.card_wrap .card .list .element svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease-out;
+}
+.card_wrap .card .list .element .label {
+  font-size: 20px;
+}
+.card_wrap .card .list .element:hover {
+  background-color: #5353ff;
+  color: #ffffff;
+  transform: translate(1px, -1px);
+}
+.card_wrap .card .list .element:hover svg {
+  stroke: #ffffff;
+}
+.card_wrap .card .list .element:active {
+  transform: scale(0.99);
+}
+.card_wrap .card .list .money:hover {
+  background-color: #8e2a2a;
+}
+.card_wrap .card .list:last-child svg {
+  stroke: #bd89ff;
+}
+.card_wrap .card .list:last-child .element {
+  color: #bd89ff;
+}
+.card_wrap .card .list:last-child .element:hover {
+  background-color: rgba(56, 45, 71, 0.836);
+}
+
+.sect1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sect1 .screen_wrap {
+  width: calc(100% - 300px);
+  height: 100vh;
+}
+.sect1 .screen_wrap .screen {
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+.sect1 .screen_wrap .screen:nth-of-type(2n) {
+  background-color: #5353ff;
+}
+.sect1 .screen_wrap .screen.active {
+  display: block;
+}

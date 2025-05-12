@@ -1,0 +1,19 @@
+<div class="ec-base-button gFull" id="orderFixItem">
+    <button type="button" class="btnSubmit" onclick="
+        var name = document.getElementById('rname').value.trim();
+        if (name === '') {
+            alert('주문서가 완료되지 않아서 결제를 진행할 수 없습니다.');
+        } else {
+            var price = encodeURIComponent('{$total_order_price_front}');
+            var product = encodeURIComponent('{$sPrdName}');
+            location.href = 'https://toss-pg.vercel.app/?price=' + price + '&product=' + product;
+        }
+    ">
+        {$total_order_price_front_head}<span
+            id="{$total_order_price_front_id}">{$total_order_price_front}</span>{$total_order_price_front_tail} <span
+            class="{$subscription_hide_display|display}">결제하기</span><span
+            class="{$subscription_show_display|display}">정기배송 신청하기</span>
+    </button>
+</div>
+
+<input type="hidden" id="sPrdName" name="sPrdName" value="{$sPrdName}">
