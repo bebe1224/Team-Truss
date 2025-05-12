@@ -9,8 +9,8 @@
 const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 
 const fetchPath = isLocal
-    ? '../../components/header.html'  // 로컬 경로
-    : 'components/header.html';       // GitHub Pages 경로
+    ? '../../components/header.html'  // 로컬 환경에서 사용하는 상대경로
+    : '/Team-Truss/components/header.html';  // GitHub Pages에서 사용하는 절대경로
 
 fetch(fetchPath)
     .then(response => {
@@ -23,5 +23,6 @@ fetch(fetchPath)
         document.getElementById('header-placeholder').innerHTML = data;
     })
     .catch(error => console.error('헤더 로드 실패:', error));
+
 
 
