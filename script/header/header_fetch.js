@@ -6,13 +6,11 @@
 //         document.getElementById('header-placeholder').innerHTML = data;
 //     })
 //     .catch(error => console.error('헤더 로드 실패:', error));
-
-
 const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 
 const fetchPath = isLocal
     ? '../../components/header.html'  // 로컬 경로
-    : './components/header.html';     // GitHub Pages 경로 (절대경로를 상대경로로 수정)
+    : 'components/header.html';       // GitHub Pages 경로
 
 fetch(fetchPath)
     .then(response => {
