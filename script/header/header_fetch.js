@@ -9,13 +9,16 @@
 
 
 const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+
 const fetchPath = isLocal
-    ? '../../components/header.html'
-    : '/TEAM-TRUSS/components/header.html';
+    ? '../../components/header.html'  // 로컬 경로
+    : '/TEAM-TRUSS/components/header.html';  // GitHub Pages 경로
 
 fetch(fetchPath)
     .then(response => {
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         return response.text();
     })
     .then(data => {
