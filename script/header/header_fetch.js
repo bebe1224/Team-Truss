@@ -6,10 +6,12 @@
 //         document.getElementById('header-placeholder').innerHTML = data;
 //     })
 //     .catch(error => console.error('헤더 로드 실패:', error));
+
 const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+
 const fetchPath = isLocal
-    ? '../../components/header.html'
-    : './components/header.html';
+    ? '../../components/header.html'  // 로컬 개발 경로
+    : '/Team-Truss/components/header.html';  // GitHub Pages에 배포된 절대경로
 
 fetch(fetchPath)
     .then(response => {
@@ -19,7 +21,7 @@ fetch(fetchPath)
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
 
-        // 💡 header.html이 삽입된 이후 실행해야 DOM을 찾을 수 있음
+        // fetch 이후 DOM 요소에 접근
         const main_menu = document.querySelectorAll('.main_menu');
         const sub_menu = document.querySelectorAll('.sub_menu');
 
@@ -33,6 +35,7 @@ fetch(fetchPath)
         });
     })
     .catch(error => console.error('헤더 로드 실패:', error));
+
 
 
 
