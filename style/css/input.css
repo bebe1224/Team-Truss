@@ -1,0 +1,191 @@
+.select {
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  color: #2a2f3b;
+  overflow: hidden;
+}
+.select .selected {
+  background-color: #f5f5f5;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 100000;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #2a2f3b;
+  height: 48px;
+}
+.select .selected .arrow {
+  position: relative;
+  right: 0px;
+  height: 10px;
+  transform: rotate(-90deg);
+  width: 25px;
+  fill: #2a2f3b;
+  z-index: 100000;
+  transition: 300ms;
+}
+.select .options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #f5f5f5;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  transition: 300ms;
+}
+.select .options input[type=radio] {
+  display: none;
+}
+.select .options label {
+  display: inline-block;
+}
+.select .options label::before {
+  content: attr(data-txt);
+  color: #2a2f3b;
+}
+.select .options input[type=radio]:checked + label {
+  display: none;
+}
+.select .options input[type=radio]#all:checked + label {
+  display: none;
+}
+.select .option {
+  border-radius: 5px;
+  padding: 5px;
+  transition: 300ms;
+  background-color: #f5f5f5;
+  width: 150px;
+  font-size: 15px;
+  color: #2a2f3b;
+}
+.select .option:hover {
+  background-color: #e0e0e0;
+}
+.select:hover .options {
+  opacity: 1;
+  top: 0;
+}
+.select:hover .selected .arrow {
+  transform: rotate(0deg);
+}
+.select:has(.options input[type=radio]#all:checked) .selected::before {
+  content: attr(data-default);
+}
+.select:has(.options input[type=radio]#option-1:checked) .selected::before {
+  content: attr(data-one);
+}
+.select:has(.options input[type=radio]#option-2:checked) .selected::before {
+  content: attr(data-two);
+}
+.select:has(.options input[type=radio]#option-3:checked) .selected::before {
+  content: attr(data-three);
+}
+
+.navbar-container {
+  width: calc(100% - 144px);
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+.search-bar:focus-within {
+  background-color: #eaeaea;
+  border-color: #00aa66;
+  box-shadow: 0 4px 15px rgba(0, 170, 102, 0.35);
+}
+.search-bar:focus-within .searchIcon {
+  fill: #00aa66;
+}
+.search-bar:hover {
+  background-color: #eaeaea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.InputContainer {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 0.75rem;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: none;
+  color: #222;
+  padding: 0.5rem 0;
+  font-family: inherit;
+}
+.input::-moz-placeholder {
+  color: #888;
+  opacity: 1;
+  -moz-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+.input::placeholder {
+  color: #888;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.input:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+.input:focus::placeholder {
+  opacity: 0.5;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  fill: #888;
+  transition: fill 0.2s ease;
+}
+
+.border {
+  width: 1px;
+  height: 24px;
+  background-color: #ccc;
+  margin: 0 0.75rem;
+}
+
+.micButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.micButton:hover {
+  background-color: #e0e0e0;
+}
+.micButton:hover .micIcon {
+  fill: #ff5100;
+}
+
+.micIcon {
+  width: 18px;
+  height: 18px;
+  fill: #888;
+  transition: fill 0.2s ease;
+}
