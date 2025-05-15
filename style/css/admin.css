@@ -59,9 +59,6 @@
 .card_wrap .card .list .element.active svg {
   stroke: #ffffff;
 }
-.card_wrap .card .list .money:hover {
-  background-color: #8e2a2a;
-}
 .card_wrap .card .list:last-child svg {
   stroke: #bd89ff;
 }
@@ -255,16 +252,18 @@ body {
   width: 70px;
   display: inline-block;
 }
+.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box {
+  background-color: #fafafa;
+  color: #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 9px;
+}
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 {
   height: auto;
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box {
-  background-color: #fafafa;
-  color: #444;
   width: 100%;
   padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .row {
   display: flex;
@@ -278,23 +277,11 @@ body {
   color: #444;
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col.controls {
-  flex: 1;
   display: flex;
+  justify-content: start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .select {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: border 0.3s ease;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .select:focus {
-  border-color: #5353ff;
-  box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .date-buttons {
   display: flex;
@@ -338,50 +325,6 @@ body {
   font-size: 14px;
   color: #444;
 }
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .radio-group {
-  display: flex;
-  gap: 12px;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .radio-group input[type=radio] {
-  display: none;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .radio-group label {
-  font-size: 14px;
-  color: #444;
-  cursor: pointer;
-  position: relative;
-  padding-left: 20px;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .radio-group label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background-color: white;
-}
-input[type=radio]:checked + .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .radio-group label::before {
-  background-color: #5353ff;
-  border-color: #5353ff;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .search-btn {
-  background-color: #5353ff;
-  color: #fff;
-  padding: 6px 16px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .search-btn:hover {
-  background-color: #3700b3;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box1 .search-box .col .search-btn:active {
-  background-color: #2c2ccf;
+.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen2 .box2 {
+  height: 600px;
 }
