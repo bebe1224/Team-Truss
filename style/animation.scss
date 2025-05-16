@@ -1,0 +1,17 @@
+@import './flex_mixins.scss';
+@import './color.scss';
+
+//둥둥 떠다니는 느낌
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

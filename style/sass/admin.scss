@@ -2,8 +2,12 @@
 @import './color.scss';
 
 // ========================================
+//이중창 생기는거 방지
+body {
+    overflow: hidden;
+}
 
-/* From Uiverse.io by Na3ar-17 */
+//어드민페이지 왼쪽 헤더 메뉴
 .card_wrap {
     background-color: rgba(36, 40, 50, 1);
     width: 300px;
@@ -104,8 +108,159 @@
     }
 }
 
-body {
-    overflow: hidden;
+//스크린2 card_wrap1
+.card_wrap1 {
+    @include fsbc;
+    gap: 100px;
+    width: 100%;
+    margin-top: 32px;
+    //양옆 여백을 위해서
+    width: calc(100% - 128px);
+    max-width: 1540px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+
+    .card {
+        position: relative;
+
+
+        h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+    }
+}
+
+//box스타일
+.sub_screen {
+    .box {
+        @include fss;
+        gap: 16px;
+        //양옆 여백을 위해서
+        width: calc(100% - 128px);
+        max-width: 1540px;
+        height: auto;
+
+        .blue_clor {
+            color: #007bff;
+        }
+
+        .red_colr {
+            color: rgb(250, 46, 46);
+        }
+    }
+
+    .box1 {
+        height: 50px;
+    }
+
+    .box2 {
+
+        //공통 레이아웃 SCSS
+        .grid-dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: auto;
+            gap: 12px;
+            text-align: center;
+            padding: 24px;
+            font-family: 'Pretendard', sans-serif;
+            font-size: 14px;
+
+            .header {
+                font-weight: 600;
+                background-color: #f1f1f1;
+                padding: 12px 0;
+            }
+
+            .label {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                font-weight: 500;
+            }
+
+            .cell {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 4px;
+                padding: 12px;
+                border-radius: 8px;
+            }
+
+            .shortcut {
+                font-size: 12px;
+                padding: 4px 8px;
+                border-radius: 4px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        //여러 스타일 유형중 이게 맘에 들어서 이거씀
+        .grid-dashboard {
+            background-color: #fafafa;
+            color: #444;
+            // border-radius: 12px;
+            width: 100%;
+
+            .cell {
+                background-color: #ffffff;
+                // border-radius: 16px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                padding: 14px;
+                font-size: 15px;
+            }
+
+            .shortcut {
+                background-color: #5353ff;
+                color: #fff;
+                // border-radius: 20px;
+                padding: 4px 12px;
+                font-size: 13px;
+
+                &:hover {
+                    background-color: #3700b3;
+                }
+            }
+        }
+
+    }
+
+    .box3,
+    .box4 {
+        @include fccc;
+        gap: 32px;
+
+        .box_child_wrap {
+            @include fsbc;
+            width: 100%;
+
+            .box_child {
+                @include fcsc;
+                gap: 16px;
+                padding: 8px;
+                width: 160px;
+                box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+                p {
+                    span {
+
+                        &:first-of-type {
+                            width: 70px;
+                            display: inline-block;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 .sect1 {
@@ -178,291 +333,203 @@ body {
                         visibility: visible;
                     }
 
-                    .box {
-                        @include fss;
-                        gap: 16px;
-                        width: calc(100% - 128px);
-                        max-width: 1540px;
-                        height: auto;
-
-                        .blue_clor {
-                            color: #007bff;
-                        }
-
-                        .red_colr {
-                            color: rgb(250, 46, 46);
-                        }
-                    }
-
-                    .box1 {
-                        height: 50px;
-                    }
-
-                    .box2 {
-
-                        //공통 레이아웃 SCSS
-                        .grid-dashboard {
-                            display: grid;
-                            grid-template-columns: repeat(4, 1fr);
-                            grid-auto-rows: auto;
-                            gap: 12px;
-                            text-align: center;
-                            padding: 24px;
-                            font-family: 'Pretendard', sans-serif;
-                            font-size: 14px;
-
-                            .header {
-                                font-weight: 600;
-                                background-color: #f1f1f1;
-                                padding: 12px 0;
-                            }
-
-                            .label {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                justify-content: center;
-                                gap: 8px;
-                                font-weight: 500;
-                            }
-
-                            .cell {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: center;
-                                gap: 4px;
-                                padding: 12px;
-                                border-radius: 8px;
-                            }
-
-                            .shortcut {
-                                font-size: 12px;
-                                padding: 4px 8px;
-                                border-radius: 4px;
-                                border: none;
-                                cursor: pointer;
-                            }
-                        }
-
-                        //1유형
-                        // .grid-dashboard {
-                        //     background-color: #fefefe;
-                        //     color: #222;
-
-                        //     .cell {
-                        //         background-color: #fff;
-                        //         border: 1px solid #ccc;
-                        //         border-radius: 12px;
-                        //         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-                        //         transition: transform 0.2s;
-
-                        //         &:hover {
-                        //             transform: translateY(-2px);
-                        //         }
-                        //     }
-
-                        //     .shortcut {
-                        //         background-color: #00b894;
-                        //         color: #fff;
-                        //         border: none;
-
-                        //         &:hover {
-                        //             background-color: #019270;
-                        //         }
-                        //     }
-                        // }
-                        //2유형
-                        // .grid-dashboard {
-                        //     background-color: #fff;
-                        //     color: #111;
-
-                        //     .cell:nth-child(5n + 1) {
-                        //         background-color: #e3f2fd; // 파랑
-                        //     }
-
-                        //     .cell:nth-child(5n + 2) {
-                        //         background-color: #e8f5e9; // 초록
-                        //     }
-
-                        //     .cell:nth-child(5n + 3) {
-                        //         background-color: #fff3e0; // 주황
-                        //     }
-
-                        //     .cell {
-                        //         border-radius: 8px;
-                        //         padding: 16px;
-                        //     }
-
-                        //     .shortcut {
-                        //         background-color: #ff7043;
-                        //         color: white;
-                        //         border: none;
-
-                        //         &:hover {
-                        //             background-color: #ff5722;
-                        //         }
-                        //     }
-                        // }
-                        //3유형
-                        .grid-dashboard {
-                            background-color: #fafafa;
-                            color: #444;
-                            // border-radius: 12px;
-                            width: 100%;
-
-                            .cell {
-                                background-color: #ffffff;
-                                // border-radius: 16px;
-                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                                padding: 14px;
-                                font-size: 15px;
-                            }
-
-                            .shortcut {
-                                background-color: #5353ff;
-                                color: #fff;
-                                // border-radius: 20px;
-                                padding: 4px 12px;
-                                font-size: 13px;
-
-                                &:hover {
-                                    background-color: #3700b3;
-                                }
-                            }
-                        }
-
-                    }
-
-                    .box3,
-                    .box4 {
-                        @include fccc;
-                        gap: 32px;
-
-                        .box_child_wrap {
-                            @include fsbc;
-                            width: 100%;
-
-                            .box_child {
-                                @include fcsc;
-                                gap: 16px;
-                                padding: 8px;
-                                width: 160px;
-                                box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-
-                                p {
-                                    span {
-
-                                        &:first-of-type {
-                                            width: 70px;
-                                            display: inline-block;
-                                        }
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-
+                    // box, box1,2,3,4 가 이자리에 있음
                 }
 
                 .sub_screen2 {
-                    //   .search-btn {}
-
-                    .box {
-                        background-color: #fafafa;
-                        color: #444;
-                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                        border-radius: 9px;
-                    }
-
-                    .box1 {
+                    .wrap1 {
+                        @include fccc;
+                        gap: 48px;
+                        width: 100%;
                         height: auto;
 
-                        .search-box {
-                            width: 100%;
-                            padding: 16px;
+                        //   .search-btn {}
+                        .box {
+                            background-color: #fafafa;
+                            color: #444;
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                            border-radius: 9px;
+                        }
 
-                            .row {
-                                display: flex;
-                                align-items: center;
-                                gap: 16px;
-                                margin-bottom: 16px;
-                            }
+                        .box1 {
+                            height: auto;
 
-                            .col {
-                                &.label {
-                                    width: 100px;
-                                    font-weight: bold;
-                                    color: #444;
-                                }
+                            .search-box {
+                                width: 100%;
+                                padding: 16px;
 
-                                &.controls {
-                                    @include fsc;
-                                    // flex: 1;
-                                    flex-wrap: wrap;
-                                    gap: 8px;
-
-                                }
-
-                                // .select {}
-
-                                .date-buttons {
-                                    display: flex;
-                                    gap: 8px;
-
-                                    button {
-                                        background-color: #ffffff;
-                                        border: 1px solid #ccc;
-                                        color: #444;
-                                        padding: 6px 12px;
-                                        font-size: 13px;
-                                        border-radius: 8px;
-                                        cursor: pointer;
-                                        transition: background-color 0.3s ease, color 0.3s ease;
-
-                                        &:hover {
-                                            background-color: #5353ff;
-                                            color: #fff;
-                                        }
-
-                                        &:active {
-                                            background-color: #3700b3;
-                                        }
-                                    }
-                                }
-
-                                .date-inputs {
+                                .row {
                                     display: flex;
                                     align-items: center;
-                                    gap: 8px;
+                                    gap: 16px;
+                                    margin-bottom: 16px;
+                                }
 
-                                    input[type="date"] {
-                                        padding: 6px 12px;
-                                        border: 1px solid #ccc;
-                                        font-size: 14px;
-                                        border-radius: 8px;
-                                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                                        transition: border 0.3s ease;
+                                .col {
+                                    &.label {
+                                        width: 100px;
+                                        font-weight: bold;
+                                        color: #444;
+                                    }
 
-                                        &:focus {
-                                            border-color: #5353ff;
-                                            box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
+                                    &.controls {
+                                        @include fsc;
+                                        // flex: 1;
+                                        flex-wrap: wrap;
+                                        gap: 8px;
+
+                                    }
+
+                                    // .select {}
+
+                                    .date-buttons {
+                                        display: flex;
+                                        gap: 8px;
+
+                                        button {
+                                            background-color: #ffffff;
+                                            border: 1px solid #ccc;
+                                            color: #444;
+                                            padding: 6px 12px;
+                                            font-size: 13px;
+                                            border-radius: 8px;
+                                            cursor: pointer;
+                                            transition: background-color 0.3s ease, color 0.3s ease;
+
+                                            &:hover {
+                                                background-color: #5353ff;
+                                                color: #fff;
+                                            }
+
+                                            &:active {
+                                                background-color: #3700b3;
+                                            }
                                         }
                                     }
 
-                                    span {
-                                        font-size: 14px;
-                                        color: #444;
+                                    .date-inputs {
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 8px;
+
+                                        input[type="date"] {
+                                            padding: 6px 12px;
+                                            border: 1px solid #ccc;
+                                            font-size: 14px;
+                                            border-radius: 8px;
+                                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                                            transition: border 0.3s ease;
+
+                                            &:focus {
+                                                border-color: #5353ff;
+                                                box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
+                                            }
+                                        }
+
+                                        span {
+                                            font-size: 14px;
+                                            color: #444;
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
 
-                    .box2 {
-                        //임시
-                        height: 600px;
+                        .box2 {
+                            @include fcsc;
+                            gap: 0;
+                            padding: 16px;
+                            height: auto;
 
+                            .total {
+                                @include fsc;
+                                gap: 16px;
+                                padding: 16px 0px;
+
+                            }
+
+                            .pagination {
+                                margin-top: 20px;
+                                text-align: center;
+
+                                button {
+                                    margin: 0 4px;
+                                    padding: 6px 12px;
+                                    border: none;
+                                    background: #f0f0f0;
+                                    border-radius: 4px;
+                                    cursor: pointer;
+                                    transition: all 0.2s;
+
+                                    &:hover {
+                                        background: #d0d0ff;
+                                    }
+
+                                    &.active {
+                                        background: #5353ff;
+                                        color: white;
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+
+                            .order-table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                font-size: 14px;
+                                color: #333;
+                                border: 1px solid #ddd;
+                                background-color: #fff;
+
+                                thead {
+                                    background-color: #f8f9fa;
+
+                                    th {
+                                        border: 1px solid #ddd;
+                                        padding: 12px 8px;
+                                        font-weight: 600;
+                                        text-align: center;
+                                        white-space: nowrap;
+                                    }
+                                }
+
+                                tbody {
+                                    tr {
+                                        transition: 0.3s ease-in-out;
+
+                                        &:hover {
+                                            background-color: #f1f3f5; // 행 hover 효과
+                                        }
+
+                                        td {
+                                            border: 1px solid #eee;
+                                            padding: 10px 8px;
+                                            text-align: center;
+                                            white-space: nowrap;
+                                        }
+                                    }
+                                }
+                            }
+
+
+                            .box_screen {
+                                //@include fss; 검색버튼 클릭시 이걸로 변경되야함
+                                @include fcc;
+                                width: 100%;
+                                height: auto;
+                                min-height: 600px;
+                                border: 1px solid #ddd;
+
+                                .nothing_text {
+                                    //검색버튼 클릭시 없어짐
+                                }
+
+                                // .order-item {
+                                //     li {}
+                                // }
+                            }
+                        }
                     }
                 }
             }
