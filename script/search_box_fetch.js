@@ -23,6 +23,7 @@
                 box.innerHTML = "<p>컴포넌트 로드 실패</p>";
             });
     });
+    
     //input.js 이벤트 여기다 넣어야 페치요청해도 기능됨
     function initSearchBoxEvents(container) {
         const chkAll = container.querySelector('#chkAll');
