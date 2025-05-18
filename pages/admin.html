@@ -122,7 +122,8 @@
                 <div class="sub_screen_wrap">
                     <div class="sub_screen sub_screen1">
                         <h3>주문 대시보드</h3>
-                        <div class="box box1">
+                        <!-- first_box 라 한 이유는 패치로 .box1 에다가 필터상자를 불러왔는데 겹치니까 -->
+                        <div class="box first_box">
                             <div class="select">
                                 <div class="selected" data-default="전체" data-one="주문번호" data-two="회원ID"
                                     data-three="상품명">
@@ -344,242 +345,84 @@
                     </div>
                     <div class="sub_screen sub_screen2">
                         <h3>전체주문조회</h3>
-                        <div class="wrap1">
-                            <div class="box box1">
-                                <div class="search-box">
-                                    <!-- 1행 -->
-                                    <div class="row">
-                                        <div class="col label">기간</div>
-                                        <div class="col controls">
-                                            <select class="select1">
-                                                <option value="order_date" selected="selected">주문일</option>
-                                                <option value="memo_date">메모작성일</option>
-                                                <option value="pay_date">결제일</option>
-                                                <option value="shipready_date">송장번호입력일</option>
-                                                <option value="shipbegin_date">배송시작일</option>
-                                                <option value="shipend_date">배송완료일</option>
-                                                <option value="purchaseconfirmation_date">구매확정일</option>
-                                            </select>
-                                            <div class="date-buttons">
-                                                <button>오늘</button>
-                                                <button>어제</button>
-                                                <button>3일</button>
-                                                <button>7일</button>
-                                                <button>15일</button>
-                                                <button>1개월</button>
-                                                <button>3개월</button>
-                                                <button>6개월</button>
-                                            </div>
-                                            <div class="date-inputs">
-                                                <input type="date" />
-                                                <span>~</span>
-                                                <input type="date" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 2행 -->
-                                    <div class="row">
-                                        <div class="col label">검색어</div>
-                                        <div class="col controls">
-                                            <select class="select1">
-                                                <option value="choice">-검색항목선택-</option>
-                                                <option value="order_id" selected="">주문번호</option>
-                                                <option value="ord_item_code">품목별 주문번호</option>
-                                                <option value="delivery_code">배송번호</option>
-                                                <option value="invoice_no">운송장번호</option>
-                                                <option value="s_order_info">마켓주문번호</option>
-                                                <option value="line1">-----------------</option>
-                                                <option value="o_name">주문자명</option>
-                                                <option value="member_id">주문자 아이디</option>
-                                                <option value="member_email">회원 이메일</option>
-                                                <option value="o_email">주문서 이메일</option>
-                                                <option value="o_phone2">주문자 휴대전화</option>
-                                                <option value="o_phone1">주문자 일반전화</option>
-                                                <option value="client_ip">주문자 IP</option>
-                                                <option value="line2">-----------------</option>
-                                                <option value="c_p_name">입금자명</option>
-                                                <option value="r_name">수령자명</option>
-                                                <option value="r_phone2">수령자 휴대전화</option>
-                                                <option value="r_phone1">수령자 일반전화</option>
-                                                <option value="r_addr">배송지 주소</option>
-                                                <option value="ord_add_item">주문서 추가항목</option>
-                                                <option value="all_name">주문자명, 입금자명, 수령자명</option>
-                                                <option value="r_safe_phone">0504 안심번호</option>
-                                                <option value="line3">-----------------</option>
-                                                <option value="product_name">상품명</option>
-                                                <option value="product_code">상품코드</option>
-                                                <option value="item_code">품목코드</option>
-                                                <option value="product_tag">상품태그</option>
-                                                <option value="manufacturer_name">제조사</option>
-                                                <option value="supplier_name">공급사</option>
-                                                <option value="line4">-----------------</option>
-                                                <option value="msg_writer_name">메모 작성자명</option>
-                                                <option value="msg_writer_id">메모 작성자 아이디</option>
-                                                <option value="msg">메모 내용</option>
-                                                <option value="line5">-----------------</option>
-                                                <option value="labels">주문 라벨</option>
-                                            </select>
-                                            <!-- <button class="search-btn">검색</button> -->
-                                        </div>
-                                    </div>
-                                    <!-- 3행 -->
-                                    <div class="row">
-                                        <div class="col label">결제상태</div>
-                                        <div class="col controls">
-                                            <!-- 결제 상태 선택: 같은 name 속성으로 묶여 한 번에 한 개만 선택 가능 -->
-                                            <!-- value 속성도 넣는 게 좋아요. 선택 시 어떤 값이 선택됐는지 서버로 보낼 때 필요하거든요. -->
-                                            <label class="custom-radio">
-                                                <input type="radio" name="payment_status" value="all" checked>
-                                                <span class="rbtn"></span>
-                                                전체
-                                            </label>
-                                            <label class="custom-radio">
-                                                <input type="radio" name="payment_status" value="before_deposit">
-                                                <span class="rbtn"></span>
-                                                입금전
-                                            </label>
-                                            <label class="custom-radio">
-                                                <input type="radio" name="payment_status" value="additional_waiting">
-                                                <span class="rbtn"></span>
-                                                추가입금대기
-                                            </label>
-                                            <label class="custom-radio">
-                                                <input type="radio" name="payment_status" value="manual_complete">
-                                                <span class="rbtn"></span>
-                                                입금완료(수동)
-                                            </label>
-                                            <label class="custom-radio">
-                                                <input type="radio" name="payment_status" value="auto_complete">
-                                                <span class="rbtn"></span>
-                                                입금완료(자동)
-                                            </label>
-                                            <label class="custom-radio">
-                                                <input type="radio" name="payment_status" value="payment_complete">
-                                                <span class="rbtn"></span>
-                                                결제완료
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <!-- 4행 -->
-                                    <div class="row">
-                                        <div class="col label">주문상태</div>
-                                        <div class="col controls">
+                        <div class="box box1">
+                        </div>
+                        <button class="search-btn">검색</button>
+                        <div class="box box2">
+                            <div class="total">
+                                <p>검색결과</p>
+                                <div>
+                                    <strong>: 0</strong>건
+                                </div>
+                                <select class="select1 select-sort">
+                                    <option value="regist_d">등록일 ↓</option>
+                                    <option value="regist_a">등록일 ↑</option>
+                                    <option value="orderNo_a">주문번호 ↑</option>
+                                    <option value="orderNo_d">주문번호 ↓</option>
+                                    <option value="product_a">상품명 ↑</option>
+                                    <option value="product_d">상품명 ↓</option>
+                                    <option value="totalPrice_a">판매가 ↑</option>
+                                    <option value="totalPrice_d">판매가 ↓</option>
+                                </select>
+                                <select class="select1 select-count">
+                                    <option value="10" selected="selected">10개씩보기</option>
+                                    <option value="20">20개씩보기</option>
+                                    <option value="30">30개씩보기</option>
+                                    <option value="50">50개씩보기</option>
+                                    <option value="100">100개씩보기</option>
+                                </select>
+                            </div>
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>
                                             <label class="custom-checkbox">
                                                 <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
                                                     id="chkAll" checked>
                                                 <span class="cbx"></span>
                                                 전체
                                             </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N10">
-                                                <span class="cbx"></span>
-                                                상품준비중
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N20">
-                                                <span class="cbx"></span>
-                                                배송준비중
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N22">
-                                                <span class="cbx"></span>
-                                                배송보류
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N21">
-                                                <span class="cbx"></span>
-                                                배송대기
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N30">
-                                                <span class="cbx"></span>
-                                                배송중
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N40">
-                                                <span class="cbx"></span>
-                                                배송완료
-                                            </label>
-                                            <label class="custom-checkbox">
-                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="N50">
-                                                <span class="cbx"></span>
-                                                구매확정
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="search-btn">검색</button>
-                            <div class="box box2">
-                                <div class="total">
-                                    <p>검색결과</p>
-                                    <div>
-                                        <strong>: 0</strong>건
-                                    </div>
-                                    <select class="select1 select-sort">
-                                        <option value="regist_d">등록일 ↓</option>
-                                        <option value="regist_a">등록일 ↑</option>
-                                        <option value="orderNo_a">주문번호 ↑</option>
-                                        <option value="orderNo_d">주문번호 ↓</option>
-                                        <option value="product_a">상품명 ↑</option>
-                                        <option value="product_d">상품명 ↓</option>
-                                        <option value="totalPrice_a">판매가 ↑</option>
-                                        <option value="totalPrice_d">판매가 ↓</option>
-                                    </select>
-                                    <select class="select1 select-count">
-                                        <option value="10" selected="selected">10개씩보기</option>
-                                        <option value="20">20개씩보기</option>
-                                        <option value="30">30개씩보기</option>
-                                        <option value="50">50개씩보기</option>
-                                        <option value="100">100개씩보기</option>
-                                    </select>
-                                </div>
-                                <table class="order-table">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <label class="custom-checkbox">
-                                                    <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
-                                                        id="chkAll" checked>
-                                                    <span class="cbx"></span>
-                                                    전체
-                                                </label>
-                                            </th>
-                                            <th>주문일(결제일)</th>
-                                            <th>주문번호</th>
-                                            <th>주문자</th>
-                                            <th>상품명</th>
-                                            <th>총 상품구매금액</th>
-                                            <th>총 실결제금액</th>
-                                            <th>결제수단</th>
-                                            <th>결제상태</th>
-                                            <th>미배송</th>
-                                            <th>배송중</th>
-                                            <th>배송완료</th>
-                                            <th>취소</th>
-                                            <th>교환</th>
-                                            <th>반품</th>
-                                            <th>목록삭제</th>
-                                            <th>메모</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- 여기에 주문 데이터가 들어갈 예정 -->
-                                        <tr>
-                                            <td colspan="17" style="text-align:center; padding: 20px; color: #777;">
-                                                검색된 주문내역이 없습니다.
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="pagination"></div>
-                            </div>
+                                        </th>
+                                        <th>주문일(결제일)</th>
+                                        <th>주문번호</th>
+                                        <th>주문자</th>
+                                        <th>상품명</th>
+                                        <th>총 상품구매금액</th>
+                                        <th>총 실결제금액</th>
+                                        <th>결제수단</th>
+                                        <th>결제상태</th>
+                                        <th>미배송</th>
+                                        <th>배송중</th>
+                                        <th>배송완료</th>
+                                        <th>취소</th>
+                                        <th>교환</th>
+                                        <th>반품</th>
+                                        <th>목록삭제</th>
+                                        <th>메모</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 여기에 주문 데이터가 들어갈 예정 -->
+                                    <tr>
+                                        <td colspan="17" style="text-align:center; padding: 20px; color: #777;">
+                                            검색된 주문내역이 없습니다.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination"></div>
+                        </div>
+                    </div>
+                    <div class="sub_screen sub_screen2">
+                        <h3>배송준비중 관리</h3>
+                        <div class="box box1">
+                        </div>
+                        <button class="search-btn">검색</button>
+                        <div class="box box2">
                         </div>
                     </div>
                     <!-- ============================ -->
-                    <div class="sub_screen sub_screen2">
-                        <h3>배송준비중 관리</h3>
-                    </div>
+
                     <div class="sub_screen sub_screen4">
                         <h3>배송대기 관리</h3>
                     </div>
@@ -680,247 +523,11 @@
             </div>
         </div>
     </section>
+    <script src="../script/search_box_fetch.js"></script>
     <script src="../script/input.js"></script>
     <script src="../script/tab/admin_tab.js"></script>
     <script src="../script/header/header_fetch.js"></script>
-    <!-- ======================== -->
-    <script>
-        const [searchBtn] = document.querySelectorAll('.search-btn');
-        const [tbody] = document.querySelectorAll('.order-table tbody');
-        const [totalCount] = document.querySelectorAll('.total strong');
-        const [sortSelect] = document.querySelectorAll('.select-sort');
-        const [countSelect] = document.querySelectorAll('.select-count');
-        const [pagination] = document.querySelectorAll('.pagination');
-
-        let orders = [];
-        let currentPage = 1;
-        let pageSize = 10;
-
-        // 검색 버튼 클릭 시 데이터 생성 및 렌더링
-        searchBtn.addEventListener('click', () => {
-            const sortValue = sortSelect.value;
-            pageSize = parseInt(countSelect.value, 10);
-
-            // 예시 데이터 (상품명과 가격을 다양하게 생성 2137)
-            orders = Array.from({ length: 2137 }, (_, i) => ({
-                orderDate: `2025-05-${String((i % 30) + 1).padStart(2, '0')}`,
-                orderNo: `ORD${1000 + i}`,
-                name: `고객${i + 1}`,
-                product: `상품${(i % 10) + 1}`,  // 상품1 ~ 상품10
-                totalPrice: `${(100000 + (i % 10) * 5000).toLocaleString()}원`,  // 100,000원부터 5,000원 단위로 증가
-                paidPrice: `${(95000 + (i % 10) * 5000).toLocaleString()}원`,
-                payMethod: '카드결제',
-                payStatus: '결제완료',
-                status: {
-                    notShipped: '○',
-                    shipping: '●',
-                    done: '-',
-                    cancel: '-',
-                    exchange: '-',
-                    return: '-',
-                    delete: '×',
-                },
-                memo: '빠른 배송 요청'
-            }));
-
-            // 정렬
-            if (sortValue === 'regist_d') {
-                orders.sort((a, b) => new Date(b.orderDate) - new Date(a.orderDate));
-            } else if (sortValue === 'regist_a') {
-                orders.sort((a, b) => new Date(a.orderDate) - new Date(b.orderDate));
-            } else if (sortValue === 'orderNo_a') {
-                orders.sort((a, b) => a.orderNo.localeCompare(b.orderNo));
-            } else if (sortValue === 'orderNo_d') {
-                orders.sort((a, b) => b.orderNo.localeCompare(a.orderNo));
-            } else if (sortValue === 'product_a') {
-                orders.sort((a, b) => a.product.localeCompare(b.product));
-            } else if (sortValue === 'product_d') {
-                orders.sort((a, b) => b.product.localeCompare(a.product));
-            } else if (sortValue === 'totalPrice_a') {
-                orders.sort((a, b) => parseInt(a.totalPrice.replace(/,/g, ''), 10) - parseInt(b.totalPrice.replace(/,/g, ''), 10));
-            } else if (sortValue === 'totalPrice_d') {
-                orders.sort((a, b) => parseInt(b.totalPrice.replace(/,/g, ''), 10) - parseInt(a.totalPrice.replace(/,/g, ''), 10));
-            }
-
-            currentPage = 1;
-            renderOrders(getPageData(currentPage));
-            renderPagination();
-            totalCount.textContent = `: ${orders.length}`;
-        });
-
-        // 정렬 옵션 변경 시 (기존 데이터 정렬 후 렌더링)
-        sortSelect.addEventListener('change', () => {
-            if (orders.length === 0) return;
-
-            currentPage = 1;
-            const val = sortSelect.value;
-            if (val === 'regist_d') {
-                orders.sort((a, b) => new Date(b.orderDate) - new Date(a.orderDate));
-            } else if (val === 'regist_a') {
-                orders.sort((a, b) => new Date(a.orderDate) - new Date(b.orderDate));
-            } else if (val === 'orderNo_a') {
-                orders.sort((a, b) => a.orderNo.localeCompare(b.orderNo));
-            } else if (val === 'orderNo_d') {
-                orders.sort((a, b) => b.orderNo.localeCompare(a.orderNo));
-            } else if (val === 'product_a') {
-                orders.sort((a, b) => a.product.localeCompare(b.product));
-            } else if (val === 'product_d') {
-                orders.sort((a, b) => b.product.localeCompare(a.product));
-            } else if (val === 'totalPrice_a') {
-                orders.sort((a, b) => parseInt(a.totalPrice.replace(/,/g, ''), 10) - parseInt(b.totalPrice.replace(/,/g, ''), 10));
-            } else if (val === 'totalPrice_d') {
-                orders.sort((a, b) => parseInt(b.totalPrice.replace(/,/g, ''), 10) - parseInt(a.totalPrice.replace(/,/g, ''), 10));
-            }
-            renderOrders(getPageData(currentPage));
-            renderPagination();
-        });
-
-        // 페이지당 개수 변경 시 (페이지 크기 변경 후 렌더링)
-        countSelect.addEventListener('change', () => {
-            if (orders.length === 0) return;
-
-            pageSize = parseInt(countSelect.value, 10);
-            currentPage = 1;
-            renderOrders(getPageData(currentPage));
-            renderPagination();
-        });
-
-        // 현재 페이지에 맞는 데이터 반환
-        function getPageData(page) {
-            const start = (page - 1) * pageSize;
-            const end = start + pageSize;
-            return orders.slice(start, end);
-        }
-
-        // 주문 목록 렌더링
-        function renderOrders(orderList) {
-            tbody.innerHTML = '';
-
-            if (orderList.length === 0) {
-                tbody.innerHTML = `
-            <tr>
-                <td colspan="17" style="text-align:center; padding:20px; color:#777;">
-                    검색된 주문내역이 없습니다.
-                </td>
-            </tr>`;
-                return;
-            }
-
-            const fragment = document.createDocumentFragment();
-            orderList.forEach(order => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-            <td><label class="custom-checkbox"><input type="checkbox" class="fChk"><span class="cbx"></span>개별</label></td>
-            <td>${order.orderDate}</td>
-            <td>${order.orderNo}</td>
-            <td>${order.name}</td>
-            <td>${order.product}</td>
-            <td>${order.totalPrice}</td>
-            <td>${order.paidPrice}</td>
-            <td>${order.payMethod}</td>
-            <td>${order.payStatus}</td>
-            <td>${order.status.notShipped}</td>
-            <td>${order.status.shipping}</td>
-            <td>${order.status.done}</td>
-            <td>${order.status.cancel}</td>
-            <td>${order.status.exchange}</td>
-            <td>${order.status.return}</td>
-            <td>${order.status.delete}</td>
-            <td>${order.memo}</td>
-        `;
-                fragment.appendChild(tr);
-            });
-
-            tbody.appendChild(fragment);
-        }
-
-        // 페이지네이션 렌더링
-        function renderPagination() {
-            const totalPages = Math.ceil(orders.length / pageSize);
-            pagination.innerHTML = '';
-
-            // 이전 버튼
-            const prevBtn = document.createElement('button');
-            prevBtn.textContent = '« 이전';
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    renderOrders(getPageData(currentPage));
-                    renderPagination();
-                }
-            });
-            pagination.appendChild(prevBtn);
-
-            // 페이지 번호 범위 (현재 ±3)
-            let startPage = Math.max(1, currentPage - 3);
-            let endPage = Math.min(totalPages, currentPage + 3);
-
-            // 첫 페이지 + ...
-            if (startPage > 1) {
-                const firstPageBtn = document.createElement('button');
-                firstPageBtn.textContent = '1';
-                firstPageBtn.addEventListener('click', () => {
-                    currentPage = 1;
-                    renderOrders(getPageData(currentPage));
-                    renderPagination();
-                });
-                pagination.appendChild(firstPageBtn);
-
-                if (startPage > 2) {
-                    const dots = document.createElement('span');
-                    dots.textContent = '...';
-                    dots.style.margin = '0 5px';
-                    pagination.appendChild(dots);
-                }
-            }
-
-            // 페이지 번호 버튼들
-            for (let i = startPage; i <= endPage; i++) {
-                const btn = document.createElement('button');
-                btn.textContent = i;
-                btn.className = i === currentPage ? 'active' : '';
-                btn.addEventListener('click', () => {
-                    currentPage = i;
-                    renderOrders(getPageData(currentPage));
-                    renderPagination();
-                });
-                pagination.appendChild(btn);
-            }
-
-            // 마지막 페이지 + ...
-            if (endPage < totalPages) {
-                if (endPage < totalPages - 1) {
-                    const dots = document.createElement('span');
-                    dots.textContent = '...';
-                    dots.style.margin = '0 5px';
-                    pagination.appendChild(dots);
-                }
-
-                const lastPageBtn = document.createElement('button');
-                lastPageBtn.textContent = totalPages;
-                lastPageBtn.addEventListener('click', () => {
-                    currentPage = totalPages;
-                    renderOrders(getPageData(currentPage));
-                    renderPagination();
-                });
-                pagination.appendChild(lastPageBtn);
-            }
-
-            // 다음 버튼
-            const nextBtn = document.createElement('button');
-            nextBtn.textContent = '다음 »';
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    renderOrders(getPageData(currentPage));
-                    renderPagination();
-                }
-            });
-            pagination.appendChild(nextBtn);
-        }
-    </script>
+    <script src="../script/orderListManager.js"></script>
 </body>
 
 </html>

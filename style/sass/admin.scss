@@ -1,7 +1,15 @@
 @import './flex_mixins.scss';
 @import './color.scss';
 
-// ========================================
+// 폰트 칼러 스타일
+.blue_clor {
+    color: #007bff;
+}
+
+.red_colr {
+    color: rgb(250, 46, 46);
+}
+
 //이중창 생기는거 방지
 body {
     overflow: hidden;
@@ -133,144 +141,24 @@ body {
     }
 }
 
-//box스타일
-.sub_screen {
-    .box {
-        @include fss;
-        gap: 16px;
-        //양옆 여백을 위해서
-        width: calc(100% - 128px);
-        max-width: 1540px;
-        height: auto;
-
-        .blue_clor {
-            color: #007bff;
-        }
-
-        .red_colr {
-            color: rgb(250, 46, 46);
-        }
-    }
-
-    .box1 {
-        height: 50px;
-    }
-
-    .box2 {
-
-        //공통 레이아웃 SCSS
-        .grid-dashboard {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: auto;
-            gap: 12px;
-            text-align: center;
-            padding: 24px;
-            font-family: 'Pretendard', sans-serif;
-            font-size: 14px;
-
-            .header {
-                font-weight: 600;
-                background-color: #f1f1f1;
-                padding: 12px 0;
-            }
-
-            .label {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                font-weight: 500;
-            }
-
-            .cell {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 4px;
-                padding: 12px;
-                border-radius: 8px;
-            }
-
-            .shortcut {
-                font-size: 12px;
-                padding: 4px 8px;
-                border-radius: 4px;
-                border: none;
-                cursor: pointer;
-            }
-        }
-
-        //여러 스타일 유형중 이게 맘에 들어서 이거씀
-        .grid-dashboard {
-            background-color: #fafafa;
-            color: #444;
-            // border-radius: 12px;
-            width: 100%;
-
-            .cell {
-                background-color: #ffffff;
-                // border-radius: 16px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                padding: 14px;
-                font-size: 15px;
-            }
-
-            .shortcut {
-                background-color: #5353ff;
-                color: #fff;
-                // border-radius: 20px;
-                padding: 4px 12px;
-                font-size: 13px;
-
-                &:hover {
-                    background-color: #3700b3;
-                }
-            }
-        }
-
-    }
-
-    .box3,
-    .box4 {
-        @include fccc;
-        gap: 32px;
-
-        .box_child_wrap {
-            @include fsbc;
-            width: 100%;
-
-            .box_child {
-                @include fcsc;
-                gap: 16px;
-                padding: 8px;
-                width: 160px;
-                box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-
-                p {
-                    span {
-
-                        &:first-of-type {
-                            width: 70px;
-                            display: inline-block;
-                        }
-                    }
-                }
-
-            }
-        }
-    }
-}
-
+// ==============================================
+//sect1 플렉스 위치조정
 .sect1 {
     @include fcc;
+}
 
+//.sect1 screen_wrap 레이어 위치 간격등
+.sect1 {
     .screen_wrap {
         position: relative;
         width: calc(100% - 300px);
         height: 100vh;
+    }
+}
 
+// screen 공통
+.sect1 {
+    .screen_wrap {
         .screen {
             @include fscc;
             gap: 32px;
@@ -285,7 +173,14 @@ body {
                 opacity: 1;
                 visibility: visible;
             }
+        }
+    }
+}
 
+//wrap 은 h2와 tab_menus 를 묶고 있음
+.sect1 {
+    .screen_wrap {
+        .screen {
             .wrap {
                 @include fsbc;
                 width: 100%;
@@ -313,11 +208,58 @@ body {
                     }
                 }
             }
+        }
+    }
+}
 
+//h2와 tab_menus
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .wrap {
+
+                h2 {}
+
+                .tab_menus {
+                    @include fcc;
+                    gap: 16px;
+
+                    li {
+                        cursor: pointer;
+                        color: $secondary-color0;
+
+                        &:hover {
+                            filter: invert(100);
+                        }
+
+                        &.active {
+                            font-weight: bold;
+                            filter: invert(100);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//sub_screen_wrap 위치 상대지정, .wrap과 형제이다
+.sect1 {
+    .screen_wrap {
+        .screen {
             .sub_screen_wrap {
                 position: relative;
                 width: 100%;
+            }
+        }
+    }
+}
 
+//sub_screen 스타일 플렉스 위치조정  탭기능을 위한 액티브 추가 
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .sub_screen_wrap {
                 .sub_screen {
                     @include fccc;
                     gap: 48px;
@@ -332,204 +274,370 @@ body {
                         opacity: 1;
                         visibility: visible;
                     }
-
-                    // box, box1,2,3,4 가 이자리에 있음
                 }
+            }
+        }
+    }
+}
 
-                .sub_screen2 {
-                    .wrap1 {
-                        @include fccc;
-                        gap: 48px;
-                        width: 100%;
+//sub_screen box 공통 스타일 
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .sub_screen_wrap {
+                .sub_screen {
+                    .box {
+                        @include fss;
+                        gap: 16px;
+                        //양옆 여백을 위해서
+                        width: calc(100% - 128px);
+                        max-width: 1540px;
                         height: auto;
+                        background-color: #fafafa;
+                        color: #444;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                        border-radius: 9px;
+                    }
+                }
+            }
+        }
+    }
+}
 
-                        //   .search-btn {}
-                        .box {
-                            background-color: #fafafa;
-                            color: #444;
-                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                            border-radius: 9px;
-                        }
+//sub_screen .search-box
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .sub_screen_wrap {
+                .sub_screen {
+                    .box {
+                        .search-box {
+                            width: 100%;
+                            padding: 16px;
 
-                        .box1 {
-                            height: auto;
+                            .row {
+                                display: flex;
+                                align-items: center;
+                                gap: 16px;
+                                margin-bottom: 16px;
+                            }
 
-                            .search-box {
-                                width: 100%;
-                                padding: 16px;
+                            .col {
+                                &.label {
+                                    width: 100px;
+                                    font-weight: bold;
+                                    color: #444;
+                                }
 
-                                .row {
+                                &.controls {
+                                    @include fsc;
+                                    // flex: 1;
+                                    flex-wrap: wrap;
+                                    gap: 8px;
+
+                                }
+
+                                // .select {}
+
+                                .date-buttons {
+                                    display: flex;
+                                    gap: 8px;
+
+                                    button {
+                                        background-color: #ffffff;
+                                        border: 1px solid #ccc;
+                                        color: #444;
+                                        padding: 6px 12px;
+                                        font-size: 13px;
+                                        border-radius: 8px;
+                                        cursor: pointer;
+                                        transition: background-color 0.3s ease, color 0.3s ease;
+
+                                        &:hover {
+                                            background-color: #5353ff;
+                                            color: #fff;
+                                        }
+
+                                        &:active {
+                                            background-color: #3700b3;
+                                        }
+                                    }
+                                }
+
+                                .date-inputs {
                                     display: flex;
                                     align-items: center;
-                                    gap: 16px;
-                                    margin-bottom: 16px;
-                                }
+                                    gap: 8px;
 
-                                .col {
-                                    &.label {
-                                        width: 100px;
-                                        font-weight: bold;
+                                    input[type="date"] {
+                                        padding: 6px 12px;
+                                        border: 1px solid #ccc;
+                                        font-size: 14px;
+                                        border-radius: 8px;
+                                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                                        transition: border 0.3s ease;
+
+                                        &:focus {
+                                            border-color: #5353ff;
+                                            box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
+                                        }
+                                    }
+
+                                    span {
+                                        font-size: 14px;
                                         color: #444;
-                                    }
-
-                                    &.controls {
-                                        @include fsc;
-                                        // flex: 1;
-                                        flex-wrap: wrap;
-                                        gap: 8px;
-
-                                    }
-
-                                    // .select {}
-
-                                    .date-buttons {
-                                        display: flex;
-                                        gap: 8px;
-
-                                        button {
-                                            background-color: #ffffff;
-                                            border: 1px solid #ccc;
-                                            color: #444;
-                                            padding: 6px 12px;
-                                            font-size: 13px;
-                                            border-radius: 8px;
-                                            cursor: pointer;
-                                            transition: background-color 0.3s ease, color 0.3s ease;
-
-                                            &:hover {
-                                                background-color: #5353ff;
-                                                color: #fff;
-                                            }
-
-                                            &:active {
-                                                background-color: #3700b3;
-                                            }
-                                        }
-                                    }
-
-                                    .date-inputs {
-                                        display: flex;
-                                        align-items: center;
-                                        gap: 8px;
-
-                                        input[type="date"] {
-                                            padding: 6px 12px;
-                                            border: 1px solid #ccc;
-                                            font-size: 14px;
-                                            border-radius: 8px;
-                                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                                            transition: border 0.3s ease;
-
-                                            &:focus {
-                                                border-color: #5353ff;
-                                                box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
-                                            }
-                                        }
-
-                                        span {
-                                            font-size: 14px;
-                                            color: #444;
-                                        }
                                     }
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
 
-                        .box2 {
-                            @include fcsc;
-                            gap: 0;
-                            padding: 16px;
-                            height: auto;
+//sub_screen 통계표나오는거 .total, order-table, pagination
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .sub_screen_wrap {
+                .sub_screen {
+                    .box {
+                        .total {
+                            @include fsc;
+                            gap: 16px;
+                            padding: 16px 0px;
 
-                            .total {
-                                @include fsc;
-                                gap: 16px;
-                                padding: 16px 0px;
+                        }
 
+                        .pagination {
+                            margin-top: 20px;
+                            text-align: center;
+
+                            button {
+                                margin: 0 4px;
+                                padding: 6px 12px;
+                                border: none;
+                                background: #f0f0f0;
+                                border-radius: 4px;
+                                cursor: pointer;
+                                transition: all 0.2s;
+
+                                &:hover {
+                                    background: #d0d0ff;
+                                }
+
+                                &.active {
+                                    background: #5353ff;
+                                    color: white;
+                                    font-weight: bold;
+                                }
                             }
+                        }
 
-                            .pagination {
-                                margin-top: 20px;
-                                text-align: center;
 
-                                button {
-                                    margin: 0 4px;
-                                    padding: 6px 12px;
-                                    border: none;
-                                    background: #f0f0f0;
-                                    border-radius: 4px;
-                                    cursor: pointer;
-                                    transition: all 0.2s;
+                        .order-table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            font-size: 14px;
+                            color: #333;
+                            border: 1px solid #ddd;
+                            background-color: #fff;
 
-                                    &:hover {
-                                        background: #d0d0ff;
-                                    }
+                            thead {
+                                background-color: #f8f9fa;
 
-                                    &.active {
-                                        background: #5353ff;
-                                        color: white;
-                                        font-weight: bold;
-                                    }
+                                th {
+                                    border: 1px solid #ddd;
+                                    padding: 12px 8px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    white-space: nowrap;
                                 }
                             }
 
+                            tbody {
+                                tr {
+                                    transition: 0.3s ease-in-out;
 
-                            .order-table {
-                                width: 100%;
-                                border-collapse: collapse;
-                                font-size: 14px;
-                                color: #333;
-                                border: 1px solid #ddd;
-                                background-color: #fff;
+                                    &:hover {
+                                        background-color: #f1f3f5; // 행 hover 효과
+                                    }
 
-                                thead {
-                                    background-color: #f8f9fa;
-
-                                    th {
-                                        border: 1px solid #ddd;
-                                        padding: 12px 8px;
-                                        font-weight: 600;
+                                    td {
+                                        border: 1px solid #eee;
+                                        padding: 10px 8px;
                                         text-align: center;
                                         white-space: nowrap;
                                     }
                                 }
+                            }
+                        }
 
-                                tbody {
-                                    tr {
-                                        transition: 0.3s ease-in-out;
 
-                                        &:hover {
-                                            background-color: #f1f3f5; // 행 hover 효과
-                                        }
+                        .box_screen {
+                            //@include fss; 검색버튼 클릭시 이걸로 변경되야함
+                            @include fcc;
+                            width: 100%;
+                            height: auto;
+                            min-height: 600px;
+                            border: 1px solid #ddd;
 
-                                        td {
-                                            border: 1px solid #eee;
-                                            padding: 10px 8px;
-                                            text-align: center;
-                                            white-space: nowrap;
+                            .nothing_text {
+                                //검색버튼 클릭시 없어짐
+                            }
+
+                            // .order-item {
+                            //     li {}
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//.sub_screen1 .first_box, box2~box4 스타일
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .sub_screen_wrap {
+                .sub_screen1 {
+
+                    //first_box 라 한 이유는 패치로 .box1 에다가 필터상자를 불러왔는데 겹치니까
+                    .first_box {
+                        height: 50px;
+                    }
+
+                    .box2 {
+
+                        //공통 레이아웃 SCSS
+                        .grid-dashboard {
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            grid-auto-rows: auto;
+                            gap: 12px;
+                            text-align: center;
+                            padding: 24px;
+                            font-family: 'Pretendard', sans-serif;
+                            font-size: 14px;
+
+                            .header {
+                                font-weight: 600;
+                                background-color: #f1f1f1;
+                                padding: 12px 0;
+                            }
+
+                            .label {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 8px;
+                                font-weight: 500;
+                            }
+
+                            .cell {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                gap: 4px;
+                                padding: 12px;
+                                border-radius: 8px;
+                            }
+
+                            .shortcut {
+                                font-size: 12px;
+                                padding: 4px 8px;
+                                border-radius: 4px;
+                                border: none;
+                                cursor: pointer;
+                            }
+                        }
+
+                        //여러 스타일 유형중 이게 맘에 들어서 이거씀
+                        .grid-dashboard {
+                            background-color: #fafafa;
+                            color: #444;
+                            // border-radius: 12px;
+                            width: 100%;
+
+                            .cell {
+                                background-color: #ffffff;
+                                // border-radius: 16px;
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                                padding: 14px;
+                                font-size: 15px;
+                            }
+
+                            .shortcut {
+                                background-color: #5353ff;
+                                color: #fff;
+                                // border-radius: 20px;
+                                padding: 4px 12px;
+                                font-size: 13px;
+
+                                &:hover {
+                                    background-color: #3700b3;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .box3,
+                    .box4 {
+                        @include fccc;
+                        gap: 32px;
+                        padding: 16px 0px 32px 0px;
+
+                        .box_child_wrap {
+                            @include fsbc;
+                            width: 100%;
+
+                            .box_child {
+                                @include fcsc;
+                                gap: 16px;
+                                padding: 8px;
+                                width: 160px;
+                                box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+                                p {
+                                    span {
+
+                                        &:first-of-type {
+                                            width: 70px;
+                                            display: inline-block;
                                         }
                                     }
                                 }
-                            }
 
-
-                            .box_screen {
-                                //@include fss; 검색버튼 클릭시 이걸로 변경되야함
-                                @include fcc;
-                                width: 100%;
-                                height: auto;
-                                min-height: 600px;
-                                border: 1px solid #ddd;
-
-                                .nothing_text {
-                                    //검색버튼 클릭시 없어짐
-                                }
-
-                                // .order-item {
-                                //     li {}
-                                // }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//.sub_screen2 box1, box2 개별
+.sect1 {
+    .screen_wrap {
+        .screen {
+            .sub_screen_wrap {
+                .sub_screen2 {
+                    .box1 {
+                        height: auto;
+                    }
+
+                    .box2 {
+                        @include fcsc;
+                        gap: 0;
+                        padding: 16px;
+                        height: auto;
                     }
                 }
             }

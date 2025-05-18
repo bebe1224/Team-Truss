@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="search-box">
+        <!-- 1행 -->
+        <div class="row">
+            <div class="col label">기간</div>
+            <div class="col controls">
+                <select class="select1">
+                    <option value="order_date" selected="selected">주문일</option>
+                    <option value="memo_date">메모작성일</option>
+                    <option value="pay_date">결제일</option>
+                    <option value="shipready_date">송장번호입력일</option>
+                    <option value="shipbegin_date">배송시작일</option>
+                    <option value="shipend_date">배송완료일</option>
+                    <option value="purchaseconfirmation_date">구매확정일</option>
+                </select>
+                <div class="date-buttons">
+                    <button>오늘</button>
+                    <button>어제</button>
+                    <button>3일</button>
+                    <button>7일</button>
+                    <button>15일</button>
+                    <button>1개월</button>
+                    <button>3개월</button>
+                    <button>6개월</button>
+                </div>
+                <div class="date-inputs">
+                    <input type="date" />
+                    <span>~</span>
+                    <input type="date" />
+                </div>
+            </div>
+        </div>
+        <!-- 2행 -->
+        <div class="row">
+            <div class="col label">검색어</div>
+            <div class="col controls">
+                <select class="select1">
+                    <option value="choice">-검색항목선택-</option>
+                    <option value="order_id" selected="">주문번호</option>
+                    <option value="ord_item_code">품목별 주문번호</option>
+                    <option value="delivery_code">배송번호</option>
+                    <option value="invoice_no">운송장번호</option>
+                    <option value="s_order_info">마켓주문번호</option>
+                    <option value="line1">-----------------</option>
+                    <option value="o_name">주문자명</option>
+                    <option value="member_id">주문자 아이디</option>
+                    <option value="member_email">회원 이메일</option>
+                    <option value="o_email">주문서 이메일</option>
+                    <option value="o_phone2">주문자 휴대전화</option>
+                    <option value="o_phone1">주문자 일반전화</option>
+                    <option value="client_ip">주문자 IP</option>
+                    <option value="line2">-----------------</option>
+                    <option value="c_p_name">입금자명</option>
+                    <option value="r_name">수령자명</option>
+                    <option value="r_phone2">수령자 휴대전화</option>
+                    <option value="r_phone1">수령자 일반전화</option>
+                    <option value="r_addr">배송지 주소</option>
+                    <option value="ord_add_item">주문서 추가항목</option>
+                    <option value="all_name">주문자명, 입금자명, 수령자명</option>
+                    <option value="r_safe_phone">0504 안심번호</option>
+                    <option value="line3">-----------------</option>
+                    <option value="product_name">상품명</option>
+                    <option value="product_code">상품코드</option>
+                    <option value="item_code">품목코드</option>
+                    <option value="product_tag">상품태그</option>
+                    <option value="manufacturer_name">제조사</option>
+                    <option value="supplier_name">공급사</option>
+                    <option value="line4">-----------------</option>
+                    <option value="msg_writer_name">메모 작성자명</option>
+                    <option value="msg_writer_id">메모 작성자 아이디</option>
+                    <option value="msg">메모 내용</option>
+                    <option value="line5">-----------------</option>
+                    <option value="labels">주문 라벨</option>
+                </select>
+                <!-- <button class="search-btn">검색</button> -->
+            </div>
+        </div>
+        <!-- 3행 -->
+        <div class="row">
+            <div class="col label">결제상태</div>
+            <div class="col controls">
+                <!-- 결제 상태 선택: 같은 name 속성으로 묶여 한 번에 한 개만 선택 가능 -->
+                <!-- value 속성도 넣는 게 좋아요. 선택 시 어떤 값이 선택됐는지 서버로 보낼 때 필요하거든요. -->
+                <label class="custom-radio">
+                    <input type="radio" name="payment_status" value="all" checked>
+                    <span class="rbtn"></span>
+                    전체
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="payment_status" value="before_deposit">
+                    <span class="rbtn"></span>
+                    입금전
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="payment_status" value="additional_waiting">
+                    <span class="rbtn"></span>
+                    추가입금대기
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="payment_status" value="manual_complete">
+                    <span class="rbtn"></span>
+                    입금완료(수동)
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="payment_status" value="auto_complete">
+                    <span class="rbtn"></span>
+                    입금완료(자동)
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="payment_status" value="payment_complete">
+                    <span class="rbtn"></span>
+                    결제완료
+                </label>
+            </div>
+        </div>
+        <!-- 4행 -->
+        <div class="row">
+            <div class="col label">주문상태</div>
+            <div class="col controls">
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="all" id="chkAll" checked>
+                    <span class="cbx"></span>
+                    전체
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N10">
+                    <span class="cbx"></span>
+                    상품준비중
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N20">
+                    <span class="cbx"></span>
+                    배송준비중
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N22">
+                    <span class="cbx"></span>
+                    배송보류
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N21">
+                    <span class="cbx"></span>
+                    배송대기
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N30">
+                    <span class="cbx"></span>
+                    배송중
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N40">
+                    <span class="cbx"></span>
+                    배송완료
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="orderStatus[]" class="fChk" value="N50">
+                    <span class="cbx"></span>
+                    구매확정
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

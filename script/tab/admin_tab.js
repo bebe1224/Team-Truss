@@ -17,46 +17,32 @@ mainScreens.forEach(screen => {
     });
 });
 
-// ✅ 상위 탭 (좌측 메뉴) 클릭 처리
+// ✅ 상위 탭 클릭 시 새로고침되게 (쿼리스트링에 탭 인덱스 저장)
 mainTabBtns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
-        // 모든 active 제거
-        mainTabBtns.forEach(b => b.classList.remove("active"));
-        mainScreens.forEach(s => s.classList.remove("active"));
-
-        // 클릭된 요소만 active
-        btn.classList.add("active");
-        mainScreens[i].classList.add("active");
-
-        // 하위 탭 초기화
-        const subTabBtns = mainScreens[i].querySelectorAll(".tab_menus li");
-        const subScreens = mainScreens[i].querySelectorAll(".sub_screen");
-
-        subTabBtns.forEach(b => b.classList.remove("active"));
-        subScreens.forEach(s => s.classList.remove("active"));
-
-        if (subTabBtns.length > 0 && subScreens.length > 0) {
-            subTabBtns[0].classList.add("active");
-            subScreens[0].classList.add("active");
-        }
+        // 현재 URL에 탭 인덱스 추가 후 새로고침
+        const url = new URL(window.location.href);
+        url.searchParams.set("tab", i);
+        window.location.href = url.toString();
     });
 });
 
-// ✅ 초기 상태: 가장 첫 번째 화면을 활성화
+// ✅ 초기 상태 설정 (쿼리스트링 기반으로 탭 복원)
 window.addEventListener("DOMContentLoaded", () => {
-    // 첫 번째 .element와 .screen
-    if (mainTabBtns.length > 0 && mainScreens.length > 0) {
-        mainTabBtns[0].classList.add("active");
-        mainScreens[0].classList.add("active");
+    const urlParams = new URLSearchParams(window.location.search);
+    const tabIndex = parseInt(urlParams.get("tab")) || 0;
 
-        const subTabBtns = mainScreens[0].querySelectorAll(".tab_menus li");
-        const subScreens = mainScreens[0].querySelectorAll(".sub_screen");
+    if (mainTabBtns[tabIndex] && mainScreens[tabIndex]) {
+        mainTabBtns[tabIndex].classList.add("active");
+        mainScreens[tabIndex].classList.add("active");
+
+        const subTabBtns = mainScreens[tabIndex].querySelectorAll(".tab_menus li");
+        const subScreens = mainScreens[tabIndex].querySelectorAll(".sub_screen");
 
         if (subTabBtns.length > 0 && subScreens.length > 0) {
-            subTabBtns[0].classList.add("active");
-            subScreens[0].classList.add("active");
+            subTabBtns[2].classList.add("active");
+            subScreens[2].classList.add("active");
         }
     }
 });
-
 
