@@ -487,107 +487,7 @@
                             </ul>
                             <button class="search-btn">상품등록</button>
                         </div>
-                        <div class="box box2">
-                            <div class="search_box2 product_filter_fetch">
-                                <ul>
-                                    <li>검색분류</li>
-                                    <li><select class="select1" name="eField[]">
-                                            <option value="product_name">상품명</option>
-                                            <option value="eng_product_name">영문상품명</option>
-                                            <option value="item_name">상품명(관리용)</option>
-                                            <option value="">--------------------</option>
-                                            <option value="product_no">상품번호</option>
-                                            <option value="product_code">상품코드</option>
-                                            <option value="ma_product_code">자체 상품코드</option>
-                                            <option value="item_code">품목코드</option>
-                                            <option value="admin_item_code">자체 품목코드</option>
-                                            <option value="">--------------------</option>
-                                            <option value="Manufacturer">제조사</option>
-                                            <option value="Supplier">공급사</option>
-                                            <option value="Brand">브랜드</option>
-                                            <option value="Classification">자체분류</option>
-                                            <option value="">--------------------</option>
-                                            <option value="model_name">모델명</option>
-                                            <option value="origin">원산지</option>
-                                            <option value="Condition">상품상태</option>
-                                        </select></li>
-                                </ul>
-                                <ul>
-                                    <li>상품구분</li>
-                                    <li>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment_status" value="all" checked>
-                                            <span class="rbtn"></span>
-                                            전체
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment_status" value="basic_product">
-                                            <span class="rbtn"></span>
-                                            기본 상품
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment_status" value="set_product">
-                                            <span class="rbtn"></span>
-                                            세트 상품
-                                        </label>
-                                        <label class="custom-radio">
-                                            <input type="radio" name="payment_status" value="reserved_product">
-                                            <span class="rbtn"></span>
-                                            예약 상품
-                                        </label>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>상품분류</li>
-                                    <li>
-                                        <select class="select1" depth="1" name="categorys[]">
-                                            <option value="">- 대분류 선택 -</option>
-                                            <option value="42">직수입자동차</option>
-                                            <option value="43">커스텀/튜닝</option>
-                                            <option value="44">용품/파츠</option>
-                                            <option value="45">브랜드의류</option>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <select class="select1" depth="2" name="categorys[]">
-                                            <option value="">- 중분류 선택 -</option>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <select class="select1" id="eCategory3" depth="3" name="categorys[]">
-                                            <option value="">- 소분류 선택 -</option>
-                                        </select>
-                                    </li>
-                                </ul>
-                                <ul>
-                                    <li>상품등록일</li>
-                                    <li>
-                                        <select class="select1" name="date">
-                                            <option value="regist">상품등록일</option>
-                                            <option value="modify">상품최종수정일</option>
-                                        </select>
-                                    </li>
-                                    <li>
-                                        <div class="date-buttons">
-                                            <button>오늘</button>
-                                            <button>어제</button>
-                                            <button>3일</button>
-                                            <button>7일</button>
-                                            <button>15일</button>
-                                            <button>1개월</button>
-                                            <button>3개월</button>
-                                            <button>6개월</button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="date-inputs">
-                                            <input type="date" />
-                                            <span>~</span>
-                                            <input type="date" />
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="box box2 product_filter_fetch">
                         </div>
                         <button class="search-btn">검색</button>
                         <div class="box box3">
@@ -653,6 +553,7 @@
                         <h3>상품등록</h3>
                         <!-- 표시 설정 -->
                         <div class="box">
+                            <h1 class="blue_clor">표시 설정</h1>
                             <ul>
                                 <li>판매상태</li>
                                 <li>
@@ -695,6 +596,7 @@
                         <div class="fcs">
                             <!-- 기본 정보-->
                             <div class="box">
+                                <h1 class="blue_clor">기본 정보</h1>
                                 <ul>
                                     <li>상품명</li>
                                     <li>
@@ -777,6 +679,7 @@
                             <div class="fc">
                                 <!-- 판매 정보-->
                                 <div class="box">
+                                    <h1 class="blue_clor">판매 정보</h1>
                                     <ul>
                                         <li>소비자가</li>
                                         <li>
@@ -906,9 +809,69 @@
                         </div>
 
                     </div>
-                    <!-- ========================= -->
-                    <div class="sub_screen sub_screen4">
+                    <div class="sub_screen sub_screen2">
                         <h3>상품관리</h3>
+                        <div class="box box2 product_filter_fetch">
+                        </div>
+                        <button class="search-btn">검색</button>
+                        <div class="box box3">
+                            <div class="total">
+                                <p>검색결과</p>
+                                <div>
+                                    <strong>: 0</strong>건
+                                </div>
+                                <select class="select1 select-sort">
+                                    <option value="regist_d">등록일 ↓</option>
+                                    <option value="regist_a">등록일 ↑</option>
+                                    <option value="orderNo_a">주문번호 ↑</option>
+                                    <option value="orderNo_d">주문번호 ↓</option>
+                                    <option value="product_a">상품명 ↑</option>
+                                    <option value="product_d">상품명 ↓</option>
+                                    <option value="totalPrice_a">판매가 ↑</option>
+                                    <option value="totalPrice_d">판매가 ↓</option>
+                                </select>
+                                <select class="select1 select-count">
+                                    <option value="10" selected="selected">10개씩보기</option>
+                                    <option value="20">20개씩보기</option>
+                                    <option value="30">30개씩보기</option>
+                                    <option value="50">50개씩보기</option>
+                                    <option value="100">100개씩보기</option>
+                                </select>
+                            </div>
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label class="custom-checkbox">
+                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
+                                                    id="chkAll" checked>
+                                                <span class="cbx"></span>
+                                                전체
+                                            </label>
+                                        </th>
+                                        <th>No</th>
+                                        <th>상품구분</th>
+                                        <th>상품코드</th>
+                                        <th>상품명</th>
+                                        <th>판매가</th>
+                                        <th>할인가</th>
+                                        <th>모바일<br>
+                                            할인가</th>
+                                        <th>바로구매 URL
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 여기에 주문 데이터가 들어갈 예정 -->
+                                    <tr>
+                                        <td colspan="9" style="text-align:center; padding: 20px; color: #777;">
+                                            검색된 상품이 없습니다.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>

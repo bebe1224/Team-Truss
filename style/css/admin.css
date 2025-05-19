@@ -33,6 +33,10 @@
   gap: 16px;
 }
 
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li .text_input {
+  width: 500px;
+}
+
 body {
   overflow: hidden;
 }
@@ -590,15 +594,7 @@ body {
   font-weight: lighter;
 }
 
-.screen2 .sub_screen_wrap .sub_screen3 .box ul li .text_input {
-  width: 500px;
-}
-
 .screen2 .sub_screen_wrap .sub_screen3 .box ul li .pric1 {
   width: 60px;
   text-align: center;
-}
-
-.screen2 .sub_screen_wrap .sub_screen {
-  padding: 20px 0px 120px 0px !important;
 }

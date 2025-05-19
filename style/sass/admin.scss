@@ -10,6 +10,7 @@
     color: rgb(250, 46, 46);
 }
 
+// ==============================================
 //플랙스
 .fcs {
     @include fcs;
@@ -33,6 +34,26 @@
 .fccc {
     @include fccc;
     gap: 16px;
+}
+
+// ==============================================
+//select1 = text_input 한테 위드값 고정으로 줌
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen3 {
+            .box {
+                ul {
+                    li {
+                        .text_input {
+                            width: 500px;
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
 }
 
 // ==============================================
@@ -909,25 +930,6 @@ $gradient-end: rgb(255, 48, 255);
     }
 }
 
-//select1 = text_input 한테 위드값 고정으로 줌
-.screen2 {
-    .sub_screen_wrap {
-        .sub_screen3 {
-            .box {
-                ul {
-                    li {
-                        .text_input {
-                            width: 500px;
-                        }
-
-                    }
-                }
-            }
-
-        }
-    }
-}
-
 //.sub_screen3 ul li .pric1  텍스트 에얼라인 조정
 .screen2 {
     .sub_screen_wrap {
@@ -948,12 +950,4 @@ $gradient-end: rgb(255, 48, 255);
     }
 }
 
-//sub_screen2 sub_screen 여백 조정
-.screen2 {
-    .sub_screen_wrap {
-        .sub_screen {
-            //밑에 여백
-            padding: 20px 0px 120px 0px !important;
-        }
-    }
-}
+// ==============================================
