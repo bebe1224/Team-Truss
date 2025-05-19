@@ -15,8 +15,8 @@ searchBtn.addEventListener('click', () => {
     const sortValue = sortSelect.value;
     pageSize = parseInt(countSelect.value, 10);
 
-    // 예시 데이터 (상품명과 가격을 다양하게 생성 2137)
-    orders = Array.from({ length: 2137 }, (_, i) => ({
+    // 예시 데이터 (상품명과 가격을 다양하게 생성 12137)
+    orders = Array.from({ length: 12137 }, (_, i) => ({
         orderDate: `2025-05-${String((i % 30) + 1).padStart(2, '0')}`,
         orderNo: `ORD${1000 + i}`,
         name: `고객${i + 1}`,

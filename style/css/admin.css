@@ -6,6 +6,33 @@
   color: rgb(250, 46, 46);
 }
 
+.fcs {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 32px;
+  width: calc(100% - 128px);
+  max-width: 1540px;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  width: 100%;
+}
+.fc .box {
+  width: 100% !important;
+}
+
+.fccc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
 body {
   overflow: hidden;
 }
@@ -241,6 +268,50 @@ body {
   border-radius: 9px;
 }
 
+.date-buttons {
+  display: flex;
+  gap: 8px;
+}
+.date-buttons button {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: #444;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.date-buttons button:hover {
+  background-color: #5353ff;
+  color: #fff;
+}
+.date-buttons button:active {
+  background-color: #3700b3;
+}
+
+.date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.date-inputs input[type=date] {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s ease;
+}
+.date-inputs input[type=date]:focus {
+  border-color: #5353ff;
+  box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
+}
+.date-inputs span {
+  font-size: 14px;
+  color: #444;
+}
+
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box {
   width: 100%;
   padding: 16px;
@@ -262,48 +333,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-buttons {
-  display: flex;
-  gap: 8px;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-buttons button {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  color: #444;
-  padding: 6px 12px;
-  font-size: 13px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-buttons button:hover {
-  background-color: #5353ff;
-  color: #fff;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-buttons button:active {
-  background-color: #3700b3;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-inputs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-inputs input[type=date] {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: border 0.3s ease;
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-inputs input[type=date]:focus {
-  border-color: #5353ff;
-  box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
-}
-.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .search-box .col .date-inputs span {
-  font-size: 14px;
-  color: #444;
 }
 
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .total {
@@ -483,7 +512,7 @@ body {
 .screen2 .sub_screen_wrap .sub_screen1 .box {
   padding: 80px 0px;
   justify-content: center !important;
-  gap: 32px !important;
+  gap: 64px !important;
 }
 
 .screen2 .sub_screen_wrap .sub_screen2 .box {
@@ -506,4 +535,70 @@ body {
 }
 .screen2 .sub_screen_wrap .sub_screen2 .box ul li a span {
   padding-left: 4px;
+}
+
+.screen2 .sub_screen_wrap .sub_screen2 .box2 .search_box2 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+}
+.screen2 .sub_screen_wrap .sub_screen2 .box2 .search_box2 ul li:first-of-type {
+  width: 76px;
+}
+.screen2 .sub_screen_wrap .sub_screen2 .box2 .search_box2 ul li .custom-radio {
+  font-weight: lighter;
+}
+
+.screen2 .sub_screen_wrap .sub_screen2 .box3 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+.screen2 .sub_screen_wrap .sub_screen3 .box {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 20px !important;
+  font-weight: bold;
+  padding: 16px;
+}
+.screen2 .sub_screen_wrap .sub_screen3 .box ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li:first-of-type {
+  width: 100px;
+}
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li p {
+  font-weight: lighter;
+}
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li .custom-radio {
+  font-weight: lighter;
+}
+
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li .text_input {
+  width: 500px;
+}
+
+.screen2 .sub_screen_wrap .sub_screen3 .box ul li .pric1 {
+  width: 60px;
+  text-align: center;
+}
+
+.screen2 .sub_screen_wrap .sub_screen {
+  padding: 20px 0px 120px 0px !important;
 }

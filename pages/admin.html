@@ -491,11 +491,426 @@
                             </ul>
                             <button class="search-btn">상품등록</button>
                         </div>
+                        <div class="box box2">
+                            <div class="search_box2 product_filter_fetch">
+                                <ul>
+                                    <li>검색분류</li>
+                                    <li><select class="select1" name="eField[]">
+                                            <option value="product_name">상품명</option>
+                                            <option value="eng_product_name">영문상품명</option>
+                                            <option value="item_name">상품명(관리용)</option>
+                                            <option value="">--------------------</option>
+                                            <option value="product_no">상품번호</option>
+                                            <option value="product_code">상품코드</option>
+                                            <option value="ma_product_code">자체 상품코드</option>
+                                            <option value="item_code">품목코드</option>
+                                            <option value="admin_item_code">자체 품목코드</option>
+                                            <option value="">--------------------</option>
+                                            <option value="Manufacturer">제조사</option>
+                                            <option value="Supplier">공급사</option>
+                                            <option value="Brand">브랜드</option>
+                                            <option value="Classification">자체분류</option>
+                                            <option value="">--------------------</option>
+                                            <option value="model_name">모델명</option>
+                                            <option value="origin">원산지</option>
+                                            <option value="Condition">상품상태</option>
+                                        </select></li>
+                                </ul>
+                                <ul>
+                                    <li>상품구분</li>
+                                    <li>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="payment_status" value="all" checked>
+                                            <span class="rbtn"></span>
+                                            전체
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="payment_status" value="basic_product">
+                                            <span class="rbtn"></span>
+                                            기본 상품
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="payment_status" value="set_product">
+                                            <span class="rbtn"></span>
+                                            세트 상품
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="payment_status" value="reserved_product">
+                                            <span class="rbtn"></span>
+                                            예약 상품
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>상품분류</li>
+                                    <li>
+                                        <select class="select1" depth="1" name="categorys[]">
+                                            <option value="">- 대분류 선택 -</option>
+                                            <option value="42">직수입자동차</option>
+                                            <option value="43">커스텀/튜닝</option>
+                                            <option value="44">용품/파츠</option>
+                                            <option value="45">브랜드의류</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <select class="select1" depth="2" name="categorys[]">
+                                            <option value="">- 중분류 선택 -</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <select class="select1" id="eCategory3" depth="3" name="categorys[]">
+                                            <option value="">- 소분류 선택 -</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>상품등록일</li>
+                                    <li>
+                                        <select class="select1" name="date">
+                                            <option value="regist">상품등록일</option>
+                                            <option value="modify">상품최종수정일</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <div class="date-buttons">
+                                            <button>오늘</button>
+                                            <button>어제</button>
+                                            <button>3일</button>
+                                            <button>7일</button>
+                                            <button>15일</button>
+                                            <button>1개월</button>
+                                            <button>3개월</button>
+                                            <button>6개월</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="date-inputs">
+                                            <input type="date" />
+                                            <span>~</span>
+                                            <input type="date" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="search-btn">검색</button>
+                        <div class="box box3">
+                            <div class="total">
+                                <p>검색결과</p>
+                                <div>
+                                    <strong>: 0</strong>건
+                                </div>
+                                <select class="select1 select-sort">
+                                    <option value="regist_d">등록일 ↓</option>
+                                    <option value="regist_a">등록일 ↑</option>
+                                    <option value="orderNo_a">주문번호 ↑</option>
+                                    <option value="orderNo_d">주문번호 ↓</option>
+                                    <option value="product_a">상품명 ↑</option>
+                                    <option value="product_d">상품명 ↓</option>
+                                    <option value="totalPrice_a">판매가 ↑</option>
+                                    <option value="totalPrice_d">판매가 ↓</option>
+                                </select>
+                                <select class="select1 select-count">
+                                    <option value="10" selected="selected">10개씩보기</option>
+                                    <option value="20">20개씩보기</option>
+                                    <option value="30">30개씩보기</option>
+                                    <option value="50">50개씩보기</option>
+                                    <option value="100">100개씩보기</option>
+                                </select>
+                            </div>
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label class="custom-checkbox">
+                                                <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
+                                                    id="chkAll" checked>
+                                                <span class="cbx"></span>
+                                                전체
+                                            </label>
+                                        </th>
+                                        <th>No</th>
+                                        <th>상품구분</th>
+                                        <th>상품코드</th>
+                                        <th>상품명</th>
+                                        <th>판매가</th>
+                                        <th>할인가</th>
+                                        <th>모바일<br>
+                                            할인가</th>
+                                        <th>바로구매 URL
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 여기에 주문 데이터가 들어갈 예정 -->
+                                    <tr>
+                                        <td colspan="9" style="text-align:center; padding: 20px; color: #777;">
+                                            검색된 상품이 없습니다.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination"></div>
+                        </div>
                     </div>
-                    <!-- ========================= -->
                     <div class="sub_screen sub_screen3">
                         <h3>상품등록</h3>
+                        <!-- 표시 설정 -->
+                        <div class="box">
+                            <ul>
+                                <li>판매상태</li>
+                                <li>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="selling_status[1]" value="T" checked>
+                                        <span class="rbtn"></span>
+                                        판매함
+                                    </label>
+                                    <label class="custom-radio">
+                                        <input type="radio" name="selling_status[1]" value="F">
+                                        <span class="rbtn"></span>
+                                        판매안함
+                                    </label>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>상품분류 선택</li>
+                                <li>
+                                    <select class="select1" depth="1" name="categorys[]">
+                                        <option value="">- 대분류 선택 -</option>
+                                        <option value="42">직수입자동차</option>
+                                        <option value="43">커스텀/튜닝</option>
+                                        <option value="44">용품/파츠</option>
+                                        <option value="45">브랜드의류</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select class="select1" depth="2" name="categorys[]">
+                                        <option value="">- 중분류 선택 -</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select class="select1" id="eCategory3" depth="3" name="categorys[]">
+                                        <option value="">- 소분류 선택 -</option>
+                                    </select>
+                                </li>
+                                <button class="search-btn">저장</button>
+                            </ul>
+                        </div>
+                        <div class="fcs">
+                            <!-- 기본 정보-->
+                            <div class="box">
+                                <ul>
+                                    <li>상품명</li>
+                                    <li>
+                                        <input class="select1 text_input" type="text" name="product_name"
+                                            placeholder="예) 플라워 미니 원피스" data-approvalname="product_name" fw-label="상품명"
+                                            fw-filter="isFill" value="" maxcount="250">
+                                        <p>[<span class="blue_clor"> 0</span> / 250 ]</p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>영문 상품명</li>
+                                    <li>
+                                        <input class="select1 text_input" type="text" name="product_name"
+                                            placeholder="ex) Floral Mini Dress" data-approvalname="product_name"
+                                            fw-label="상품명" fw-filter="isFill" value="" maxcount="250">
+                                        <p>[<span class="blue_clor"> 0</span> / 250 ]</p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>모델명</li>
+                                    <li>
+                                        <input class="select1 text_input" type="text" name="model_name" placeholder=""
+                                            value="" maxcount="250">
+                                        <p>[<span class="blue_clor"> 0</span> / 250 ]</p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>상품코드</li>
+                                    <li>
+                                        <p> 자동생성</p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>자체 상품코드</li>
+                                    <li>
+                                        <input class="select1 text_input" type="text" name="self_product_coed"
+                                            placeholder="" value="" maxcount="40" style="width: 300px;">
+                                        <button class="check_duplicate_btn">중복확인</button>
+                                        <p>[<span class="blue_clor"> 0</span> / 40 ]</p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>상품상태</li>
+                                    <li>
+                                        <select class="select1" name="prd_used_type">
+                                            <option value="N" selected="selected">신상품</option>
+                                            <option value="U">중고상품</option>
+                                            <option value="B">반품상품</option>
+                                            <option value="R">재고상품</option>
+                                            <option value="E">전시상품</option>
+                                            <option value="F">리퍼상품</option>
+                                            <option value="S">스크래치상품</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>상품 요약설명</li>
+                                    <li>
+                                        <input class="select1 text_input" type="text" name="product_short_story"
+                                            placeholder="" value="" maxcount="250">
+                                        <p>[<span class="blue_clor"> 0</span> / 250 ]</p>
+
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>상품설명</li>
+                                    <li>
+                                        <textarea class="select1" rows="3" cols="20" name="simple_desc"
+                                            style="width: 600px;"></textarea>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>검색어 설정</li>
+                                    <li>
+                                        <textarea class="select1" rows="3" cols="20" name="Search Term Settings"
+                                            style="width: 600px;"></textarea>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fc">
+                                <!-- 판매 정보-->
+                                <div class="box">
+                                    <ul>
+                                        <li>소비자가</li>
+                                        <li>
+                                            <input class="select1 pric1" type="text" name="product_custom[1]" value="0">
+                                            <p class="blue_clor">KRW</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>공급가</li>
+                                        <li>
+                                            <input class="select1 pric1" type="text" name="product_custom[1]" value="0">
+                                            <p class="blue_clor">KRW</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>판매가</li>
+                                        <li>
+                                            <input class="select1 pric1" type="text" name="product_custom[1]" value="0">
+                                            <p class="blue_clor">KRW</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>과세구분
+                                        </li>
+                                        <li>
+                                            <label class="custom-radio">
+                                                <input type="radio" name="selling_status[1]" value="taxable" checked>
+                                                <span class="rbtn"></span>
+                                                과세상품<span class="red_colr">(10%)</span>
+                                            </label>
+                                            <label class="custom-radio">
+                                                <input type="radio" name="selling_status[1]" value="zero_rated">
+                                                <span class="rbtn"></span>
+                                                영세상품
+                                            </label>
+                                            <label class="custom-radio">
+                                                <input type="radio" name="selling_status[1]" value="tax_exempt">
+                                                <span class="rbtn"></span>
+                                                면세상품
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>구매제한</li>
+                                        <li>
+                                            <label class="custom-radio">
+                                                <input type="radio" name="purchase_limit[1]" value="default" checked>
+                                                <span class="rbtn"></span>
+                                                기본설정 사용
+                                            </label>
+                                            <label class="custom-radio">
+                                                <input type="radio" name="purchase_limit[1]" value="all">
+                                                <span class="rbtn"></span>
+                                                모두 구매 가능
+                                            </label>
+                                            <label class="custom-radio">
+                                                <input type="radio" name="purchase_limit[1]" value="members_only">
+                                                <span class="rbtn"></span>
+                                                회원만 구매 가능
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--이미지 정보-->
+                                <div class="box">
+                                    <ul>
+                                        <li>이미지등록</li>
+                                        <!-- 예만 필요해서 -->
+                                        <li style="width: 100%; justify-content: space-between;">
+                                            <div class="fccc">
+                                                <img src="../imgs/admin/img_upload108x108_1.gif" alt="사진업로드">
+                                                <!-- 숨겨진 파일 선택 인풋 -->
+                                                <p>상세이미지 등록</p>
+                                                <input type="file" id="imageUploadInput" style="display: none;"
+                                                    accept="image/*">
+                                                <!-- 사용자가 누를 버튼 -->
+                                                <button type="button" class="upload_image_btn"
+                                                    onclick="document.getElementById('imageUploadInput').click()">
+                                                    + 추가
+                                                </button>
+                                            </div>
+                                            <div class="fccc">
+                                                <img src="../imgs/admin/img_upload108x108_1.gif" alt="사진업로드">
+                                                <p>목록이미지 등록</p>
+
+                                                <!-- 숨겨진 파일 선택 인풋 -->
+                                                <input type="file" id="imageUploadInput" style="display: none;"
+                                                    accept="image/*">
+
+                                                <!-- 사용자가 누를 버튼 -->
+                                                <button type="button" class="upload_image_btn"
+                                                    onclick="document.getElementById('imageUploadInput').click()">
+                                                    + 추가
+                                                </button>
+                                            </div>
+                                            <div class="fccc">
+                                                <img src="../imgs/admin/img_upload108x108_1.gif" alt="사진업로드">
+                                                <p>작은목록이미지 등록</p>
+
+                                                <!-- 숨겨진 파일 선택 인풋 -->
+                                                <input type="file" id="imageUploadInput" style="display: none;"
+                                                    accept="image/*">
+                                                <!-- 사용자가 누를 버튼 -->
+                                                <button type="button" class="upload_image_btn"
+                                                    onclick="document.getElementById('imageUploadInput').click()">
+                                                    + 추가
+                                                </button>
+                                            </div>
+                                            <div class="fccc">
+                                                <img src="../imgs/admin/img_upload108x108_1.gif" alt="사진업로드">
+                                                <p>축소이미지
+                                                    등록</p>
+
+                                                <!-- 숨겨진 파일 선택 인풋 -->
+                                                <input type="file" id="imageUploadInput" style="display: none;"
+                                                    accept="image/*">
+                                                <!-- 사용자가 누를 버튼 -->
+                                                <button type="button" class="upload_image_btn"
+                                                    onclick="document.getElementById('imageUploadInput').click()">
+                                                    + 추가
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                    <!-- ========================= -->
                     <div class="sub_screen sub_screen4">
                         <h3>상품관리</h3>
                     </div>
@@ -515,10 +930,10 @@
             </div>
         </div>
     </section>
-    <script src="../script/search_box_fetch.js"></script>
-    <script src="../script/tab/admin_tab.js"></script>
     <script src="../script/header/header_fetch.js"></script>
     <script src="../script/orderListManager.js"></script>
+    <script src="../script/search_box_fetch.js"></script>
+    <script src="../script/tab/admin_tab.js"></script>
 </body>
 
 </html>

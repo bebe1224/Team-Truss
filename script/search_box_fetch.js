@@ -1,3 +1,5 @@
+// ===============================
+// 어드민페이지 주문 탭 필터
 (function () {
     const boxes = document.querySelectorAll(".box.box1");
 
@@ -23,7 +25,7 @@
                 box.innerHTML = "<p>컴포넌트 로드 실패</p>";
             });
     });
-    
+
     //input.js 이벤트 여기다 넣어야 페치요청해도 기능됨
     function initSearchBoxEvents(container) {
         const chkAll = container.querySelector('#chkAll');
@@ -47,6 +49,30 @@
         });
     }
 })();
+// ===============================
+// 어드민페이지 상품 탭 필터
+(function () {
+    const pffs = document.querySelectorAll(".product_filter_fetch");
 
+    const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    const fetchPath = isLocal
+        ? '/components/search_box2.html'
+        : '/Team-Truss/components/search_box2.html';
+
+    pffs.forEach(pff => {
+        fetch(fetchPath)
+            .then(response => {
+                if (!response.ok) throw new Error(`컴포넌트 로드 실패: ${response.status}`);
+                return response.text();
+            })
+            .then(html => {
+                pff.innerHTML = html;
+            })
+            .catch(err => {
+                console.error(err);
+                pff.innerHTML = "<p>컴포넌트 로드 실패</p>";
+            });
+    });
+})();
 
 

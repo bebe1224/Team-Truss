@@ -10,6 +10,31 @@
     color: rgb(250, 46, 46);
 }
 
+//플랙스
+.fcs {
+    @include fcs;
+    gap: 32px;
+    //이미 설정한 레이어 문제 안생길려면 써줘야함
+    width: calc(100% - 128px);
+    max-width: 1540px;
+}
+
+.fc {
+    @include fc;
+    gap: 44px;
+    width: 100%;
+
+    // 이미 박스에다가   width: 100% - 124px 해놔서 
+    .box {
+        width: 100% !important;
+    }
+}
+
+.fccc {
+    @include fccc;
+    gap: 16px;
+}
+
 // ==============================================
 //이중창 생기는거 방지
 body {
@@ -351,6 +376,57 @@ $gradient-end: rgb(255, 48, 255);
 }
 
 //sub_screen .search-box
+// .box  .search-box .col 안에 있어서 밖으로 빼놨음
+.date-buttons {
+    display: flex;
+    gap: 8px;
+
+    button {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        color: #444;
+        padding: 6px 12px;
+        font-size: 13px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+            background-color: #5353ff;
+            color: #fff;
+        }
+
+        &:active {
+            background-color: #3700b3;
+        }
+    }
+}
+
+.date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    input[type="date"] {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: border 0.3s ease;
+
+        &:focus {
+            border-color: #5353ff;
+            box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
+        }
+    }
+
+    span {
+        font-size: 14px;
+        color: #444;
+    }
+}
+
 .sect1 {
     .screen_wrap {
         .screen {
@@ -368,6 +444,7 @@ $gradient-end: rgb(255, 48, 255);
                                 margin-bottom: 16px;
                             }
 
+                            //이렇게 하면 .col 안에 있을때만 스타일이 적용됨
                             .col {
                                 &.label {
                                     width: 100px;
@@ -385,55 +462,55 @@ $gradient-end: rgb(255, 48, 255);
 
                                 // .select {}
 
-                                .date-buttons {
-                                    display: flex;
-                                    gap: 8px;
+                                // .date-buttons {
+                                //     display: flex;
+                                //     gap: 8px;
 
-                                    button {
-                                        background-color: #ffffff;
-                                        border: 1px solid #ccc;
-                                        color: #444;
-                                        padding: 6px 12px;
-                                        font-size: 13px;
-                                        border-radius: 8px;
-                                        cursor: pointer;
-                                        transition: background-color 0.3s ease, color 0.3s ease;
+                                //     button {
+                                //         background-color: #ffffff;
+                                //         border: 1px solid #ccc;
+                                //         color: #444;
+                                //         padding: 6px 12px;
+                                //         font-size: 13px;
+                                //         border-radius: 8px;
+                                //         cursor: pointer;
+                                //         transition: background-color 0.3s ease, color 0.3s ease;
 
-                                        &:hover {
-                                            background-color: #5353ff;
-                                            color: #fff;
-                                        }
+                                //         &:hover {
+                                //             background-color: #5353ff;
+                                //             color: #fff;
+                                //         }
 
-                                        &:active {
-                                            background-color: #3700b3;
-                                        }
-                                    }
-                                }
+                                //         &:active {
+                                //             background-color: #3700b3;
+                                //         }
+                                //     }
+                                // }
 
-                                .date-inputs {
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 8px;
+                                // .date-inputs {
+                                //     display: flex;
+                                //     align-items: center;
+                                //     gap: 8px;
 
-                                    input[type="date"] {
-                                        padding: 6px 12px;
-                                        border: 1px solid #ccc;
-                                        font-size: 14px;
-                                        border-radius: 8px;
-                                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                                        transition: border 0.3s ease;
+                                //     input[type="date"] {
+                                //         padding: 6px 12px;
+                                //         border: 1px solid #ccc;
+                                //         font-size: 14px;
+                                //         border-radius: 8px;
+                                //         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                                //         transition: border 0.3s ease;
 
-                                        &:focus {
-                                            border-color: #5353ff;
-                                            box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
-                                        }
-                                    }
+                                //         &:focus {
+                                //             border-color: #5353ff;
+                                //             box-shadow: 0 0 8px rgba(83, 83, 255, 0.3);
+                                //         }
+                                //     }
 
-                                    span {
-                                        font-size: 14px;
-                                        color: #444;
-                                    }
-                                }
+                                //     span {
+                                //         font-size: 14px;
+                                //         color: #444;
+                                //     }
+                                // }
                             }
                         }
                     }
@@ -699,7 +776,7 @@ $gradient-end: rgb(255, 48, 255);
             .box {
                 padding: 80px 0px;
                 justify-content: center !important;
-                gap: 32px !important;
+                gap: 64px !important;
             }
         }
     }
@@ -718,7 +795,8 @@ $gradient-end: rgb(255, 48, 255);
     }
 }
 
-//screen2  .sub_screen2 .ul li a span, button 플렉스 스타일
+
+//screen2  .sub_screen2 .box .ul li a span, button 플렉스 스타 (공통)
 .screen2 {
     .sub_screen_wrap {
         .sub_screen2 {
@@ -726,6 +804,7 @@ $gradient-end: rgb(255, 48, 255);
                 //기본 상태
                 // @include fss;
                 justify-content: space-between !important;
+
                 ul {
                     @include fcc;
                     gap: 16px;
@@ -741,6 +820,140 @@ $gradient-end: rgb(255, 48, 255);
                     }
                 }
             }
+        }
+    }
+}
+
+//screen2  .sub_screen2 search_box2플렉스,
+// box2 .ul li 스타일, custom-radio 스타일
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen2 {
+            .box2 {
+                .search_box2 {
+                    @include fcsc;
+                    gap: 16px;
+
+                    ul {
+
+                        li {
+                            &:first-of-type {
+                                width: 76px;
+                            }
+
+                            //폰트웨이트 볼드 되 있길래
+                            .custom-radio {
+                                font-weight: lighter;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//.screen2  .sub_screen_wrap .sub_screen2 .box3  플랙스 설정
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen2 {
+            .box3 {
+                @include fcsc;
+            }
+        }
+    }
+}
+
+// ==============================================
+// .screen2  .sub_screen3  .box 플랙스,폰트웨이트, 
+// ul에도 플랙스 설정 첫번째 li 위드값고정값과 플랙스 줌
+//p에는 폰트웨이트 라이터 줌
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen3 {
+            .box {
+                @include fcsc;
+                gap: 20px !important;
+                font-weight: bold;
+                padding: 16px;
+
+                ul {
+                    @include fsc;
+                    gap: 16px;
+                    width: 100%;
+
+                    //이미지 얼롭드 li 박스에만 내가 따로 인라인 스타일줌
+                    //width: 100%; justify-content: space-between;
+                    li {
+                        @include fss;
+                        gap: 16px;
+
+                        &:first-of-type {
+
+                            width: 100px;
+
+                        }
+
+                        p {
+                            font-weight: lighter;
+                        }
+
+                        .custom-radio {
+                            font-weight: lighter;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+//select1 = text_input 한테 위드값 고정으로 줌
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen3 {
+            .box {
+                ul {
+                    li {
+                        .text_input {
+                            width: 500px;
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+//.sub_screen3 ul li .pric1  텍스트 에얼라인 조정
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen3 {
+            .box {
+                ul {
+
+                    li {
+                        .pric1 {
+                            width: 60px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+//sub_screen2 sub_screen 여백 조정
+.screen2 {
+    .sub_screen_wrap {
+        .sub_screen {
+            //밑에 여백
+            padding: 20px 0px 120px 0px !important;
         }
     }
 }
