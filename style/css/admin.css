@@ -1,3 +1,97 @@
+.card_rainbow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  width: 240px;
+  height: 300px;
+  background: #f7f5f5;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.card_rainbow h2 {
+  z-index: 1;
+  font-size: 1.1em;
+}
+.card_rainbow p {
+  font-weight: bold;
+  z-index: 1;
+  font-size: 1.1em;
+}
+.card_rainbow::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 130%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+.card_rainbow::after {
+  content: "";
+  position: absolute;
+  background: #f7f5f5;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.card_rainbow2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  width: 240px;
+  height: 300px;
+  background: #f7f5f5;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.card_rainbow2 h2 {
+  z-index: 1;
+  font-size: 1.1em;
+}
+.card_rainbow2 p {
+  font-weight: bold;
+  z-index: 1;
+  font-size: 1.1em;
+}
+.card_rainbow2::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 130%;
+  background-image: linear-gradient(180deg, rgb(123, 0, 255), rgb(0, 255, 200));
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+.card_rainbow2::after {
+  content: "";
+  position: absolute;
+  background: #f7f5f5;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .blue_clor {
   color: #007bff;
 }
@@ -11,8 +105,13 @@
   justify-content: center;
   align-items: start;
   gap: 32px;
-  width: calc(100% - 128px);
-  max-width: 1540px;
+}
+
+.fsbc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
 }
 
 .fc {
@@ -20,9 +119,6 @@
   flex-direction: column;
   gap: 44px;
   width: 100%;
-}
-.fc .box {
-  width: 100% !important;
 }
 
 .fccc {
@@ -111,57 +207,6 @@ body {
   background-color: rgba(56, 45, 71, 0.836);
 }
 
-.card_rainbow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 16px;
-  width: 240px;
-  height: 300px;
-  background: #f7f5f5;
-  position: relative;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-}
-.card_rainbow h2 {
-  z-index: 1;
-  font-size: 1.1em;
-}
-.card_rainbow p {
-  font-weight: bold;
-  z-index: 1;
-  font-size: 1.1em;
-}
-.card_rainbow::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 130%;
-  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
-  animation: rotBGimg 3s linear infinite;
-  transition: all 0.2s linear;
-}
-.card_rainbow::after {
-  content: "";
-  position: absolute;
-  background: #f7f5f5;
-  inset: 5px;
-  border-radius: 15px;
-}
-
-@keyframes rotBGimg {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .sect1 {
   display: flex;
   justify-content: center;
@@ -242,20 +287,22 @@ body {
 }
 
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen {
+  width: 100%;
+  position: absolute;
+  display: none;
+  padding: 20px 0px 200px 0px;
+}
+.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .inner {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   gap: 48px;
-  position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  width: 100%;
-  padding: 20px 0px 200px 0px;
+  width: calc(100% - 124px);
+  height: auto;
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen.active {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box {
@@ -263,8 +310,7 @@ body {
   justify-content: start;
   align-items: start;
   gap: 16px;
-  width: calc(100% - 128px);
-  max-width: 1540px;
+  width: 100%;
   height: auto;
   background-color: #fafafa;
   color: #444;
@@ -597,4 +643,10 @@ body {
 .screen2 .sub_screen_wrap .sub_screen3 .box ul li .pric1 {
   width: 60px;
   text-align: center;
+}
+
+.screen3 .sub_screen_wrap .sub_screen1 .box {
+  padding: 80px 0px;
+  justify-content: center !important;
+  gap: 64px !important;
 }

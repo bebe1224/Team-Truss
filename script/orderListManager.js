@@ -234,3 +234,7 @@ function renderPagination() {
     });
     pagination.appendChild(nextBtn);
 }
+
+
+
+

@@ -17,6 +17,10 @@ mainScreens.forEach(screen => {
     });
 });
 
+
+
+
+
 // ✅ 상위 탭 클릭 시 새로고침되게 (쿼리스트링에 탭 인덱스 저장)
 mainTabBtns.forEach((btn, i) => {
     btn.addEventListener("click", () => {
@@ -40,8 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const subScreens = mainScreens[tabIndex].querySelectorAll(".sub_screen");
 
         if (subTabBtns.length > 0 && subScreens.length > 0) {
-            subTabBtns[3].classList.add("active");
-            subScreens[3].classList.add("active");
+            subTabBtns[0].classList.add("active");
+            subScreens[0].classList.add("active");
         }
     }
 });

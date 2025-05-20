@@ -1,6 +1,128 @@
 @import './flex_mixins.scss';
 @import './color.scss';
+// ==============================================
+// 색상 변수
+$bg-color: #f7f5f5;
+$gradient-start: rgb(0, 183, 255);
+$gradient-end: rgb(255, 48, 255);
+$bg-color2: #f7f5f5;
+$gradient-start2: rgb(123, 0, 255); // 진한 보라
+$gradient-end2: rgb(0, 255, 200); // 밝은 청록
 
+// $hover-gradient-start: rgb(81, 255, 0); // 필요 시 활성화
+// $hover-gradient-end: purple;
+.card_rainbow {
+    @include fccc;
+    gap: 16px;
+    width: 240px;
+    height: 300px;
+    background: $bg-color;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+    h2 {
+        z-index: 1;
+        font-size: 1.1em;
+    }
+
+    p {
+        font-weight: bold;
+        z-index: 1;
+        font-size: 1.1em;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 130%;
+        background-image: linear-gradient(180deg, $gradient-start, $gradient-end);
+        animation: rotBGimg 3s linear infinite;
+        transition: all 0.2s linear;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background: $bg-color;
+        inset: 5px;
+        border-radius: 15px;
+    }
+
+    // 호버 효과 (필요 시 주석 해제)
+    // &:hover::before {
+    //   background-image: linear-gradient(180deg, $hover-gradient-start, $hover-gradient-end);
+    //   animation: rotBGimg 3.5s linear infinite;
+    // }
+}
+
+.card_rainbow2 {
+    @include fccc;
+    gap: 16px;
+    width: 240px;
+    height: 300px;
+    background: $bg-color2;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+    h2 {
+        z-index: 1;
+        font-size: 1.1em;
+    }
+
+    p {
+        font-weight: bold;
+        z-index: 1;
+        font-size: 1.1em;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 130%;
+        background-image: linear-gradient(180deg, $gradient-start2, $gradient-end2);
+        animation: rotBGimg 3s linear infinite;
+        transition: all 0.2s linear;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background: $bg-color2;
+        inset: 5px;
+        border-radius: 15px;
+    }
+
+    // 호버 효과 (필요 시 주석 해제)
+    // &:hover::before {
+    //   background-image: linear-gradient(180deg, $hover-gradient-start2, $hover-gradient-end2);
+    //   animation: rotBGimg 3.5s linear infinite;
+    // }
+}
+
+// 회전 애니메이션
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// ==============================================
 // 폰트 칼러 스타일
 .blue_clor {
     color: #007bff;
@@ -15,20 +137,17 @@
 .fcs {
     @include fcs;
     gap: 32px;
-    //이미 설정한 레이어 문제 안생길려면 써줘야함
-    width: calc(100% - 128px);
-    max-width: 1540px;
+}
+
+.fsbc {
+    @include fsbc;
+    gap: 32px;
 }
 
 .fc {
     @include fc;
     gap: 44px;
     width: 100%;
-
-    // 이미 박스에다가   width: 100% - 124px 해놔서 
-    .box {
-        width: 100% !important;
-    }
 }
 
 .fccc {
@@ -164,75 +283,6 @@ body {
     }
 }
 
-//screen2 sub_screen1 요소
-// 색상 변수
-$bg-color: #f7f5f5;
-$gradient-start: rgb(0, 183, 255);
-$gradient-end: rgb(255, 48, 255);
-
-// $hover-gradient-start: rgb(81, 255, 0); // 필요 시 활성화
-// $hover-gradient-end: purple;
-.card_rainbow {
-    @include fccc;
-    gap: 16px;
-    width: 240px;
-    height: 300px;
-    background: $bg-color;
-    position: relative;
-    display: flex;
-    place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-
-    h2 {
-        z-index: 1;
-        font-size: 1.1em;
-    }
-
-    p {
-        font-weight: bold;
-        z-index: 1;
-        font-size: 1.1em;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        width: 100px;
-        height: 130%;
-        background-image: linear-gradient(180deg, $gradient-start, $gradient-end);
-        animation: rotBGimg 3s linear infinite;
-        transition: all 0.2s linear;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        background: $bg-color;
-        inset: 5px;
-        border-radius: 15px;
-    }
-
-    // 호버 효과 (필요 시 주석 해제)
-    // &:hover::before {
-    //   background-image: linear-gradient(180deg, $hover-gradient-start, $hover-gradient-end);
-    //   animation: rotBGimg 3.5s linear infinite;
-    // }
-}
-
-// 회전 애니메이션
-@keyframes rotBGimg {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 // ==============================================
 //sect1 플렉스 위치조정
 .sect1 {
@@ -348,23 +398,27 @@ $gradient-end: rgb(255, 48, 255);
 }
 
 //sub_screen 스타일 플렉스 위치조정  탭기능을 위한 액티브 추가 
+//inner 추가해서 안정성 추구
 .sect1 {
     .screen_wrap {
         .screen {
             .sub_screen_wrap {
                 .sub_screen {
-                    @include fccc;
-                    gap: 48px;
-                    position: absolute;
-                    opacity: 0;
-                    visibility: hidden;
                     width: 100%;
+                    position: absolute;
+                    display: none;
                     //밑에 여백
                     padding: 20px 0px 200px 0px;
 
+                    .inner {
+                        @include fscc;
+                        gap: 48px;
+                        width: calc(100% - 124px);
+                        height: auto;
+                    }
+
                     &.active {
-                        opacity: 1;
-                        visibility: visible;
+                        display: block;
                     }
                 }
             }
@@ -382,8 +436,7 @@ $gradient-end: rgb(255, 48, 255);
                         @include fss;
                         gap: 16px;
                         //양옆 여백을 위해서
-                        width: calc(100% - 128px);
-                        max-width: 1540px;
+                        width: 100%;
                         height: auto;
                         background-color: #fafafa;
                         color: #444;
@@ -951,3 +1004,15 @@ $gradient-end: rgb(255, 48, 255);
 }
 
 // ==============================================
+//screen3  .sub_screen1 .box 플랙스,패딩
+.screen3 {
+    .sub_screen_wrap {
+        .sub_screen1 {
+            .box {
+                padding: 80px 0px;
+                justify-content: center !important;
+                gap: 64px !important;
+            }
+        }
+    }
+}
