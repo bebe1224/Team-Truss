@@ -92,6 +92,10 @@
     transform: rotate(360deg);
   }
 }
+.font_weight_lighter {
+  font-weight: lighter;
+}
+
 .blue_clor {
   color: #007bff;
 }
@@ -643,6 +647,11 @@ body {
 .screen2 .sub_screen_wrap .sub_screen3 .box ul li .pric1 {
   width: 60px;
   text-align: center;
+}
+
+.temporary ul li {
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: line-through;
 }
 
 .screen3 .sub_screen_wrap .sub_screen1 .box {

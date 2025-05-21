@@ -546,6 +546,33 @@
                                         </label>
                                     </li>
                                 </ul>
+                                <!-- ------------ -->
+                                <ul>
+                                    <li>진열 위치 선택</li>
+                                    <li>
+                                        <label class="custom-radio">
+                                            <input type="radio" name="display_location" value="main">
+                                            <span class="rbtn"></span>
+                                            메인 페이지에 진열
+                                        </label>
+
+                                        <!-- 서브 진열 여부 -->
+                                        <label class="custom-radio">
+                                            <input type="radio" name="display_location" value="sub">
+                                            <span class="rbtn"></span>
+                                            서브 페이지에 진열
+                                        </label>
+                                    </li>
+                                </ul>
+                                <!-- ------------ -->
+                                <ul id="displayOptions" class="display-option-box">
+                                    <li id="displayLabel">진열 옵션</li>
+                                    <li id="displayInputs">
+                                        <!-- 여기에 JS로 동적으로 옵션들 삽입 -->
+                                    </li>
+                                </ul>
+
+
                                 <ul>
                                     <li>상품분류 선택</li>
                                     <li>
@@ -569,6 +596,7 @@
                                     </li>
                                     <button class="search-btn">저장</button>
                                 </ul>
+
                             </div>
                             <div class="fsbc" style="width: 100%;">
                                 <!-- 기본 정보-->
@@ -855,13 +883,12 @@
                 </div>
             </div>
             <!-- ========================= -->
-            <div class="screen screen3">
+            <div class="screen screen2">
                 <div class="wrap">
-                    <h2>회원관리</h2>
+                    <h2>회원</h2>
                     <ul class="tab_menus">
                         <li>회원 대시보드</li>
-                        <li>회원 조회</li>
-                        <li>회원 관리</li>
+                        <li>회원정보 관리</li>
                     </ul>
                 </div>
                 <div class="sub_screen_wrap">
@@ -888,6 +915,278 @@
                             </div>
                         </div>
                     </div>
+                    <div class="sub_screen sub_screen2">
+                        <div class="inner">
+                            <h3>회원정보 관리</h3>
+                            <div class="fsbc" style="width: 100%;">
+                                <div class="box box2">
+                                    <div class="search_box2">
+                                        <ul>
+                                            <li>가입일</li>
+                                            <li>
+                                                <select name="day_type" class="select1">
+                                                    <option value="" selected="selected">- 선택 -</option>
+                                                    <option value="1">가입일</option>
+                                                    <option value="2">생일</option>
+                                                    <option value="3">결혼기념일</option>
+                                                    <option value="4">배우자생일</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>개인정보</li>
+                                            <li>
+                                                <select name="search_type" class="select1">
+                                                    <option value="name">이름</option>
+                                                    <option value="member_id" selected="">아이디</option>
+                                                    <option value="email">이메일</option>
+                                                    <option value="phone">전화번호</option>
+                                                    <option value="mobile">휴대폰번호</option>
+                                                    <option value="nick_name">별명</option>
+                                                    <option value="addr">주소</option>
+                                                    <option value="cssn">사업자번호</option>
+                                                    <option value="cname">상호명</option>
+                                                </select>
+                                                <input type="text" name="type" value="" class="select1"
+                                                    style="width:130px;">
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>회원등급</li>
+                                            <li>
+                                                <select name="group_no" class="select1">
+                                                    <option value="" selected="selected">전체</option>
+                                                    <option value="1">일반회원</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>나이</li>
+                                            <li><input type="text" name="age1" value="" class="select1"
+                                                    style="width:40px;" maxlength="2"> 세~ <input type="text" name="age2"
+                                                    value="" class="select1" style="width:40px;" maxlength="2">세 </li>
+                                        </ul>
+                                        <ul>
+                                            <li>성별</li>
+                                            <li>
+                                                <label class="custom-radio">
+                                                    <input type="radio" name="sex" value="M" checked>
+                                                    <span class="rbtn"></span>
+                                                    남
+                                                </label>
+                                                <label class="custom-radio">
+                                                    <input type="radio" name="sex" value="W">
+                                                    <span class="rbtn"></span>
+                                                    여
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>지역</li>
+                                            <li>
+                                                <select name="region" class="select1">
+                                                    <option value="region_00" selected="">전체</option>
+                                                    <option value="region_01">경기</option>
+                                                    <option value="region_02">서울</option>
+                                                    <option value="region_03">인천</option>
+                                                    <option value="region_04">강원</option>
+                                                    <option value="region_05">충남</option>
+                                                    <option value="region_06">충북</option>
+                                                    <option value="region_07">대전</option>
+                                                    <option value="region_08">경북</option>
+                                                    <option value="region_09">경남</option>
+                                                    <option value="region_10">대구</option>
+                                                    <option value="region_11">부산</option>
+                                                    <option value="region_12">울산</option>
+                                                    <option value="region_13">전북</option>
+                                                    <option value="region_14">전남</option>
+                                                    <option value="region_15">광주</option>
+                                                    <option value="region_15_01">세종</option>
+                                                    <option value="region_16">제주</option>
+                                                    <option value="region_17">해외</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="box box2">
+                                    <div class="search_box2 temporary">
+                                        <ul>
+                                            <li>필요시추가</li>
+                                            <li>
+                                                <select name="day_type" class="select1">
+                                                    <option value="" selected="selected">- 선택 -</option>
+                                                    <option value="1">가입일</option>
+                                                    <option value="2">생일</option>
+                                                    <option value="3">결혼기념일</option>
+                                                    <option value="4">배우자생일</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>필요시추가</li>
+                                            <li>
+                                                <select name="search_type" class="select1">
+                                                    <option value="name">이름</option>
+                                                    <option value="member_id" selected="">아이디</option>
+                                                    <option value="email">이메일</option>
+                                                    <option value="phone">전화번호</option>
+                                                    <option value="mobile">휴대폰번호</option>
+                                                    <option value="nick_name">별명</option>
+                                                    <option value="addr">주소</option>
+                                                    <option value="cssn">사업자번호</option>
+                                                    <option value="cname">상호명</option>
+                                                </select>
+                                                <input type="text" name="type" value="" class="select1"
+                                                    style="width:130px;">
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>필요시추가</li>
+                                            <li>
+                                                <select name="group_no" class="select1">
+                                                    <option value="" selected="selected">전체</option>
+                                                    <option value="1">일반회원</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>필요시추가</li>
+                                            <li><input type="text" name="age1" value="" class="select1"
+                                                    style="width:40px;" maxlength="2"> 세~ <input type="text" name="age2"
+                                                    value="" class="select1" style="width:40px;" maxlength="2">세 </li>
+                                        </ul>
+                                        <ul>
+                                            <li>필요시추가</li>
+                                            <li>
+                                                <label class="custom-radio">
+                                                    <input type="radio" name="sex" value="M" checked>
+                                                    <span class="rbtn"></span>
+                                                    남
+                                                </label>
+                                                <label class="custom-radio">
+                                                    <input type="radio" name="sex" value="W">
+                                                    <span class="rbtn"></span>
+                                                    여
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>필요시추가</li>
+                                            <li>
+                                                <select name="region" class="select1">
+                                                    <option value="region_00" selected="">전체</option>
+                                                    <option value="region_01">경기</option>
+                                                    <option value="region_02">서울</option>
+                                                    <option value="region_03">인천</option>
+                                                    <option value="region_04">강원</option>
+                                                    <option value="region_05">충남</option>
+                                                    <option value="region_06">충북</option>
+                                                    <option value="region_07">대전</option>
+                                                    <option value="region_08">경북</option>
+                                                    <option value="region_09">경남</option>
+                                                    <option value="region_10">대구</option>
+                                                    <option value="region_11">부산</option>
+                                                    <option value="region_12">울산</option>
+                                                    <option value="region_13">전북</option>
+                                                    <option value="region_14">전남</option>
+                                                    <option value="region_15">광주</option>
+                                                    <option value="region_15_01">세종</option>
+                                                    <option value="region_16">제주</option>
+                                                    <option value="region_17">해외</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="search-btn">검색</button>
+                            <div class="box box3">
+                                <div class="total">
+                                    <p>검색결과</p>
+                                    <div>
+                                        <strong>: 0</strong>건
+                                    </div>
+                                    <select class="select1 select-sort">
+                                        <option value="regist_d">등록일 ↓</option>
+                                        <option value="regist_a">등록일 ↑</option>
+                                        <option value="name_a">이름순</option>
+                                        <option value="name_d">이름역순</option>
+                                        <option value="id_a">아이디순</option>
+                                        <option value="id_d">아이디역순</option>
+                                        <option value="grade_a">회원등급 낮은순</option>
+                                        <option value="grade_d">회원등급 높은순</option>
+                                        <option value="age_a">나이순</option>
+                                        <option value="age_d">나이역순</option>
+                                        <option value="male">남성 회원</option>
+                                        <option value="female">여성 회원</option>
+                                    </select>
+                                    <select class="select1 select-count">
+                                        <option value="10" selected="selected">10개씩보기</option>
+                                        <option value="20">20개씩보기</option>
+                                        <option value="30">30개씩보기</option>
+                                        <option value="50">50개씩보기</option>
+                                        <option value="100">100개씩보기</option>
+                                    </select>
+                                </div>
+                                <table class="order-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
+                                                        id="chkAll" checked>
+                                                    <span class="cbx"></span>
+                                                    전체
+                                                </label>
+                                            </th>
+                                            <th>등록일</th>
+                                            <th>이름</th>
+                                            <th>아이디</th>
+                                            <th>휴대전화</th>
+                                            <th>등급</th>
+                                            <th>나이</th>
+                                            <th>성별</th>
+                                            <th>자역
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 여기에 주문 데이터가 들어갈 예정 -->
+                                        <tr>
+                                            <td colspan="9" style="text-align:center; padding: 20px; color: #777;">
+                                                검색된 상품이 없습니다.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen screen2">
+                <div class="wrap">
+                    <h2>회원</h2>
+                    <ul class="tab_menus">
+                        <li>회원 대시보드</li>
+                        <li>회원정보 관리</li>
+                    </ul>
+                </div>
+                <div class="sub_screen_wrap">
+                    <div class="sub_screen sub_screen1">
+                        <div class="inner">
+                            <h3>통계 매출관리</h3>
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                    <div class="sub_screen sub_screen2">
+                        <div class="inner">
+                            <h3>회원정보 관리</h3>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -896,6 +1195,7 @@
     <script src="../script/orderListManager.js"></script>
     <script src="../script/search_box_fetch.js"></script>
     <script src="../script/tab/admin_tab.js"></script>
+    <script src="../script/admin/product.js"></script>
 </body>
 
 </html>

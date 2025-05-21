@@ -1,5 +1,7 @@
 @import './flex_mixins.scss';
 @import './color.scss';
+
+//TIP 여기서 스크린은 스크린 순서가아니라 스크린 종류이다
 // ==============================================
 // 색상 변수
 $bg-color: #f7f5f5;
@@ -120,6 +122,12 @@ $gradient-end2: rgb(0, 255, 200); // 밝은 청록
     to {
         transform: rotate(360deg);
     }
+}
+
+// ==============================================
+// 폰트 웨이트
+.font_weight_lighter {
+    font-weight: lighter;
 }
 
 // ==============================================
@@ -1004,6 +1012,15 @@ body {
 }
 
 // ==============================================
+.temporary {
+    ul {
+        li {
+            color: $primary-color5;
+            text-decoration: line-through;
+        }
+    }
+}
+
 //screen3  .sub_screen1 .box 플랙스,패딩
 .screen3 {
     .sub_screen_wrap {
