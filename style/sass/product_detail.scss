@@ -7,7 +7,6 @@ body {
 
 .sect1_2 {
     .inner {
-
         @include fsbc;
         align-items: start;
         gap: 48px;
@@ -44,11 +43,17 @@ body {
                 width: 100%;
                 border: 1px solid #000;
 
+
+
                 li {
                     @include fcc;
                     width: 80px;
                     height: 100px;
                     cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
 
                     img {
                         object-fit: cover;
@@ -102,10 +107,26 @@ body {
                 border-top: 2px solid $secondary-color0;
                 padding: 32px 0px;
 
-                .quantity-selector {}
+                .quantity-selector {
+                    input {
+                        text-align: center; // 수평 가운데
+                        vertical-align: middle;
+                        font-size: 16px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        // 시스템 기본 스타일 제거 (크롬 등 브라우저 기본 스타일 초기화)
+                        -moz-appearance: textfield;
+
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+                }
 
                 .p3 {
-                    font-weight: bold
+                    font-weight: bold;
                 }
             }
 

@@ -44,8 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const subScreens = mainScreens[tabIndex].querySelectorAll(".sub_screen");
 
         if (subTabBtns.length > 0 && subScreens.length > 0) {
-            subTabBtns[1].classList.add("active");
-            subScreens[1].classList.add("active");
+            subTabBtns[0].classList.add("active");
+            subScreens[0].classList.add("active");
         }
     }
 });

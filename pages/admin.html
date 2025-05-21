@@ -1262,25 +1262,235 @@
                 </div>
             </div>
             <!-- ========================= -->
-            <div class="screen screen2">
+            <div class="screen screen2 settlement_screen">
                 <div class="wrap">
                     <h2>회원</h2>
                     <ul class="tab_menus">
-                        <li>회원 대시보드</li>
-                        <li>회원정보 관리</li>
+                        <li>통계 대시보드</li>
+                        <li>매출/정산 관리</li>
                     </ul>
                 </div>
                 <div class="sub_screen_wrap">
                     <div class="sub_screen sub_screen1">
                         <div class="inner">
-                            <h3>통계 매출관리</h3>
-                            <div class="box"></div>
+                            <h3>매출 통계 대시보드</h3>
+                            <div class="box">
+                                <div class="card_rainbow3">
+                                    <h2>일일 매출</h2>
+                                    <p class="blue_clor">0원</p>
+                                </div>
+                                <div class="card_rainbow3">
+                                    <h2>주 매출</h2>
+                                    <p class="blue_clor">0원</p>
+                                </div>
+                                <div class="card_rainbow3">
+                                    <h2>월 매출</h2>
+                                    <p class="red_colr">0원</p>
+                                </div>
+                                <div class="card_rainbow3">
+                                    <h2>TOTAL</h2>
+                                    <p class="red_colr">0원</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="sub_screen sub_screen2">
                         <div class="inner">
-                            <h3>회원정보 관리</h3>
+                            <h3>매출/정산 관리</h3>
+                            <div class="fsbc ais" style="width: 100%;">
+                                <div class="box box2">
+                                    <div class="search_box2">
+                                        <ul>
+                                            <li>매출/정산 관리</li>
+                                            <li>
+                                                <label for="startDate">시작일</label>
+                                                <input type="date" id="startDate" class="select1" />
+                                                <label for="endDate" style="margin-left:12px;">종료일</label>
+                                                <input type="date" id="endDate" class="select1" />
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>총 매출액</li>
+                                            <li>
+                                                <input type="number" id="totalSales" placeholder="숫자 입력"
+                                                    class="select1" />
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>수수료율 (%)</li>
+                                            <li>
+                                                <input type="number" id="commissionRate" placeholder="예: 5"
+                                                    class="select1" min="0" max="100" step="0.1" />
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>최종 정산액</li>
+                                            <li>
+                                                <input type="number" id="finalSettlement" class="select1" readonly
+                                                    placeholder="자동 계산" />
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>정산 상태</li>
+                                            <li>
+                                                <select id="settlementStatus" class="select1">
+                                                    <option value="pending">미정산</option>
+                                                    <option value="processing">진행중</option>
+                                                    <option value="completed">완료</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>정산 내역 다운로드</li>
+                                            <li>
+                                                <button id="downloadSettlement" type="button"
+                                                    class="download_excel_btn">엑셀
+                                                    다운로드</button>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>세금 계산 여부</li>
+                                            <li>
+                                                <label class="custom-checkbox font_weight_lighter">
+                                                    <input type="checkbox" id="taxIncluded" class="fChk" />
+                                                    <span class="cbx"></span>
+                                                    세금 포함
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="box box2" style="height: 339px;">
+                                    <div class="search_box2">
+                                        <ul>
+                                            <li>매출 분석 구분</li>
+                                            <li>
+                                                <select id="salesPeriod" class="select1">
+                                                    <option value="daily">일별 매출</option>
+                                                    <option value="weekly">주별 매출</option>
+                                                    <option value="monthly">월별 매출</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>기간 선택</li>
+                                            <li>
+                                                <label for="analysisStartDate">시작일</label>
+                                                <input type="date" id="analysisStartDate" class="select1">
+                                                <label for="analysisEndDate" style="margin-left:12px;">종료일</label>
+                                                <input type="date" id="analysisEndDate" class="select1">
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>총 매출액</li>
+                                            <li>
+                                                <input type="number" id="analyzedTotalSales" class="select1" readonly
+                                                    placeholder="자동 계산">
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>그래프 보기</li>
+                                            <li>
+                                                <button id="viewSalesChart" type="button" class="chart_btn">매출 그래프
+                                                    보기</button>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>엑셀 다운로드</li>
+                                            <li>
+                                                <button id="downloadSalesReport" type="button"
+                                                    class="download_excel_btn">분석
+                                                    리포트 다운로드</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="search-btn">매출/정산 결과보기</button>
+                            <div class="box box3">
+                                <div class="total fsbc">
+                                    <div class="search_summary_bar">
+                                        <p>정산 검색 결과</p>
+                                        <div>
+                                            <strong>: 0</strong>건
+                                        </div>
 
+                                        <!-- 정렬 기준 셀렉트 -->
+                                        <select class="select1 select-sort">
+                                            <option value="date_d">정산일 ↓</option>
+                                            <option value="date_a">정산일 ↑</option>
+                                            <option value="sales_d">매출액 높은순</option>
+                                            <option value="sales_a">매출액 낮은순</option>
+                                            <option value="commission_d">수수료 높은순</option>
+                                            <option value="commission_a">수수료 낮은순</option>
+                                            <option value="status_completed">정산 완료</option>
+                                            <option value="status_pending">미정산</option>
+                                        </select>
+
+                                        <!-- 페이지 당 표시 개수 셀렉트 -->
+                                        <select class="select1 select-count">
+                                            <option value="10" selected="selected">10건씩 보기</option>
+                                            <option value="20">20건씩 보기</option>
+                                            <option value="30">30건씩 보기</option>
+                                            <option value="50">50건씩 보기</option>
+                                            <option value="100">100건씩 보기</option>
+                                        </select>
+                                    </div>
+
+                                    <button class="bin-button">
+                                        <svg class="bin-top" viewBox="0 0 39 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
+                                            <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white"
+                                                stroke-width="3"></line>
+                                        </svg>
+                                        <svg class="bin-bottom" viewBox="0 0 33 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="path-1-inside-1_8_19" fill="white">
+                                                <path
+                                                    d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+                                                </path>
+                                            </mask>
+                                            <path
+                                                d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                                                fill="white" mask="url(#path-1-inside-1_8_19)"></path>
+                                            <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
+                                            <path d="M21 6V29" stroke="white" stroke-width="4"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <table class="order-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
+                                                        id="chkAll" checked>
+                                                    <span class="cbx"></span>
+                                                    전체
+                                                </label>
+                                            </th>
+                                            <th>정산 기간</th>
+                                            <th>총 매출액</th>
+                                            <th>수수료율 (%)</th>
+                                            <th>최종 정산액</th>
+                                            <th>정산 상태</th>
+                                            <th>알림 설정</th>
+                                            <th>세금 계산 여부</th>
+                                            <th>엑셀 다운로드</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- 여기에 주문 데이터가 들어갈 예정 -->
+                                        <tr>
+                                            <td colspan="9" style="text-align:center; padding: 20px; color: #777;">
+                                                검색된 상품이 없습니다.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="pagination"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1288,10 +1498,12 @@
         </div>
     </section>
     <script src="../script/header/header_fetch.js"></script>
-    <script src="../script/orderListManager.js"></script>
+    <script src="../script/admin/orderListManager.js"></script>
     <script src="../script/search_box_fetch.js"></script>
     <script src="../script/tab/admin_tab.js"></script>
     <script src="../script/admin/product.js"></script>
+    <script src="../script/admin/settlementCalculator.js">
+    </script>
 </body>
 
 </html>

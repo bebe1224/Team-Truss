@@ -342,6 +342,44 @@
   transform: scale(0.98);
 }
 
+.download_excel_btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 6px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.download_excel_btn:hover {
+  background-color: #388e3c;
+}
+.download_excel_btn:active {
+  background-color: #2e7d32;
+  transform: scale(0.98);
+}
+
+.chart_btn {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 6px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.chart_btn:hover {
+  background-color: #1976d2;
+}
+.chart_btn:active {
+  background-color: #1565c0;
+  transform: scale(0.98);
+}
+
 /* From Uiverse.io by vinodjangid07 (36px 버전) */
 .bin-button {
   display: flex;

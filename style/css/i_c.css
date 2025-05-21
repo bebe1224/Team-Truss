@@ -1,9 +1,22 @@
+.position_fixed {
+  position: fixed;
+  z-index: -1;
+}
+
+.opacity {
+  opacity: 0.7;
+}
+
 body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
 
+.sect1_1 {
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}
 .sect1_1 .inner {
   display: flex;
   justify-content: center;
@@ -115,4 +128,7 @@ body {
 .sect1_1 .inner .screen_wrap .screen .products .product article span {
   color: #BDBBBB;
   text-decoration: line-through;
+}
+video {
+  width: 100%;
 }
