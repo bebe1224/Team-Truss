@@ -343,28 +343,51 @@
                             </div>
                             <button class="search-btn">검색</button>
                             <div class="box box2">
-                                <div class="total">
-                                    <p>검색결과</p>
-                                    <div>
-                                        <strong>: 0</strong>건
+                                <div class="total fsbc">
+                                    <div class="search_summary_bar">
+                                        <p>검색결과</p>
+                                        <div>
+                                            <strong>: 0</strong>건
+                                        </div>
+                                        <select class="select1 select-sort">
+                                            <option value="regist_d">등록일 ↓</option>
+                                            <option value="regist_a">등록일 ↑</option>
+                                            <option value="orderNo_a">주문번호 ↑</option>
+                                            <option value="orderNo_d">주문번호 ↓</option>
+                                            <option value="product_a">상품명 ↑</option>
+                                            <option value="product_d">상품명 ↓</option>
+                                            <option value="totalPrice_a">판매가 ↑</option>
+                                            <option value="totalPrice_d">판매가 ↓</option>
+                                        </select>
+                                        <select class="select1 select-count">
+                                            <option value="10" selected="selected">10개씩보기</option>
+                                            <option value="20">20개씩보기</option>
+                                            <option value="30">30개씩보기</option>
+                                            <option value="50">50개씩보기</option>
+                                            <option value="100">100개씩보기</option>
+                                        </select>
                                     </div>
-                                    <select class="select1 select-sort">
-                                        <option value="regist_d">등록일 ↓</option>
-                                        <option value="regist_a">등록일 ↑</option>
-                                        <option value="orderNo_a">주문번호 ↑</option>
-                                        <option value="orderNo_d">주문번호 ↓</option>
-                                        <option value="product_a">상품명 ↑</option>
-                                        <option value="product_d">상품명 ↓</option>
-                                        <option value="totalPrice_a">판매가 ↑</option>
-                                        <option value="totalPrice_d">판매가 ↓</option>
-                                    </select>
-                                    <select class="select1 select-count">
-                                        <option value="10" selected="selected">10개씩보기</option>
-                                        <option value="20">20개씩보기</option>
-                                        <option value="30">30개씩보기</option>
-                                        <option value="50">50개씩보기</option>
-                                        <option value="100">100개씩보기</option>
-                                    </select>
+                                    <button class="bin-button">
+                                        <svg class="bin-top" viewBox="0 0 39 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
+                                            <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white"
+                                                stroke-width="3"></line>
+                                        </svg>
+                                        <svg class="bin-bottom" viewBox="0 0 33 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="path-1-inside-1_8_19" fill="white">
+                                                <path
+                                                    d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+                                                </path>
+                                            </mask>
+                                            <path
+                                                d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                                                fill="white" mask="url(#path-1-inside-1_8_19)"></path>
+                                            <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
+                                            <path d="M21 6V29" stroke="white" stroke-width="4"></path>
+                                        </svg>
+                                    </button>
                                 </div>
                                 <table class="order-table">
                                     <thead>
@@ -466,28 +489,53 @@
                             </div>
                             <button class="search-btn">검색</button>
                             <div class="box box3">
-                                <div class="total">
-                                    <p>검색결과</p>
-                                    <div>
-                                        <strong>: 0</strong>건
+                                <div class="total fsbc">
+                                    <div class="search_summary_bar">
+                                        <p>검색결과</p>
+                                        <div>
+                                            <strong>: 0</strong>건
+                                        </div>
+                                        <select class="select1 select-sort">
+                                            <option value="regist_d">등록일 ↓</option>
+                                            <option value="regist_a">등록일 ↑</option>
+                                            <option value="orderNo_a">주문번호 ↑</option>
+                                            <option value="orderNo_d">주문번호 ↓</option>
+                                            <option value="product_a">상품명 ↑</option>
+                                            <option value="product_d">상품명 ↓</option>
+                                            <option value="totalPrice_a">판매가 ↑</option>
+                                            <option value="totalPrice_d">판매가 ↓</option>
+                                        </select>
+                                        <select class="select1 select-count">
+                                            <option value="10" selected="selected">10개씩보기</option>
+                                            <option value="20">20개씩보기</option>
+                                            <option value="30">30개씩보기</option>
+                                            <option value="50">50개씩보기</option>
+                                            <option value="100">100개씩보기</option>
+                                        </select>
                                     </div>
-                                    <select class="select1 select-sort">
-                                        <option value="regist_d">등록일 ↓</option>
-                                        <option value="regist_a">등록일 ↑</option>
-                                        <option value="orderNo_a">주문번호 ↑</option>
-                                        <option value="orderNo_d">주문번호 ↓</option>
-                                        <option value="product_a">상품명 ↑</option>
-                                        <option value="product_d">상품명 ↓</option>
-                                        <option value="totalPrice_a">판매가 ↑</option>
-                                        <option value="totalPrice_d">판매가 ↓</option>
-                                    </select>
-                                    <select class="select1 select-count">
-                                        <option value="10" selected="selected">10개씩보기</option>
-                                        <option value="20">20개씩보기</option>
-                                        <option value="30">30개씩보기</option>
-                                        <option value="50">50개씩보기</option>
-                                        <option value="100">100개씩보기</option>
-                                    </select>
+
+                                    <button class="bin-button">
+                                        <svg class="bin-top" viewBox="0 0 39 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
+                                            <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white"
+                                                stroke-width="3"></line>
+                                        </svg>
+                                        <svg class="bin-bottom" viewBox="0 0 33 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="path-1-inside-1_8_19" fill="white">
+                                                <path
+                                                    d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+                                                </path>
+                                            </mask>
+                                            <path
+                                                d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                                                fill="white" mask="url(#path-1-inside-1_8_19)"></path>
+                                            <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
+                                            <path d="M21 6V29" stroke="white" stroke-width="4"></path>
+                                        </svg>
+                                    </button>
+
                                 </div>
                                 <table class="order-table">
                                     <thead>
@@ -821,28 +869,53 @@
                             </div>
                             <button class="search-btn">검색</button>
                             <div class="box box3">
-                                <div class="total">
-                                    <p>검색결과</p>
-                                    <div>
-                                        <strong>: 0</strong>건
+                                <div class="total fsbc">
+                                    <div class="search_summary_bar">
+                                        <p>검색결과</p>
+                                        <div>
+                                            <strong>: 0</strong>건
+                                        </div>
+                                        <select class="select1 select-sort">
+                                            <option value="regist_d">등록일 ↓</option>
+                                            <option value="regist_a">등록일 ↑</option>
+                                            <option value="orderNo_a">주문번호 ↑</option>
+                                            <option value="orderNo_d">주문번호 ↓</option>
+                                            <option value="product_a">상품명 ↑</option>
+                                            <option value="product_d">상품명 ↓</option>
+                                            <option value="totalPrice_a">판매가 ↑</option>
+                                            <option value="totalPrice_d">판매가 ↓</option>
+                                        </select>
+                                        <select class="select1 select-count">
+                                            <option value="10" selected="selected">10개씩보기</option>
+                                            <option value="20">20개씩보기</option>
+                                            <option value="30">30개씩보기</option>
+                                            <option value="50">50개씩보기</option>
+                                            <option value="100">100개씩보기</option>
+                                        </select>
                                     </div>
-                                    <select class="select1 select-sort">
-                                        <option value="regist_d">등록일 ↓</option>
-                                        <option value="regist_a">등록일 ↑</option>
-                                        <option value="orderNo_a">주문번호 ↑</option>
-                                        <option value="orderNo_d">주문번호 ↓</option>
-                                        <option value="product_a">상품명 ↑</option>
-                                        <option value="product_d">상품명 ↓</option>
-                                        <option value="totalPrice_a">판매가 ↑</option>
-                                        <option value="totalPrice_d">판매가 ↓</option>
-                                    </select>
-                                    <select class="select1 select-count">
-                                        <option value="10" selected="selected">10개씩보기</option>
-                                        <option value="20">20개씩보기</option>
-                                        <option value="30">30개씩보기</option>
-                                        <option value="50">50개씩보기</option>
-                                        <option value="100">100개씩보기</option>
-                                    </select>
+
+                                    <button class="bin-button">
+                                        <svg class="bin-top" viewBox="0 0 39 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
+                                            <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white"
+                                                stroke-width="3"></line>
+                                        </svg>
+                                        <svg class="bin-bottom" viewBox="0 0 33 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="path-1-inside-1_8_19" fill="white">
+                                                <path
+                                                    d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+                                                </path>
+                                            </mask>
+                                            <path
+                                                d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                                                fill="white" mask="url(#path-1-inside-1_8_19)"></path>
+                                            <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
+                                            <path d="M21 6V29" stroke="white" stroke-width="4"></path>
+                                        </svg>
+                                    </button>
+
                                 </div>
                                 <table class="order-table">
                                     <thead>
@@ -882,7 +955,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ========================= -->
             <div class="screen screen2">
                 <div class="wrap">
                     <h2>회원</h2>
@@ -1102,32 +1174,55 @@
                             </div>
                             <button class="search-btn">검색</button>
                             <div class="box box3">
-                                <div class="total">
-                                    <p>검색결과</p>
-                                    <div>
-                                        <strong>: 0</strong>건
+                                <div class="total fsbc">
+                                    <div class="search_summary_bar">
+                                        <p>검색결과</p>
+                                        <div>
+                                            <strong>: 0</strong>건
+                                        </div>
+                                        <select class="select1 select-sort">
+                                            <option value="regist_d">등록일 ↓</option>
+                                            <option value="regist_a">등록일 ↑</option>
+                                            <option value="name_a">이름순</option>
+                                            <option value="name_d">이름역순</option>
+                                            <option value="id_a">아이디순</option>
+                                            <option value="id_d">아이디역순</option>
+                                            <option value="grade_a">회원등급 낮은순</option>
+                                            <option value="grade_d">회원등급 높은순</option>
+                                            <option value="age_a">나이순</option>
+                                            <option value="age_d">나이역순</option>
+                                            <option value="male">남성 회원</option>
+                                            <option value="female">여성 회원</option>
+                                        </select>
+                                        <select class="select1 select-count">
+                                            <option value="10" selected="selected">10개씩보기</option>
+                                            <option value="20">20개씩보기</option>
+                                            <option value="30">30개씩보기</option>
+                                            <option value="50">50개씩보기</option>
+                                            <option value="100">100개씩보기</option>
+                                        </select>
                                     </div>
-                                    <select class="select1 select-sort">
-                                        <option value="regist_d">등록일 ↓</option>
-                                        <option value="regist_a">등록일 ↑</option>
-                                        <option value="name_a">이름순</option>
-                                        <option value="name_d">이름역순</option>
-                                        <option value="id_a">아이디순</option>
-                                        <option value="id_d">아이디역순</option>
-                                        <option value="grade_a">회원등급 낮은순</option>
-                                        <option value="grade_d">회원등급 높은순</option>
-                                        <option value="age_a">나이순</option>
-                                        <option value="age_d">나이역순</option>
-                                        <option value="male">남성 회원</option>
-                                        <option value="female">여성 회원</option>
-                                    </select>
-                                    <select class="select1 select-count">
-                                        <option value="10" selected="selected">10개씩보기</option>
-                                        <option value="20">20개씩보기</option>
-                                        <option value="30">30개씩보기</option>
-                                        <option value="50">50개씩보기</option>
-                                        <option value="100">100개씩보기</option>
-                                    </select>
+                                    <button class="bin-button">
+                                        <svg class="bin-top" viewBox="0 0 39 7" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4"></line>
+                                            <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white"
+                                                stroke-width="3"></line>
+                                        </svg>
+                                        <svg class="bin-bottom" viewBox="0 0 33 39" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="path-1-inside-1_8_19" fill="white">
+                                                <path
+                                                    d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z">
+                                                </path>
+                                            </mask>
+                                            <path
+                                                d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                                                fill="white" mask="url(#path-1-inside-1_8_19)"></path>
+                                            <path d="M12 6L12 29" stroke="white" stroke-width="4"></path>
+                                            <path d="M21 6V29" stroke="white" stroke-width="4"></path>
+                                        </svg>
+                                    </button>
                                 </div>
                                 <table class="order-table">
                                     <thead>
@@ -1166,6 +1261,7 @@
                     </div>
                 </div>
             </div>
+            <!-- ========================= -->
             <div class="screen screen2">
                 <div class="wrap">
                     <h2>회원</h2>

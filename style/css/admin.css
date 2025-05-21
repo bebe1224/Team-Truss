@@ -390,8 +390,11 @@ body {
 }
 
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .total {
+  width: 100%;
+}
+.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box .total .search_summary_bar {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
   padding: 16px 0px;

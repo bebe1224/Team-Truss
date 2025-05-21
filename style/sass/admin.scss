@@ -610,9 +610,13 @@ body {
                 .sub_screen {
                     .box {
                         .total {
-                            @include fsc;
-                            gap: 16px;
-                            padding: 16px 0px;
+                            width: 100%;
+
+                            .search_summary_bar {
+                                @include fsbc;
+                                gap: 16px;
+                                padding: 16px 0px;
+                            }
 
                         }
 

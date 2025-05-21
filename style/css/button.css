@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .btn1 {
   font-weight: bold;
   cursor: pointer;
@@ -339,4 +340,36 @@
 .upload_image_btn:active {
   background-color: #3f51b5;
   transform: scale(0.98);
+}
+
+/* From Uiverse.io by vinodjangid07 (36px 버전) */
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 2px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+.bin-button .bin-bottom {
+  width: 10px;
+}
+.bin-button .bin-top {
+  width: 12px;
+  transform-origin: right;
+  transition-duration: 0.3s;
 }
