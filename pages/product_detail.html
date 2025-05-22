@@ -69,6 +69,33 @@
                     </div>
                 </div>
             </div>
+            <div class="detail_panel_wrap fccc40 width100">
+                <button class="toggle-btn">
+                    <div><span>상품 상세 보기</span></div>
+                </button>
+                <div class="detail_panel">
+                    <img src="../imgs/product_detail/test_img1.png" alt="상품 상세 이미지" />
+                    <img src="../imgs/product_detail/test_img2.png" alt="상품 상세 이미지" />
+                    <img src="../imgs/product_detail/test_img3.png" alt="상품 상세 이미지" />
+                </div>
+            </div>
+            <div class="fcsc40 width100">
+                <div class="fsc16 width100">
+                    <h3>판매자 정보</h3>
+                    <button class="btn1_1">상세정보
+                    </button>
+                </div>
+                <table class="boss">
+                    <tbody>
+                        <tr>
+                            <td class="color2">이름</th>
+                            <td>백제현</td>
+                            <td class="color2">전화번호</th>
+                            <td>010-1234-5678</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="fcsc40 width100">
                 <h3>상품정보 제공고시</h3>
                 <table class="Info">
@@ -135,12 +162,56 @@
                             <!-- 여기에 주문 데이터가 들어갈 예정 -->
                             <tr>
                                 <td colspan="4" style="text-align:center; padding: 20px; color: #777;">
-                                    검색된 상품이 없습니다.
+                                    게시글이 없습니다.
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+            </div>
+            <div class="fcsc40 width100">
+                <h3>반품/교환정보</h3>
+                <table class="return">
+                    <thead>
+                        <tr>
+                            <th colspan="2">TEAM-TRUSS 반품/교환 안내
+                                <br><span class="color1 font14">반품 시 먼저 판매자와 연락하셔서 반품사유, 택배사, 배송비, 반품지
+                                    주소 등을 협의하신 후 반품상품을 발송해 주시기 바랍니다.</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>판매자 지정택배사</td>
+                            <td>원하는 값을 입력하면 됨</td>
+                        </tr>
+                        <tr>
+                            <td>반품배송비</td>
+                            <td>원하는 값을 입력하면 됨</td>
+                        </tr>
+                        <tr>
+                            <td>보내실 곳</td>
+                            <td>원하는 값을 입력하면 됨</td>
+                        </tr>
+                        <tr>
+                            <td>반품/교환 사유에 따른 요청 가능 기간</td>
+                            <td>표시/광고와 상이, 계약 내용과 다르게 이행된 경우 상품 수령 후 3개월 이내 혹은 표시/광고와 다른 사실을 안 날로부터 30일 이내 </td>
+                        </tr>
+                        <tr>
+                            <td>반품/교환 불가능 사유</td>
+                            <td>1. 반품요청기간이 지난 경우 <br>
+                                2. 구매자의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우 (단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외) <br>
+                                3. 구매자의 책임있는 사유로 포장이 훼손되어 상품 가치가 현저히 상실된 경우 (예: 식품, 화장품, 향수류, 음반 등) <br>
+                                4. 구매자의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우 (라벨이 떨어진 의류 또는 태그가 떨어진 명품관 상품인 경우) <br>
+                                5. 시간의 경과에 의하여 재판매가 곤란할 정도로 상품 등의 가치가 현저히 감소한 경우 <br>
+                                6. 고객의 요청사항에 맞춰 제작에 들어가는 맞춤제작상품의 경우 (판매자에게 회복불가능한 손해가 예상되고, 그러한 예정으로 청약철회권 행사가 불가하다는 사실을
+                                서면 동의 받은 경우) <br>
+                                7. 복제가 가능한 상품 등의 포장을 훼손한 경우 (CD/DVD/GAME/도서의 경우 포장 개봉 시)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </section>
@@ -189,6 +260,7 @@
             </div>
         </div>
     </footer>
+    <script src="../script/jquery-3.7.1.js"></script>
     <script src="../script/btn.js"></script>
     <script src="../script/header/header_fetch.js"></script>
     <script src="../script/tab/tab.js"></script>
@@ -196,10 +268,9 @@
     <script src="../script/productDetailLoader.js">
     </script>
     <script src="../script/tab/product_detail_tab.js"></script>
+    <script src="../script/toggle-slide/toggle.js"></script>
     <script src="../script/product_number_control.js">
     </script>
-
-
 </body>
 
 </html>

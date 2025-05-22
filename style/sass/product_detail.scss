@@ -7,7 +7,8 @@ body {
 
 // ======================
 //table 들
-//th td = 둘 tr 안에 있다  헤드냐 바디냐의 따라 위치가 다름 바디는=th
+//th(열) td(열) 둘다같다 그리고 = 둘다 tr(행) 안에 있다  헤드냐 바디냐의 따라 위치가 다름 바디는=th
+//colspan='2'은 HTML 테이블에서 사용하는 속성으로, 한 셀이 여러 열(컬럼)을 가로로 병합할 수 있도록 해주는 기능
 //tr =행 th= 열
 .Info {
     width: 100%;
@@ -15,19 +16,19 @@ body {
     border: 1px solid #ddd;
     background-color: #fff;
 
-    // thead {
-    //     background-color: #f8f9fa;
+    thead {
+        background-color: #f8f9fa;
 
-    //     tr {
-    //         th {
-    //             border: 1px solid #ddd;
-    //             padding: 12px 8px;
-    //             font-weight: 600;
-    //             text-align: center;
-    //             white-space: nowrap;
-    //         }
-    //     }
-    // }
+        tr {
+            th {
+                border: 1px solid #ddd;
+                padding: 12px 8px;
+                font-weight: 600;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+    }
 
     tbody {
         tr {
@@ -85,10 +86,86 @@ body {
     }
 }
 
+//반품.교환
+.return {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #fff;
+
+    thead {
+        background-color: #f8f9fa;
+
+        tr {
+            th {
+                border: 1px solid #ddd;
+                padding: 12px 8px;
+                font-weight: 600;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                border: 1px solid #eee;
+                padding: 16px;
+
+                &:first-of-type {
+                    width: 200px;
+                    border: 1px solid #ddd;
+                    background-color: #f8f9fa;
+                }
+            }
+        }
+    }
+}
+
+//판매자 정보
+.boss {
+    width: 100%;
+    border-collapse: collapse;
+
+    tbody {
+        tr {
+            td {
+                border: 1px solid #eee;
+                padding: 8px;
+                text-align: center;
+
+                &:first-of-type {
+                    width: 200px;
+                    border: 1px solid #ddd;
+                    background-color: #f8f9fa;
+                }
+            }
+        }
+    }
+}
+
 // ======================
-//칼라라
+//위드100%
+.width100 {
+    width: 100%;
+}
+
+// =====================
+//폰트사이즈
+.font14 {
+    font-size: 14px;
+}
+
+// ======================
+//칼라
 .color1 {
     color: $primary-color5;
+}
+
+.color2 {
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 // ======================
@@ -102,6 +179,11 @@ body {
     gap: 16px
 }
 
+.fsc16 {
+    @include fsc;
+    gap: 16px
+}
+
 .fcsc16 {
     @include fcsc;
     gap: 16px
@@ -109,6 +191,11 @@ body {
 
 .fcsc40 {
     @include fcsc;
+    gap: 40px
+}
+
+.fccc40 {
+    @include fccc;
     gap: 40px
 }
 
@@ -122,9 +209,20 @@ body {
 }
 
 // ======================
-//위드100%
-.width100 {
-    width: 100%;
+.detail_panel_wrap {
+
+
+    .toggle-btn {}
+
+    .detail_panel {
+        display: none;
+        text-align: center;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+        img {
+            padding: 48px 0px;
+        }
+    }
 }
 
 // ======================
@@ -143,7 +241,7 @@ body {
 
                 .i_w {
                     @include fcc;
-                    border-radius: 9px;
+
                     width: 650px;
                     height: 700px;
                     overflow: hidden;
@@ -191,8 +289,10 @@ body {
                 @include fc;
                 gap: 80px;
                 border-top: 2px solid #000;
+                border-bottom: 2px solid #000;
                 padding: 16px 0px 0px 0px;
                 width: 700px;
+                height: 700px;
 
                 h2 {}
 
