@@ -5,136 +5,260 @@ body {
     user-select: none;
 }
 
-.sect1_2 {
-    .inner {
-        @include fsbc;
-        align-items: start;
-        gap: 48px;
+// ======================
+//table 들
+//th td = 둘 tr 안에 있다  헤드냐 바디냐의 따라 위치가 다름 바디는=th
+//tr =행 th= 열
+.Info {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #fff;
 
-        .product_box {
-            @include fc;
-            gap: 32px;
+    // thead {
+    //     background-color: #f8f9fa;
 
-            .i_w {
-                @include fcc;
-                border-radius: 9px;
-                width: 650px;
-                height: 700px;
-                overflow: hidden;
-                box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    //     tr {
+    //         th {
+    //             border: 1px solid #ddd;
+    //             padding: 12px 8px;
+    //             font-weight: 600;
+    //             text-align: center;
+    //             white-space: nowrap;
+    //         }
+    //     }
+    // }
 
-                &:hover {
-                    img {
-                        transform: scale(1.05);
-                    }
-                }
+    tbody {
+        tr {
 
-                img {
-                    object-fit: cover;
-                    width: 100%;
-                    height: 100%;
-                    transition: 0.3s ease-in-out;
+            td {
+                border: 1px solid #eee;
+                padding: 16px;
+
+                &:first-of-type {
+                    width: 200px;
+                    border: 1px solid #ddd;
+                    background-color: #f8f9fa;
                 }
             }
+        }
+    }
+}
 
-            .img_tab {
-                @include fsc;
-                gap: 8px;
-                width: 100%;
-                border: 1px solid #000;
+//Q&A 
+.Q_A {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #fff;
 
+    thead {
+        background-color: #f8f9fa;
 
+        th {
+            border: 1px solid #ddd;
+            padding: 12px 8px;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
 
-                li {
+    tbody {
+        tr {
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #f1f3f5; // 행 hover 효과
+            }
+
+            td {
+                border: 1px solid #eee;
+                padding: 10px 8px;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+// ======================
+//칼라라
+.color1 {
+    color: $primary-color5;
+}
+
+// ======================
+//플렉스
+.fsbc {
+    @include fsbc;
+}
+
+.fcc16 {
+    @include fcc;
+    gap: 16px
+}
+
+.fcsc16 {
+    @include fcsc;
+    gap: 16px
+}
+
+.fcsc40 {
+    @include fcsc;
+    gap: 40px
+}
+
+.fcsc4 {
+    @include fcsc;
+    gap: 4px
+}
+
+.aic {
+    align-items: center !important;
+}
+
+// ======================
+//위드100%
+.width100 {
+    width: 100%;
+}
+
+// ======================
+.sect1_2 {
+    .inner {
+        @include fcsc;
+        gap: 80px;
+
+        .fsbc {
+            align-items: start;
+            gap: 48px;
+
+            .product_box {
+                @include fc;
+                gap: 32px;
+
+                .i_w {
                     @include fcc;
-                    width: 80px;
-                    height: 100px;
-                    cursor: pointer;
+                    border-radius: 9px;
+                    width: 650px;
+                    height: 700px;
+                    overflow: hidden;
+                    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
                     &:hover {
-                        opacity: 0.6;
+                        img {
+                            transform: scale(1.05);
+                        }
                     }
 
                     img {
                         object-fit: cover;
                         width: 100%;
                         height: 100%;
+                        transition: 0.3s ease-in-out;
                     }
                 }
-            }
-        }
 
-        .product_detail_box {
-            @include fc;
-            gap: 80px;
-            border-top: 2px solid #000;
-            padding: 16px 0px 0px 0px;
-            width: 700px;
-
-            h2 {}
-
-            .detail {
-                @include fc;
-                gap: 16px;
-
-                p {
+                .img_tab {
                     @include fsc;
-                    gap: 32px;
+                    gap: 8px;
+                    width: 100%;
 
-                    span {
+                    li {
+                        @include fcc;
+                        width: 80px;
+                        height: 100px;
+                        cursor: pointer;
 
-                        width: 95px;
-                    }
-                }
+                        &:hover {
+                            opacity: 0.6;
+                        }
 
-                .p1 {
-                    color: $secondary-color0;
-                    text-decoration: line-through;
-                }
-
-                .p2 {
-                    font-weight: bold;
-                }
-
-                .p3 {
-                    color: $secondary-color1;
-                }
-            }
-
-            .price {
-                @include fsbc;
-                align-items: center;
-                border-top: 2px solid $secondary-color0;
-                padding: 32px 0px;
-
-                .quantity-selector {
-                    input {
-                        text-align: center; // 수평 가운데
-                        vertical-align: middle;
-                        font-size: 16px;
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-                        // 시스템 기본 스타일 제거 (크롬 등 브라우저 기본 스타일 초기화)
-                        -moz-appearance: textfield;
-
-                        &::-webkit-inner-spin-button,
-                        &::-webkit-outer-spin-button {
-                            -webkit-appearance: none;
-                            margin: 0;
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
                         }
                     }
                 }
-
-                .p3 {
-                    font-weight: bold;
-                }
             }
 
-            .btn_wrap {
-                @include fsc;
-                gap: 32px;
-                padding: 32px 0px;
-                border-top: 2px solid $secondary-color0;
+            .product_detail_box {
+                @include fc;
+                gap: 80px;
+                border-top: 2px solid #000;
+                padding: 16px 0px 0px 0px;
+                width: 700px;
+
+                h2 {}
+
+                .detail {
+                    @include fc;
+                    gap: 16px;
+
+                    p {
+                        @include fsc;
+                        gap: 32px;
+
+                        span {
+
+                            width: 95px;
+                        }
+                    }
+
+                    .p1 {
+                        color: $secondary-color0;
+                        text-decoration: line-through;
+                    }
+
+                    .p2 {
+                        font-weight: bold;
+                    }
+
+                    .p3 {
+                        color: $secondary-color1;
+                    }
+                }
+
+                .price {
+                    @include fsbc;
+                    align-items: center;
+                    border-top: 2px solid $secondary-color0;
+                    padding: 32px 0px;
+
+                    .quantity-selector {
+                        input {
+                            text-align: center; // 수평 가운데
+                            vertical-align: middle;
+                            font-size: 16px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            // 시스템 기본 스타일 제거 (크롬 등 브라우저 기본 스타일 초기화)
+                            -moz-appearance: textfield;
+
+                            &::-webkit-inner-spin-button,
+                            &::-webkit-outer-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .p3 {
+                        font-weight: bold;
+                    }
+                }
+
+                .btn_wrap {
+                    @include fsc;
+                    gap: 32px;
+                    padding: 32px 0px;
+                    border-top: 2px solid $secondary-color0;
+                }
             }
         }
     }

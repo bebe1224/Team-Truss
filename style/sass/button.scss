@@ -15,6 +15,20 @@
         filter: invert(100%);
     }
 }
+.btn1_1 {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, .9);
+    border-radius: 9px;
+    transition: 0.3s ease-in-out;
+    width: auto;
+    text-align: center;
+
+    &:hover {
+        filter: invert(100%);
+    }
+}
 
 .cta {
     border: none;
@@ -220,7 +234,6 @@
         }
     }
 }
-
 // ===================================
 //  <div class="quantity-selector">
 //                 <button onclick="decreaseQuantity()">-</button>
