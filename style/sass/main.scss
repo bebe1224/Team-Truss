@@ -1,6 +1,8 @@
 @import './flex_mixins.scss';
 @import './color.scss';
 
+//
+
 body {
     user-select: none;
 }
@@ -280,25 +282,16 @@ body {
 
     .inner {
         @include fcc;
-
-
         .barcode {
-            font-family: "Libre Barcode 39 Extended Text", system-ui;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 100px;
-            color: $primary-color1;
 
             a {
                 transition: 0.3s ease-in-out;
-
                 &:hover {
                     opacity: 0.8;
                     color: $primary-color0;
                 }
             }
         }
-
     }
 }
 

@@ -238,13 +238,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.sect5 .inner .barcode {
-  font-family: "Libre Barcode 39 Extended Text", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 100px;
-  color: #fafafa;
-}
 .sect5 .inner .barcode a {
   transition: 0.3s ease-in-out;
 }

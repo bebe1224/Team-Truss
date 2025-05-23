@@ -11,19 +11,19 @@
   background-color: antiquewhite;
 }
 .sect1_swiper .swiper_slide1 {
-  background: url(../../imgs/swiper/slide/sect1/1.png) no-repeat center/cover;
+  background: url(../../imgs/swiper/slide/sect1/Team-Truss-copen_bg1.png) no-repeat center/cover;
 }
 .sect1_swiper .swiper_slide2 {
-  background: url(../../imgs/swiper/slide/sect1/2.png) no-repeat center/cover;
+  background: url(../../imgs/swiper/slide/sect1/Team-Truss-jimny_bg1.png) no-repeat center/cover;
 }
 .sect1_swiper .swiper_slide3 {
-  background: url(../../imgs/swiper/slide/sect1/3.png) no-repeat center/cover;
+  background: url(../../imgs/swiper/slide/sect1/1.png) no-repeat center/cover;
 }
 .sect1_swiper .swiper_slide4 {
-  background: url(../../imgs/swiper/slide/sect1/4.png) no-repeat center/cover;
+  background: url(../../imgs/swiper/slide/sect1/2.png) no-repeat center/cover;
 }
 .sect1_swiper .swiper_slide5 {
-  background: url(../../imgs/swiper/slide/sect1/5.png) no-repeat center/cover;
+  background: url(../../imgs/swiper/slide/sect1/3.png) no-repeat center/cover;
 }
 .sect1_swiper .swiper_slide6 {
   background: url(../../imgs/swiper/slide/sect1/6.png) no-repeat center/cover;
@@ -84,10 +84,10 @@
 }
 .sect1 .swiper-slide .text {
   position: absolute;
-  bottom: 8%;
-  left: 8%;
-  color: #fafafa;
-  font-size: 60PX;
+  bottom: 5%;
+  left: 9%;
+  color: #2c2c2c;
+  font-size: 80PX;
 }
 
 .sect2_swiper {
