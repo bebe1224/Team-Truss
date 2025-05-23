@@ -9,6 +9,16 @@ header {
     top: 0;
     z-index: 999;
     width: 100%;
+    transition: 0.3s ease-in-out;
+
+    //스크롤시 헤더가 슬라이드 되게하려면 필요
+    &.scrolled {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: transform 0.3s ease;
+    }
 
     .wrap {
         @include fcc;

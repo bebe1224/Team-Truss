@@ -1,8 +1,8 @@
 (() => {
     const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
     const fetchPath = isLocal
-        ? '../../components/header.html'  // 로컬 개발 경로
-        : '/Team-Truss/components/header.html';  // GitHub Pages에 배포된 절대경로
+        ? '../../components/header.html'
+        : '/Team-Truss/components/header.html';
 
     fetch(fetchPath)
         .then(response => {
@@ -12,7 +12,23 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
 
-            // fetch 이후 DOM 요소에 접근
+            // ✅ 헤더 삽입 후에 실행해야 함!
+            const header = document.querySelector('header');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+                if (currentScrollY > lastScrollY) {
+                    // 아래로 스크롤 → 헤더 숨기기
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // 위로 스크롤 → 헤더 보이기
+                    header.style.transform = 'translateY(0)';
+                }
+                lastScrollY = currentScrollY;
+            }); 
+
+            // 기존 메뉴 hover 효과
             const main_menu = document.querySelectorAll('.main_menu');
             const sub_menu = document.querySelectorAll('.sub_menu');
 
@@ -27,6 +43,7 @@
         })
         .catch(error => console.error('헤더 로드 실패:', error));
 })();
+
 
 //최적 방법: 즉시 실행 함수 (IIFE) 로 스코프 분리
 //IIFE = Immediately Invoked Function Expression
