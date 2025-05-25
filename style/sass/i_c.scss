@@ -73,6 +73,7 @@ body {
                 .products {
                     @include fsbc;
                     align-items: start;
+                    margin-top: 32px;
 
                     .product {
                         @include fscc;
@@ -111,9 +112,11 @@ body {
                             overflow: hidden;
                             width: 100%;
                             height: 331px;
-                            background-color: $primary-color5;
+                            // background-color: $primary-color1;
+                            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 
                             img {
+                                object-fit: cover;
                                 width: 100%;
                                 height: 100%
                             }

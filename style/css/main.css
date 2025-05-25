@@ -198,6 +198,8 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .sect4 .inner .screen_wrap .screen .products .product .i_w img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -301,6 +303,8 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .sect6 .inner .products_wrap .products .product .i_w img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -445,6 +449,8 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .sect9 .inner .products_wrap .products .product .i_w img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }

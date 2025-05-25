@@ -241,8 +241,8 @@ body {
 
                 .i_w {
                     @include fcc;
-
-                    width: 650px;
+                    //이거 위드값 늘리거나 줄이면 product_detail_box 크기조정해야함
+                    width: 800px;
                     height: 700px;
                     overflow: hidden;
                     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -291,7 +291,7 @@ body {
                 border-top: 2px solid #000;
                 border-bottom: 2px solid #000;
                 padding: 16px 0px 0px 0px;
-                width: 700px;
+                width: 500px;
                 height: 700px;
 
                 h2 {}

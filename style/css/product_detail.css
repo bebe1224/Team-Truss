@@ -204,7 +204,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 650px;
+  width: 800px;
   height: 700px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
@@ -250,7 +250,7 @@ body {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
   padding: 16px 0px 0px 0px;
-  width: 700px;
+  width: 500px;
   height: 700px;
 }
 .sect1_2 .inner .fsbc .product_detail_box .detail {

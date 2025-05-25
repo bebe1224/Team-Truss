@@ -65,6 +65,7 @@ body {
   justify-content: space-between;
   align-items: center;
   align-items: start;
+  margin-top: 32px;
 }
 .sect1_1 .inner .screen_wrap .screen .products .product {
   display: flex;
@@ -95,9 +96,11 @@ body {
   overflow: hidden;
   width: 100%;
   height: 331px;
-  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 .sect1_1 .inner .screen_wrap .screen .products .product .i_w img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
 }
