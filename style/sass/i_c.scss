@@ -1,6 +1,262 @@
 @import './flex_mixins.scss';
 @import './color.scss';
 
+// ====== h1 자동차 
+$car-color: #2a2a2a;
+$car-color2: rgb(255, 2, 2);
+$wheel-color: #1e1e1e;
+$road-color: #ccc;
+$road-white: #fff;
+
+// ======  h1
+h1 {
+    @include fcc;
+    gap: 32px;
+
+}
+
+.car-road {
+    width: 110px;
+    overflow: hidden;
+}
+
+.car {
+    width: 110px;
+    position: relative;
+
+    .car-base {
+        background: $car-color;
+        width: 100%;
+        height: 22px;
+        border-radius: 2px 5px 10px 10px;
+    }
+
+    .car-base2 {
+        background: $car-color2;
+        width: 100%;
+        height: 22px;
+        border-radius: 2px 5px 10px 10px;
+    }
+
+
+    .car-top {
+        height: 36px;
+        width: 66px;
+        background: $car-color;
+        margin-bottom: -18px;
+        border-radius: 100px / 60px;
+        margin-left: 15px;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 18px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 43px solid $car-color;
+            position: absolute;
+            left: -10px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -29px;
+            top: 14px;
+            border-radius: 50% 50% 0 0;
+            width: 60px;
+            height: 8px;
+            background: $car-color;
+        }
+
+        .window {
+            position: absolute;
+            background: white;
+            width: 42px;
+            height: 11px;
+            top: 3px;
+            border-radius: 50% 50% 0 0;
+            left: 12px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 20px;
+                background: $car-color;
+                height: 100%;
+                width: 5px;
+            }
+        }
+    }
+        .car-top2 {
+        height: 36px;
+        width: 66px;
+        background: $car-color2;
+        margin-bottom: -18px;
+        border-radius: 100px / 60px;
+        margin-left: 15px;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 18px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 43px solid $car-color2;
+            position: absolute;
+            left: -10px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -29px;
+            top: 14px;
+            border-radius: 50% 50% 0 0;
+            width: 60px;
+            height: 8px;
+            background: $car-color2;
+        }
+
+        .window {
+            position: absolute;
+            background: white;
+            width: 42px;
+            height: 11px;
+            top: 3px;
+            border-radius: 50% 50% 0 0;
+            left: 12px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 20px;
+                background: $car-color2;
+                height: 100%;
+                width: 5px;
+            }
+        }
+    }
+
+    .wheel {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: $wheel-color;
+        position: absolute;
+        border: 2px solid rgb(249, 249, 249);
+        animation: rotateWheel 0.7s infinite linear;
+
+        &::before {
+            content: '';
+            width: 14px;
+            height: 14px;
+            top: 4px;
+            left: 4px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            width: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $wheel-color;
+        }
+
+        &-left {
+            left: 12px;
+            bottom: -10px;
+        }
+
+        &-right {
+            right: 12px;
+            bottom: -10px;
+        }
+
+        &-spike {
+            position: absolute;
+            top: 50%;
+            bottom: 4px;
+            width: calc(100% - 8px);
+            left: 4px;
+            height: 3px;
+            transform: translateY(-50%);
+            background: $wheel-color;
+        }
+
+        &-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: white;
+            z-index: 2;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .head-light {
+        position: absolute;
+        background: #ffdd00;
+        right: 1px;
+        top: 19px;
+        border-radius: 50% 15px 15px 50%;
+        width: 10px;
+        height: 4px;
+    }
+}
+
+.road {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+    height: 3px;
+    background-image: linear-gradient(to left,
+            $road-color 0%,
+            $road-color 20%,
+            $road-white 20%,
+            $road-white 40%,
+            $road-color 40%,
+            $road-color 60%,
+            $road-white 60%,
+            $road-white 80%,
+            $road-color 80%);
+    animation: border-dance 0.5s infinite linear;
+}
+
+// Keyframes
+@keyframes rotateWheel {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes border-dance {
+    0% {
+        left: 40px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+
+//=======
 .position_fixed {
     position: fixed;
     z-index: -1;
@@ -73,7 +329,7 @@ body {
                 .products {
                     @include fsbc;
                     align-items: start;
-                    margin-top: 32px;
+                    margin-top: 36px;
 
                     .product {
                         @include fscc;
