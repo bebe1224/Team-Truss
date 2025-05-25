@@ -1,6 +1,6 @@
 (() => {
     const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-    const fetchPath = isLocal ? '../../components/product.html' : '/Team-Truss/components/Product.html';
+    const fetchPath = isLocal ? '../../components/product.html' : '/Team-Truss/components/product.html';
     const dataPath = isLocal ? '../../json/product.json' : '/Team-Truss/json/product.json';
 
     Promise.all([
