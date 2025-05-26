@@ -327,25 +327,33 @@ body {
                 .sub_screen {
                     .box {
                         ul {
-                            @include fcc;
-                            border: 1px solid #000;
-                         
+                            @include fsbc;
+
+
                             li {
                                 @include fcc;
-                                border: 1px solid #000;
-                                flex: 1;
-                                height: 60px;
-                                
+                                width: 200px;
+                            
+
+
 
                                 .i_w {
                                     width: 60px;
                                     height: 60px;
-                                    border: 1px solid #000;
+                               
+                                    overflow: hidden;
+
+                                    &:hover {
+                                        img {
+                                            transform: scale(1.1);
+                                        }
+                                    }
 
                                     img {
                                         object-fit: cover;
                                         width: 100%;
                                         height: 100%;
+                                        transition: 0.3s ease-in-out;
                                     }
                                 }
                             }

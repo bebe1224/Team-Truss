@@ -227,26 +227,27 @@ body {
 
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid #000;
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box ul li {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #000;
-  flex: 1;
-  height: 60px;
+  width: 200px;
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box ul li .i_w {
   width: 60px;
   height: 60px;
-  border: 1px solid #000;
+  overflow: hidden;
+}
+.sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box ul li .i_w:hover img {
+  transform: scale(1.1);
 }
 .sect1 .screen_wrap .screen .sub_screen_wrap .sub_screen .box ul li .i_w img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: 0.3s ease-in-out;
 }
