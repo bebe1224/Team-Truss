@@ -1,4 +1,4 @@
-// Swiper 생성  sect1
+// Swiper 생성 sect1
 const swiper = new Swiper(".sect1_swiper", {
     slidesPerView: 1,
     spaceBetween: 16,
@@ -22,21 +22,35 @@ const swiper = new Swiper(".sect1_swiper", {
 
 // 슬라이드 변경 완료 시 텍스트 애니메이션
 swiper.on("slideChangeTransitionStart", () => {
-    const activeSlide = swiper.slides[swiper.activeIndkex];
-    const text = activeSlide.querySelector(".text");
-    if (text) {
-        gsap.effects.textEffect(text);
+    const activeSlide = swiper.slides[swiper.activeIndex];
+    if (activeSlide) {
+        const text = activeSlide.querySelector(".text");
+        if (text) {
+            gsap.effects.textEffect(text);
+        } else {
+            console.warn("활성 슬라이드에 .text 요소 없음");
+        }
+    } else {
+        console.warn("활성 슬라이드 요소 없음");
     }
 });
 
 // 처음 로딩 시 1번 슬라이드에도 적용
 window.addEventListener("load", () => {
     const activeSlide = swiper.slides[swiper.activeIndex];
-    const text = activeSlide.querySelector(".text");
-    if (text) {
-        gsap.effects.textEffect(text);
+    if (activeSlide) {
+        const text = activeSlide.querySelector(".text");
+        if (text) {
+            gsap.effects.textEffect(text);
+        } else {
+            console.warn("초기 슬라이드에 .text 요소 없음");
+        }
+    } else {
+        console.warn("초기 활성 슬라이드 요소 없음");
     }
 });
+
+
 
 
 //======================= fetch 하는곳에 넣어서 주석처리
