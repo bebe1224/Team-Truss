@@ -1,5 +1,121 @@
 [
     {
+        "category": "Recommended",
+        "products": [
+            {
+                "id": "1_1",
+                "name": "추천상품1",
+                "originalPrice": "122,200,000",
+                "currentPrice": "11,100,000원",
+                "images": [
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen1_3.webp",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen1_2.webp",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen1_1.webp",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen1_4.webp",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen1_5.webp",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen1_6.webp"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Recommended",
+        "products": [
+            {
+                "id": "1_2",
+                "name": "추천상품2",
+                "originalPrice": "122,200,000",
+                "currentPrice": "11,100,000원",
+                "images": [
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen2_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen2_2.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen2_3.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen2_4.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen2_5.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen2_6.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Recommended",
+        "products": [
+            {
+                "id": "1_3",
+                "name": "추천상품3",
+                "originalPrice": "122,200,000",
+                "currentPrice": "11,100,000원",
+                "images": [
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen3_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen3_2.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen3_3.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen3_4.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen3_5.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen3_6.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Recommended",
+        "products": [
+            {
+                "id": "1_4",
+                "name": "추천상품4",
+                "originalPrice": "122,200,000",
+                "currentPrice": "11,100,000원",
+                "images": [
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen4_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen4_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen4_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen4_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen4_1.jpeg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen4_1.jpeg"
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Recommended",
+        "products": [
+            {
+                "id": "1_5",
+                "name": "추천상품5",
+                "originalPrice": "42,200,000",
+                "currentPrice": "2,100,000원",
+                "images": [
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen5_1.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen5_2.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen5_3.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen5_4.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen5_5.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen5_6.jpg"
+                ]
+            }
+        ]
+    },
+      {
+        "category": "Recommended",
+        "products": [
+            {
+                "id": "1_6",
+                "name": "추천상품6",
+                "originalPrice": "5,642,200,000",
+                "currentPrice": "3,222,100,000원",
+                "images": [
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen6_1.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen6_2.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen6_3.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen6_4.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen6_5.jpg",
+                    "../imgs/i_c_page/import/G-Wagen/g_wagen6_6.jpg"
+                ]
+            }
+        ]
+    },
+
+
+    {
         "category": "bestseller1",
         "products": [
             {
@@ -151,6 +267,7 @@
             }
         ]
     },
+
 
     {
         "category": "bestseller2",
@@ -305,6 +422,7 @@
         ]
     },
 
+
     {
         "category": "bestseller3",
         "products": [
@@ -457,6 +575,7 @@
             }
         ]
     },
+
 
     {
         "category": "bestseller4",

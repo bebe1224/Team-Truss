@@ -129,6 +129,7 @@
 
 //sect2 스와이퍼
 .sect2_swiper {
+    padding: 0px 4px;
     width: 100%;
     height: 600px;
 
@@ -139,57 +140,63 @@
             margin-top: 32px;
         }
 
-        &:hover {
-            .i_w {
-                .hidden {
-                    opacity: 1;
+        .swiper_product {
+            height: 450px;
+            cursor: pointer;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+            &:hover {
+                .i_w {
+                    .hidden {
+                        opacity: 1;
+                    }
                 }
             }
-        }
 
+            .i_w {
 
-        .i_w {
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: auto;
-            background-color: $primary-color5;
-
-            img {
+                position: relative;
+                overflow: hidden;
                 width: 100%;
-                height: 100%
+                height: 300px;
+                background-color: $primary-color5;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%
+                }
+
+                .hidden {
+                    @include fcc;
+                    gap: 8px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
             }
 
-            .hidden {
-                @include fcc;
-                gap: 8px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out
+            article {
+                @include fcsc;
+                width: 100%;
+                height: calc(100% - 300px);
+                font-size: 12px;
+                padding: 16px;
+
+                b {
+                    font-size: 14px;
+                }
+
+                span {
+                    color: $secondary-color0;
+                    text-decoration: line-through;
+                }
+
+                .price {}
             }
         }
-
-        article {
-            @include fcsc;
-            width: 100%;
-            height: calc(100% - 331px);
-            font-size: 12px;
-
-            b {
-                font-size: 14px;
-            }
-
-            span {
-                color: $secondary-color0;
-                text-decoration: line-through;
-            }
-
-            .price {}
-        }
-
     }
 }
