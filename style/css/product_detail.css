@@ -308,3 +308,14 @@ body {
   padding: 32px 0px;
   border-top: 2px solid #BDBBBB;
 }
+
+.toTop {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 99;
+  opacity: 0.2;
+}
+.toTop.active1 {
+  opacity: 1;
+}

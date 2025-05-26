@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/css/BasketPage.css">
+    <link rel="stylesheet" href="../style/css/button.css">
+    <link rel="stylesheet" href="../style/css/footer.css">
+    <link rel="stylesheet" href="../style/css/header.css">
+    <link rel="stylesheet" href="../style/css/input.css">
+    <link rel="stylesheet" href="../style/css/underline.css">
+    <link rel="stylesheet" href="../style/css/search.css">
+    <link rel="stylesheet" href="../style/css/sect.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+    <section class="sect sect1">
+        <div class="card_wrap">
+            <div class="card">
+                <ul class="list">
+                    <li class="element">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-shopping-cart" width="24"
+                            height="24" viewBox="0 0 24 24" fill="none" stroke="#7e8590" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a1 1 0 0 0 1 .61h9.72a1 1 0 0 0 1-.76L23 6H6"></path>
+                        </svg>
+                        <p class="label">장바구니</p>
+                    </li>
+                    <li class="element">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                            stroke="#7e8590" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-heart">
+                            <path
+                                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z" />
+                        </svg>
+
+                        <p class="label">찜목록</p>
+                    </li>
+                </ul>
+                <div class="separator"></div>
+                <ul class="list">
+                    <li class="element">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-file-plus" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="#7e8590" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+
+                        <p class="label">필요시 추가</p>
+                    </li>
+                    <li class="element money">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-file-plus" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="#7e8590" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+
+
+
+                        <p class="label">필요시 추가</p>
+                    </li>
+                </ul>
+                <div class="separator"></div>
+                <ul class="list">
+                    <li class="element">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="lucide lucide-file-plus" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="#7e8590" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="12" y1="18" x2="12" y2="12"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                        <p class="label">필요시 추가</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="screen_wrap">
+            <div class="screen screen1">
+                <div class="wrap">
+                    <h2>장바구니</h2>
+                    <ul class="tab_menus">
+                        <li>장바구니</li>
+                        <li>필요시 추가</li>
+                    </ul>
+                </div>
+                <div class="sub_screen_wrap">
+                    <div class="sub_screen sub_screen1">
+                        <div class="inner">
+                            <h3>장박 구니</h3>
+                            <div class="box fsbc">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="orderStatus[]" class="fChk" value="all" id="chkAll"
+                                        checked="">
+                                    <span class="cbx"></span>
+                                    전체선택
+                                </label>
+                                <button class="delete-button3">
+                                    ␡
+                                </button>
+
+                            </div>
+                            <div class="box">
+                                <ul>
+                                    <li>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" name="orderStatus[]" class="fChk" value="all"
+                                                id="chkAll" checked="">
+                                            <span class="cbx"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <div class="i_w">
+                                            <img src="" alt="이미지">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="product_name">상품명</p>
+                                    </li>
+                                    <li> <span>소비자가</span></li>
+                                    <li>
+                                        <p class="price">가격</p>
+                                    </li>
+                                    <li>배송방법</li>
+                                    <li>배송비</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub_screen sub_screen1">
+                        <div class="inner">
+                            <h3>아직 미정</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ===== 구분선 ====== -->
+            <div class="screen screen2">
+                <div class="wrap">
+                    <h2>찜목록</h2>
+                    <ul class="tab_menus">
+                        <li>찜목록</li>
+                        <li>필요시 추가</li>
+                    </ul>
+                </div>
+                <div class="sub_screen_wrap">
+                    <div class="sub_screen sub_screen1">
+                        <div class="inner">
+                            <h3>찜목록</h3>
+                        </div>
+                    </div>
+                    <div class="sub_screen sub_screen2">
+                        <div class="inner">
+                            <h3>아직 미정</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====================================== -->
+    <script src="../script/jquery-3.7.1.js"></script>
+    <!-- ====================================== -->
+    <script src="../script/header/header_fetch.js"></script>
+    <script src="../script/tab/maypage_tab.js"></script>
+
+    <!-- 체크박스 클릭시 전체 체크박스 클릭됨 (임시)-->
+    <script>
+        $('#chkAll').change(function () {
+            $('input[name="orderStatus[]"]').not(this).prop('checked', this.checked);
+        });
+    </script>
+</body>
+
+</html>

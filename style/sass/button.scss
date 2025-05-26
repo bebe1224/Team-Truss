@@ -745,3 +745,358 @@
         background-position: 8px 0, 12px 4px;
     }
 }
+
+// ===================================
+// 누르면 맨위로 올라가는 버튼 
+// <button class="toTop">
+//   <svg class="svgIcon" viewBox="0 0 384 512">
+//     <path
+//       d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+//     ></path>
+//   </svg>
+// </button>
+
+.toTop {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+
+    .svgIcon {
+        width: 12px;
+        transition-duration: 0.3s;
+
+        path {
+            fill: white;
+        }
+    }
+
+    &:hover {
+        width: 140px;
+        border-radius: 50px;
+        transition-duration: 0.3s;
+        background-color: rgb(181, 160, 255);
+        align-items: center;
+
+        .svgIcon {
+            transition-duration: 0.3s;
+            transform: translateY(-200%);
+        }
+    }
+
+    &::before {
+        position: absolute;
+        bottom: -20px;
+        content: "Back to Top";
+        color: white;
+        font-size: 0px;
+        // transition-duration: 0.3s; // (주석 원래 있던 거)
+    }
+
+    &:hover::before {
+        font-size: 13px;
+        opacity: 1;
+        bottom: unset;
+        transition-duration: 0.3s;
+        // transform: translateY(-30px); // (주석 원래 있던 거)
+    }
+}
+
+
+// ===================================
+// <button class="del_btn">
+//   <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+// </button>
+
+.del_btn {
+    width: 32px; // 크기 축소
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.164); // 그림자도 축소
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+
+    .svgIcon {
+        width: 8px; // 아이콘 크기 축소
+        transition-duration: 0.3s;
+
+        path {
+            fill: white;
+        }
+    }
+
+    &:hover {
+        width: 90px; // 호버 시 너비도 비율에 맞게 축소
+        border-radius: 25px;
+        background-color: rgb(255, 69, 69);
+        align-items: center;
+        transition-duration: 0.3s;
+
+        .svgIcon {
+            width: 30px; // 호버 시 아이콘 크기도 축소
+            transform: translateY(50%); // 이동 거리 비율에 맞게 수정
+            transition-duration: 0.3s;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        top: -15px; // 위치 조정
+        content: "Delete";
+        color: white;
+        font-size: 1px; // 초기 폰트 크기 축소
+        transition-duration: 0.3s;
+    }
+
+    &:hover::before {
+        font-size: 10px; // 호버 시 폰트 크기도 비율에 맞게
+        opacity: 1;
+        transform: translateY(20px); // 이동 거리 조정
+        transition-duration: 0.3s;
+    }
+}
+
+// ===================================
+.delete-button2 {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px; // 줄인 크기에 맞게 축소
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 4px;
+    width: 32px;
+    height: 35px;
+    border-radius: 8px 8px 6px 6px;
+    cursor: pointer;
+    position: relative;
+    will-change: transform;
+    transition: all 0.1s ease-in-out 0s;
+    user-select: none;
+
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background-position: bottom right, bottom right;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow:
+        inset -2px -5px 0px rgba(255, 255, 255, 0.4),
+        inset -2px -4px 0px rgba(0, 0, 0, 0.3),
+        0px 1px 1px rgba(0, 0, 0, 0.3),
+        0px 1px 1px rgba(255, 255, 255, 0.1);
+    transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5));
+        z-index: -1;
+        border-radius: 8px;
+        box-shadow:
+            inset 2px 0px 0px rgba(255, 255, 255, 0.1),
+            inset 2px -4px 0px rgba(0, 0, 0, 0.3);
+        transition: all 0.1s ease-in-out 0s;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image:
+            linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+        background-position: bottom right, bottom right;
+        background-size: 100% 100%, 100% 100%;
+        background-repeat: no-repeat;
+        z-index: -1;
+        border-radius: 8px;
+        transition: all 0.1s ease-in-out 0s;
+    }
+
+    &:active {
+        will-change: transform;
+        transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(2px) scale(0.96);
+        height: 34px;
+        border: 0.25px solid rgba(0, 0, 0, 0.2);
+        box-shadow:
+            inset -2px -4px 0px rgba(255, 255, 255, 0.2),
+            inset -2px -3px 0px rgba(0, 0, 0, 0.8),
+            0px 1px 0px rgba(0, 0, 0, 0.9),
+            0px 1px 0px rgba(255, 255, 255, 0.2);
+        transition: all 0.1s ease-in-out 0s;
+
+        &::after {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.2));
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 5%;
+            left: 20%;
+            width: 50%;
+            height: 80%;
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: overlay 0.1s ease-in-out 0s;
+            pointer-events: none;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@keyframes overlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes overlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.delete-button3 {
+    background-color: #5353ff;
+    color: #fff;
+    font-size: 20px;
+    border: 0.5px solid rgba(83, 83, 255, 0.6);
+    padding-bottom: 4px;
+    width: 32px;
+    height: 35px;
+    border-radius: 8px 8px 6px 6px;
+    cursor: pointer;
+    position: relative;
+    will-change: transform;
+    transition: all 0.1s ease-in-out 0s;
+    user-select: none;
+
+    background-image:
+        linear-gradient(to right, rgba(83, 83, 255, 0.9), rgba(83, 83, 255, 0)),
+        linear-gradient(to bottom, rgba(50, 50, 255, 0.8), rgba(30, 30, 255, 0));
+    background-position: bottom right, bottom right;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    box-shadow:
+        inset -2px -5px 0px rgba(200, 200, 255, 0.6),
+        inset -2px -4px 0px rgba(20, 20, 120, 0.7),
+        0px 1px 1px rgba(20, 20, 120, 0.5),
+        0px 1px 1px rgba(180, 180, 255, 0.4);
+    transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(10, 10, 80, 0.7));
+        z-index: -1;
+        border-radius: 8px;
+        box-shadow:
+            inset 2px 0px 0px rgba(255, 255, 255, 0.15),
+            inset 2px -4px 0px rgba(20, 20, 120, 0.7);
+        transition: all 0.1s ease-in-out 0s;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image:
+            linear-gradient(to right, rgba(50, 50, 255, 0.8), rgba(50, 50, 255, 0)),
+            linear-gradient(to bottom, rgba(40, 40, 220, 0.7), rgba(20, 20, 220, 0));
+        background-position: bottom right, bottom right;
+        background-size: 100% 100%, 100% 100%;
+        background-repeat: no-repeat;
+        z-index: -1;
+        border-radius: 8px;
+        transition: all 0.1s ease-in-out 0s;
+    }
+
+    &:active {
+        will-change: transform;
+        transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(2px) scale(0.96);
+        height: 34px;
+        border: 0.25px solid rgba(50, 50, 255, 0.5);
+        box-shadow:
+            inset -2px -4px 0px rgba(220, 220, 255, 0.3),
+            inset -2px -3px 0px rgba(10, 10, 80, 0.9),
+            0px 1px 0px rgba(10, 10, 80, 0.8),
+            0px 1px 0px rgba(200, 200, 255, 0.3);
+        transition: all 0.1s ease-in-out 0s;
+
+        &::after {
+            background-image: linear-gradient(to bottom, rgba(10, 10, 80, 0.7), rgba(220, 220, 255, 0.15));
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 5%;
+            left: 20%;
+            width: 50%;
+            height: 80%;
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: overlay 0.1s ease-in-out 0s;
+            pointer-events: none;
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@keyframes overlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
